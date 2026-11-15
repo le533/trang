@@ -149,7 +149,7 @@ app.use((req, res, next) => {
   }
   return next();
 });
-app.use(express.static(path.resolve(__dirname, '..'), {
+app.use(express.static(path.resolve(__dirname, '..', 'public'), {
   dotfiles: 'deny',
   index: ['index.html'],
 }));
