@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cài đặt hệ thống | Nihongo Learning</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/admin.css" />
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/admin.js" defer></script>
+  </head>
+  <body
+    data-require-login="true"
+    data-require-admin="true"
+    data-login-href="../auth/login.html"
+    data-dashboard-href="../dashboard.html"
+    data-admin-dashboard-href="index.html"
+    data-page="settings"
+  >
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <span class="admin-brand-mark" aria-hidden="true">あ</span>
+          <span>NhaiTiengNhat</span>
+        </div>
+
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
+          <a href="index.html">Tổng quan</a>
+          <a href="../lessons/index.html">Bài học</a>
+          <a href="../kanji/index.html?admin=1">Học liệu</a>
+          <a href="feedback.html">Nhận xét</a>
+          <a href="users.html">Người dùng</a>
+          <a href="progress.html">Tiến độ</a>
+          <a href="reports.html">Báo cáo</a>
+          <a href="settings.html" aria-current="page">Cài đặt</a>
+        </nav>
+
+        <div class="admin-user-card">
+          <p class="section-kicker">Đăng nhập</p>
+          <strong data-admin-user-name>Quản trị viên</strong>
+          <a href="../auth/profile.html">Hồ sơ cá nhân</a>
+        </div>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <p class="section-kicker">CÀI ĐẶT</p>
+            <h1>Hệ thống quản trị</h1>
+          </div>
+          <a class="button button-primary" href="index.html">Quay lại tổng quan</a>
+        </header>
+
+        <section class="admin-grid">
+          <article class="admin-settings-card">
+            <h3>Backend và xác thực</h3>
+            <div class="admin-settings-list">
+              <div class="setting-row">
+                <span>Nguồn dữ liệu</span>
+                <span class="setting-badge">MySQL 8</span>
+              </div>
+              <div class="setting-row">
+                <span>API</span>
+                <span class="setting-badge">Node.js + Express</span>
+              </div>
+              <div class="setting-row">
+                <span>Phân quyền quản trị</span>
+                <span class="setting-badge">Xác thực phía máy chủ</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="admin-settings-card">
+            <h3>Quản lý nội dung</h3>
+            <div class="admin-settings-list">
+              <div class="setting-row">
+                <span>Quản lý nội dung</span>
+                <span class="setting-badge">Sẵn sàng</span>
+              </div>
+              <div class="setting-row">
+                <span>Video và tiến độ học</span>
+                <span class="setting-badge">Lưu qua API</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="admin-settings-card">
+            <h3>Gợi ý mở rộng</h3>
+            <div class="admin-settings-list">
+              <div class="setting-row">
+                <span>Quản lý khóa học</span>
+                <span class="setting-badge">Mở rộng</span>
+              </div>
+              <div class="setting-row">
+                <span>Thông tin kết nối</span>
+                <span class="setting-badge">backend/.env</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

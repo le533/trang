@@ -1,0 +1,32 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+[*] --> not_started
+not_started --> in_progress : POST progress status=in_progress
+not_started --> completed : POST progress status=completed
+in_progress --> completed : POST progress status=completed
+completed --> in_progress : học lại / cập nhật trạng thái
+in_progress --> not_started : đặt lại trạng thái
+completed --> not_started : đặt lại trạng thái
+note right of in_progress
+Backend xác thực user và quyền khóa học;
+upsert tiến độ rồi cập nhật learning stats
+trong transaction.
+end note
+@enduml

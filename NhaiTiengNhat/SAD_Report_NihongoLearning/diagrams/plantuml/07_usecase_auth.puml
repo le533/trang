@@ -1,0 +1,45 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Khách" as Guest
+actor "Học viên" as Learner
+actor "Quản trị viên" as Admin
+rectangle "Tài khoản" {
+  usecase "Đăng ký" as Register
+  usecase "Đăng nhập một cổng" as Login
+  usecase "Xác thực JWT" as JWT
+  usecase "Đăng xuất" as Logout
+  usecase "Cập nhật hồ sơ" as Profile
+  usecase "Đổi mật khẩu" as Password
+  usecase "Xác minh trạng thái tài khoản" as Status
+  usecase "Kiểm tra role admin phía server" as Role
+}
+Guest --> Register
+Guest --> Login
+Learner --> Login
+Learner --> Logout
+Learner --> Profile
+Learner --> Password
+Admin --> Login
+Admin --> Logout
+Login ..> JWT : <<include>>
+JWT ..> Status : <<include>>
+Role ..> JWT : <<include>>
+@enduml

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Đọc tài liệu PDF, Word và TXT, tự lưu trang đọc để tiếp tục đúng vị trí trong lần học sau." />
+    <meta property="og:title" content="Thư viện tài liệu | Nihongo Learning" />
+    <meta property="og:description" content="Đọc PDF, DOCX và lưu vị trí học tập trên tài khoản." />
+    <title>Thư viện tài liệu | Nihongo Learning</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/learning-content.css" />
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/nav-mobile.js" defer></script>
+    <script src="../../js/admin-guard.js" defer></script>
+    <script src="../../js/document-reader.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../../index.html" aria-label="Nihongo Learning - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">あ</span><span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../../index.html">Trang chủ</a>
+            <a class="navigation-link" href="../lessons/index.html">Bài học</a>
+            <a class="navigation-link" href="../training/index.html">Khóa học</a>
+            <a class="navigation-link is-active" href="index.html" aria-current="page">Thư viện</a>
+          </nav>
+          <div class="account-links" data-auth-ui data-login-href="../auth/login.html"
+            data-register-href="../auth/register.html" data-dashboard-href="../dashboard.html"
+            data-admin-dashboard-href="../admin/index.html" data-profile-href="../auth/profile.html"
+            data-home-href="../../index.html"></div>
+        </div>
+      </header>
+      <main class="learning-main">
+        <section class="learning-page-intro">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Trang chủ</a><span aria-hidden="true">/</span><span aria-current="page">Thư viện</span></nav>
+            <div class="learning-heading-row">
+              <div><p class="section-kicker">ĐỌC VÀ ÔN TẬP</p><h1>Thư viện tài liệu</h1>
+                <p class="learning-intro-copy">PDF, Word (DOCX) và văn bản. Đăng nhập để lưu vị trí đọc, tiếp tục đúng trang trong lần học sau.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="learning-content container">
+          <p id="documents-message" class="form-notice" role="status" aria-live="polite"></p>
+          <form id="document-upload-form" class="document-upload-form" hidden>
+            <h2>Thêm tài liệu</h2>
+            <label>Tiêu đề<input name="title" maxlength="255" required></label>
+            <label>Tệp PDF, DOCX hoặc TXT<input name="document" type="file" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" required></label>
+            <label>Khóa học (để trống nếu miễn phí)<select name="courseId"><option value="">Tài liệu miễn phí</option></select></label>
+            <button class="button button-primary" type="submit">Tải tài liệu lên</button>
+            <progress max="100" value="0" hidden></progress>
+          </form>
+          <div id="document-grid" class="document-grid" aria-live="polite"></div>
+          <p id="documents-error" class="learning-load-error" role="alert" hidden></p>
+        </section>
+      </main>
+      <footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nihongo Learning</p><p><a href="../training/index.html">Xem khóa học</a></p></div></footer>
+    </div>
+    <dialog id="document-reader-dialog" class="reader-dialog" aria-labelledby="reader-title">
+      <div class="reader-shell">
+        <header class="reader-header">
+          <h2 id="reader-title"></h2>
+          <div class="reader-controls">
+            <button class="button button-secondary" id="reader-prev" type="button">Trang trước</button>
+            <span id="reader-page-status" aria-live="polite"></span>
+            <button class="button button-secondary" id="reader-next" type="button">Trang sau</button>
+            <button class="button button-secondary" id="reader-close" type="button">Đóng</button>
+          </div>
+        </header>
+        <p id="reader-save-status" role="status" aria-live="polite">Đang khôi phục vị trí đọc…</p>
+        <div id="reader-page-list" class="reader-page-list"></div>
+      </div>
+    </dialog>
+  </body>
+</html>

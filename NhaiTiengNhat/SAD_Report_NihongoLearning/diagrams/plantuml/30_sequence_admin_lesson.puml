@@ -1,0 +1,36 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+actor Admin
+participant "Lessons Admin UI" as UI
+participant "POST /api/uploads/video" as Upload
+participant "adminMiddleware" as Auth
+participant "FFprobe / FFmpeg" as Media
+database MySQL as DB
+Admin -> UI : nhập metadata, chọn MP4/WebM
+UI -> Upload : multipart video + Bearer JWT
+Upload -> Auth : xác minh role admin
+Upload -> Upload : kiểm tra mime, extension, signature, size
+Upload -> Media : đọc duration và tạo preview 300s
+Media --> Upload : metadata + preview file
+Upload -> DB : insert video_assets
+Upload --> UI : /media/videos/:uuid
+UI -> DB : POST /api/lessons với videoUrl
+DB --> UI : lesson created
+@enduml

@@ -1,0 +1,73 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+entity courses  {
+   * id : BIGINT <<PK>>
+  --
+  slug : VARCHAR <<UQ>>
+  level : ENUM
+  price_vnd : DECIMAL 
+}
+entity lessons  {
+   * id : BIGINT <<PK>>
+  --
+  course_id : BIGINT <<FK>>
+  level : ENUM
+  video_url : VARCHAR
+  is_deleted : BOOLEAN 
+}
+entity grammar_points  {
+   * id : BIGINT <<PK>>
+  --
+  title : VARCHAR
+  level : ENUM
+  is_deleted : BOOLEAN 
+}
+entity grammar_examples  {
+   * id : BIGINT <<PK>>
+  --
+  grammar_point_id : BIGINT <<FK>>
+  japanese_text : TEXT
+  meaning_vi : TEXT 
+}
+entity exercises  {
+   * id : BIGINT <<PK>>
+  --
+  level : ENUM
+  question_count : SMALLINT
+  is_deleted : BOOLEAN 
+}
+entity exercise_questions  {
+   * id : BIGINT <<PK>>
+  --
+  exercise_id : BIGINT <<FK>>
+  question_type : ENUM
+  sort_order : SMALLINT 
+}
+entity exercise_choices  {
+   * id : BIGINT <<PK>>
+  --
+  question_id : BIGINT <<FK>>
+  is_correct : BOOLEAN 
+}
+courses ||--o{ lessons
+grammar_points ||--o{ grammar_examples
+exercises ||--|{ exercise_questions
+exercise_questions ||--o{ exercise_choices
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as U
+actor "Quản trị viên" as A
+rectangle "Thư viện tài liệu" {
+  usecase "Duyệt danh sách tài liệu" as List
+  usecase "Kiểm tra quyền khóa học" as Access
+  usecase "Đọc PDF / DOCX / TXT" as Read
+  usecase "Khôi phục trang và vị trí đọc" as Restore
+  usecase "Lưu trang và vị trí cuộn" as Save
+  usecase "Tải / trích xuất tài liệu" as Upload
+  usecase "Gắn tài liệu với khóa học" as Link
+}
+U --> List
+U --> Read
+U --> Restore
+U --> Save
+A --> Upload
+A --> Link
+Read ..> Access : <<include>>
+Read ..> Restore : <<include>>
+Save ..> Access : <<include>>
+@enduml

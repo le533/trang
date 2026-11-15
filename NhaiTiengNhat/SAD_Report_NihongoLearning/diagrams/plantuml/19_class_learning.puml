@@ -1,0 +1,72 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+class User
+class Course  {
+   +id: bigint
+  +level: JLPT
+  +priceVnd: decimal 
+}
+class Lesson  {
+   +id: bigint
+  +courseId: bigint?
+  +videoUrl: string?
+  +content: longtext 
+}
+class LessonProgress  {
+   +userId: bigint
+  +lessonId: bigint
+  +status: enum
+  +completedAt: datetime? 
+}
+class Exercise  {
+   +id: bigint
+  +level: JLPT
+  +questionCount: int 
+}
+class ExerciseQuestion  {
+   +id: bigint
+  +exerciseId: bigint
+  +questionType: enum 
+}
+class ExerciseChoice  {
+   +id: bigint
+  +questionId: bigint
+  +isCorrect: boolean 
+}
+class ExerciseAttempt  {
+   +id: bigint
+  +userId: bigint
+  +exerciseId: bigint
+  +score: decimal 
+}
+class UserLearningStats  {
+   +userId: bigint
+  +accuracy: decimal
+  +streakDays: int 
+}
+User "1" -- "0..*" LessonProgress
+Lesson "1" -- "0..*" LessonProgress
+Course "1" -- "0..*" Lesson
+Exercise "1" -- "1..*" ExerciseQuestion
+ExerciseQuestion "1" -- "0..*" ExerciseChoice
+User "1" -- "0..*" ExerciseAttempt
+Exercise "1" -- "0..*" ExerciseAttempt
+User "1" -- "0..1" UserLearningStats
+@enduml

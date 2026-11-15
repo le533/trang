@@ -1,0 +1,434 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── 1120px — thu nhỏ nav links ───────────────────────────────────── */
+@media (max-width: 1120px) {
+  .header-inner {
+    grid-template-columns: max-content minmax(0, 1fr) max-content;
+    column-gap: 10px;
+  }
+
+  .navigation-link {
+    padding-inline: 7px;
+    font-size: 12px;
+  }
+
+  .account-greeting {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle[aria-expanded="true"] {
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  background: #edf4f0;
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.nav-toggle-icon {
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  transition: top 160ms ease, transform 160ms ease;
+}
+
+.nav-toggle-icon::before {
+  top: -6px;
+}
+
+.nav-toggle-icon::after {
+  top: 6px;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ── Mobile nav — dùng class inject bởi nav-mobile.js ─────────────── *
+ * html.nav-mobile-active có specificity cao hơn class đơn,
+ * không cần !important, không bị override bởi CSS trang con.         */
+
+html.nav-mobile-active .header-inner {
+  position: relative;
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-block: 0;
+}
+
+html.nav-mobile-active .nav-toggle {
+  display: flex;
+  order: 3;
+}
+
+html.nav-mobile-active .account-links {
+  order: 2;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+html.nav-mobile-active .account-links .button {
+  min-height: 36px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* Nav ẩn mặc định — dropdown khi .is-open */
+html.nav-mobile-active .site-navigation {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  right: -1px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  padding: 10px 12px 16px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 10px 32px rgb(29 48 45 / 12%);
+  min-width: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+html.nav-mobile-active .site-navigation.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.nav-mobile-active .site-navigation,
+  html.nav-mobile-active .nav-toggle-icon::before,
+  html.nav-mobile-active .nav-toggle-icon::after {
+    transition: none;
+  }
+}
+
+html.nav-mobile-active .navigation-link {
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  justify-content: flex-start;
+}
+
+/* ── Breakpoints layout trang ──────────────────────────────────────── */
+@media (max-width: 920px) {
+  .kanji-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 34px;
+  }
+
+  .hero-copy h1 {
+    font-size: 44px;
+  }
+
+  .feature-grid,
+  .spotlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guide-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 32px, 1220px);
+  }
+
+  .header-inner {
+    min-height: auto;
+  }
+
+  .brand-name {
+    font-size: 12px;
+  }
+
+  .account-links {
+    gap: 5px;
+  }
+
+  .account-links .button {
+    min-height: 36px;
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+
+  .account-links .account-nav-link {
+    font-size: 11px;
+  }
+
+  .account-logout {
+    min-height: 32px !important;
+    padding: 5px 8px !important;
+  }
+
+  .hero-section {
+    padding-block: 42px 48px;
+  }
+
+  .hero-layout {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(35px, 10vw, 46px);
+  }
+
+  .hero-lead {
+    font-size: 17px;
+  }
+
+  .hero-actions,
+  .cta-layout .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .learning-scene {
+    min-height: 320px;
+  }
+
+  .scene-sheet {
+    width: 220px;
+    min-height: 260px;
+  }
+
+  .sheet-kanji {
+    font-size: 94px;
+  }
+
+  .section-block {
+    padding-block: 56px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .section-heading h2,
+  .guide-intro h2,
+  .cta-layout h2 {
+    font-size: 28px;
+  }
+
+  .feature-grid,
+  .spotlight-grid,
+  .guide-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: 205px;
+  }
+
+  .guide-steps {
+    gap: 18px;
+  }
+
+  .guide-step {
+    min-height: 115px;
+  }
+
+  .guide-step h3 {
+    margin-top: 12px;
+  }
+
+  .spotlight-card {
+    min-height: 240px;
+  }
+
+  .cta-layout {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .final-cta {
+    padding-block: 38px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 14px;
+  }
+
+  .payment-result-actions .button {
+    width: 100%;
+  }
+
+  .kanji-heading-row,
+  .kanji-level-row,
+  .kanji-toolbar,
+  .kanji-results-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .kanji-heading-row {
+    gap: 18px;
+  }
+
+  .kanji-heading-row h1 {
+    font-size: 34px;
+  }
+
+  .kanji-level-row {
+    gap: 12px;
+  }
+
+  .level-selector {
+    flex-wrap: wrap;
+  }
+
+  .kanji-toolbar {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .kanji-search,
+  .kanji-filters {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .kanji-search input {
+    min-width: 0;
+  }
+
+  .kanji-filters {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .kanji-filters label {
+    flex: 1 1 145px;
+  }
+
+  .kanji-filters select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .kanji-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kanji-card {
+    min-width: 0;
+    padding-inline: 8px;
+  }
+}
+
+@media (max-width: 390px) {
+  html.nav-mobile-active .header-inner {
+    min-height: auto;
+    flex-wrap: wrap;
+    padding-block: 8px;
+  }
+
+  html.nav-mobile-active .account-links {
+    flex: 1 0 100%;
+    order: 4;
+    justify-content: flex-end;
+  }
+
+  .brand-name {
+    max-width: 92px;
+    overflow-wrap: anywhere;
+    font-size: 10px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+}

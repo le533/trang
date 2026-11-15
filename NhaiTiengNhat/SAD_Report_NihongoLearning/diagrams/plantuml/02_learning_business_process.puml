@@ -1,0 +1,38 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+start
+:Mở website;
+:Đăng ký hoặc đăng nhập;
+:Chọn cấp độ JLPT;
+if (Nội dung miễn phí?) then (Có)
+  :Mở từ vựng / Kanji / ngữ pháp / bài học;
+else (Không)
+  :Kiểm tra quyền khóa học;
+  if (Đã có quyền?) then (Có)
+    :Mở nội dung nâng cao;
+  else (Chưa)
+    :Hiển thị trạng thái khóa và luồng đăng ký;
+  endif
+endif
+:Học, luyện phát âm hoặc xem video;
+:Lưu tiến độ / làm bài tập;
+:Cập nhật thống kê cá nhân;
+stop
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+actor Learner
+participant "Lesson Dialog" as UI
+participant "POST /lessons/:id/progress" as API
+participant authMiddleware as Auth
+participant lessonsController as C
+database MySQL as DB
+Learner -> UI : chọn đang học / hoàn thành
+UI -> API : status + Bearer JWT
+API -> Auth : xác thực tài khoản
+Auth --> API : userId, role
+API -> C : updateProgress()
+C -> DB : BEGIN; lock lesson; kiểm tra quyền
+alt có quyền học
+  C -> DB : upsert lesson_progress
+  C -> DB : refresh user_learning_stats
+  C -> DB : COMMIT
+  C --> UI : success
+else không có quyền
+  C -> DB : ROLLBACK
+  C --> UI : 403
+end
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+actor Learner
+participant "Course Page" as UI
+participant "POST /api/payments/vnpay" as API
+participant authMiddleware as Auth
+participant paymentsController as C
+database MySQL as DB
+participant "VNPay Sandbox" as VNP
+Learner -> UI : chọn đăng ký khóa
+UI -> API : courseId + JWT
+API -> Auth : xác thực user
+API -> C : createCheckout()
+C -> DB : kiểm tra khóa, giá, quyền; insert pending order
+DB --> C : orderRef
+C -> C : tạo tham số + HMAC SHA-512
+C --> UI : paymentUrl + orderRef
+UI -> VNP : điều hướng trình duyệt
+VNP --> Learner : giao diện thanh toán Sandbox
+@enduml

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <title>Luyện tập tiếng Nhật theo JLPT | Nihongo Learning</title>
+    <meta name="description" content="Luyện tập từ vựng và ngữ pháp tiếng Nhật theo cấp độ JLPT, xem kết quả và lưu lịch sử làm bài." />
+    <meta property="og:title" content="Bài tập tiếng Nhật | Nihongo Learning" />
+    <meta property="og:description" content="Luyện tập theo cấp độ và theo dõi kết quả học tiếng Nhật." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/learning-content.css" />
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/nav-mobile.js" defer></script>
+    <script src="../../js/admin-guard.js" defer></script>
+    <script src="../../js/exercises.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../../index.html" aria-label="Nihongo Learning - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../../index.html">Trang chủ</a>
+            <a class="navigation-link" href="../kanji/index.html">Kanji</a>
+            <a class="navigation-link" href="../vocabulary/index.html">Từ vựng</a>
+            <a class="navigation-link" href="../grammar/index.html">Ngữ pháp</a>
+            <a class="navigation-link" href="../lessons/index.html">Bài học</a>
+            <a class="navigation-link is-active" href="index.html" aria-current="page">Bài tập</a>
+            <a class="navigation-link" href="../training/index.html">Khóa học</a>
+            <a class="navigation-link" href="../resources/index.html">Thư viện</a>
+          </nav>
+
+          <div
+            class="account-links"
+            data-auth-ui
+            data-login-href="../auth/login.html"
+            data-register-href="../auth/register.html"
+            data-dashboard-href="../dashboard.html"
+            data-profile-href="../auth/profile.html"
+            data-home-href="../../index.html"
+          ></div>
+        </div>
+      </header>
+
+      <main id="main-content" class="learning-main">
+        <section class="learning-page-intro" aria-labelledby="exercises-title">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="../../index.html">Trang chủ</a>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Bài tập</span>
+            </nav>
+            <div class="learning-heading-row">
+              <div>
+                <p class="section-kicker">LUYỆN TẬP THỰC HÀNH</p>
+                <h1 id="exercises-title">Bài tập tiếng Nhật</h1>
+                <p class="learning-intro-copy">
+                  Luyện tập theo từng cấp độ để củng cố vốn từ, ngữ pháp và kỹ năng đọc hiểu sau mỗi bài học.
+                </p>
+              </div>
+              <div class="learning-count" aria-label="Tổng bài tập">
+                <span id="exercises-total">0</span>
+                <span>bài tập</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="learning-content container" aria-label="Tra cứu bài tập">
+          <div class="learning-toolbar lesson-toolbar">
+            <form class="learning-search" id="exercises-search-form">
+              <label class="visually-hidden" for="exercises-search-input">Tìm kiếm bài tập</label>
+              <input type="search" id="exercises-search-input" placeholder="Tìm bài tập theo tên, chủ đề hoặc mô tả..." />
+              <button class="button button-primary" type="submit">Tìm kiếm</button>
+            </form>
+            <div class="level-filter-group" role="group" aria-label="Lọc bài tập theo cấp độ JLPT">
+              <button class="level-pill is-current" data-level="all" type="button" aria-pressed="true">Tất cả</button>
+              <button class="level-pill" data-level="N5" type="button" aria-pressed="false">N5</button>
+              <button class="level-pill" data-level="N4" type="button" aria-pressed="false">N4</button>
+              <button class="level-pill" data-level="N3" type="button" aria-pressed="false">N3</button>
+              <button class="level-pill" data-level="N2" type="button" aria-pressed="false">N2</button>
+              <button class="level-pill" data-level="N1" type="button" aria-pressed="false">N1</button>
+            </div>
+            <button class="button button-primary" id="add-exercise-button" type="button" hidden>+ Tạo bài tập</button>
+          </div>
+
+          <div class="learning-results-heading">
+            <h2>Bài tập luyện</h2>
+            <p id="exercises-grid-count" role="status" aria-live="polite">Đang tải danh sách...</p>
+          </div>
+
+          <div class="learning-grid" id="exercises-grid" aria-label="Danh sách bài tập"></div>
+          <p class="learning-empty-state" id="exercises-empty-state" role="status" hidden>
+            Không tìm thấy bài tập phù hợp.
+          </p>
+          <p class="learning-load-error" id="exercises-load-error" role="alert" hidden>
+            Không thể tải dữ liệu bài tập: <span data-load-error-message></span>
+            <button class="button button-secondary" id="retry-exercises-load" type="button">Thử lại</button>
+          </p>
+        </section>
+      </main>
+
+      <dialog class="learning-dialog" id="exercises-dialog" aria-labelledby="exercises-dialog-title">
+        <div class="learning-dialog-body">
+          <h3 id="exercises-dialog-title">Chi tiết bài tập</h3>
+          <div id="exercises-detail-content"></div>
+          <div class="learning-dialog-actions">
+            <button class="button button-secondary" id="close-exercises-detail" type="button">Đóng</button>
+          </div>
+        </div>
+      </dialog>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-main">
+            <div class="footer-about">
+              <a class="footer-brand" href="../../index.html">
+                <span class="brand-mark" aria-hidden="true">あ</span>
+                NIHONGO LEARNING
+              </a>
+              <p>Một góc nhỏ để bạn học, luyện tập và tiến gần hơn tới tiếng Nhật mỗi ngày.</p>
+            </div>
+            <nav class="footer-navigation" aria-label="Điều hướng website">
+              <h2>Khám phá</h2>
+              <a href="../../index.html">Trang chủ</a>
+              <a href="../kanji/index.html">Kanji</a>
+              <a href="../vocabulary/index.html">Từ vựng</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Chủ đề học tập">
+              <h2>Học tiếng Nhật</h2>
+              <a href="../grammar/index.html">Ngữ pháp</a>
+              <a href="../lessons/index.html">Bài học</a>
+              <a href="index.html" aria-current="page">Bài tập</a>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 Nihongo Learning. All rights reserved.</p>
+            <p>Học một chút, vững thêm mỗi ngày.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

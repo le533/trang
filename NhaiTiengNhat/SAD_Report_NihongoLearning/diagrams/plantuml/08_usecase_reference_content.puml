@@ -1,0 +1,44 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as U
+actor "Quản trị viên" as A
+rectangle "Học liệu ngôn ngữ" {
+  usecase "Tra cứu theo JLPT" as Search
+  usecase "Tìm theo chữ / cách đọc / nghĩa" as Find
+  usecase "Lọc theo số nét / từ loại" as Filter
+  usecase "Xem chi tiết Kanji" as KDetail
+  usecase "Nghe phát âm bằng speech synthesis" as Speak
+  usecase "Xem ví dụ và cách dùng" as Examples
+  usecase "Thêm / sửa / xóa Kanji" as KCrud
+  usecase "Thêm / sửa / xóa từ vựng" as VCrud
+  usecase "Thêm / sửa / xóa ngữ pháp" as GCrud
+}
+U --> Search
+U --> Find
+U --> Filter
+U --> KDetail
+U --> Speak
+U --> Examples
+A --> KCrud
+A --> VCrud
+A --> GCrud
+KDetail ..> Examples : <<include>>
+@enduml

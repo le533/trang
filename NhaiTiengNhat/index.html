@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <meta name="description" content="Học tiếng Nhật theo lộ trình JLPT với từ vựng, Kanji, ngữ pháp, bài học video và bài tập. Theo dõi tiến độ học tập mỗi ngày." />
+    <meta property="og:title" content="Nihongo Learning | Học tiếng Nhật mỗi ngày" />
+    <meta property="og:description" content="Học tiếng Nhật theo lộ trình JLPT với bài học, từ vựng, Kanji, ngữ pháp và luyện tập." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta name="robots" content="index,follow" />
+    <title>Nihongo Learning | Học tiếng Nhật mỗi ngày</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2327675d'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='42' fill='white'%3Eあ%3C/text%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Nihongo Learning",
+        "inLanguage": "vi",
+        "description": "Nền tảng học tiếng Nhật theo lộ trình JLPT."
+      }
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/auth.js" defer></script>
+    <script src="js/nav-mobile.js" defer></script>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a
+            class="brand"
+            href="index.html"
+            aria-label="Nihongo Learning - Trang chủ"
+          >
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a
+              class="navigation-link is-active"
+              href="index.html"
+              aria-current="page"
+              >Trang chủ</a
+            >
+            <a class="navigation-link" href="pages/kanji/index.html">Kanji</a>
+            <a class="navigation-link" href="pages/vocabulary/index.html"
+              >Từ vựng</a
+            >
+            <a class="navigation-link" href="pages/grammar/index.html"
+              >Ngữ pháp</a
+            >
+            <a class="navigation-link" href="pages/lessons/index.html"
+              >Bài học</a
+            >
+            <a class="navigation-link" href="pages/exercises/index.html"
+              >Bài tập</a
+            >
+            <a class="navigation-link" href="pages/training/index.html"
+              >Khóa học</a
+            >
+            <a class="navigation-link" href="pages/resources/index.html"
+              >Thư viện</a
+            >
+          </nav>
+
+          <div
+            class="account-links"
+            data-auth-ui
+            data-login-href="pages/auth/login.html"
+            data-register-href="pages/auth/register.html"
+            data-dashboard-href="pages/dashboard.html"
+            data-profile-href="pages/auth/profile.html"
+            data-home-href="index.html"
+          >
+            <a class="button button-login" href="pages/auth/login.html"
+              >Đăng nhập</a
+            >
+            <a class="button button-register" href="pages/auth/register.html"
+              >Đăng ký</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content" class="home-main">
+        <section class="hero-section" aria-labelledby="hero-title">
+          <div class="container hero-layout">
+            <div class="hero-copy">
+              <p class="eyebrow">
+                <span aria-hidden="true"></span> NIHONGO LEARNING
+              </p>
+              <h1 id="hero-title">毎日、日本語を一歩ずつ。</h1>
+              <p class="hero-lead">Mỗi ngày một bước gần hơn với tiếng Nhật.</p>
+              <p class="hero-description">
+                Gom những điều nhỏ bé thành tiến bộ mỗi ngày. Học Kanji, từ vựng
+                và ngữ pháp theo lộ trình rõ ràng, dễ bắt đầu.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="pages/lessons/index.html"
+                  >Khám phá bài học <span aria-hidden="true">→</span></a
+                >
+                <a class="button button-secondary" href="#learning-path"
+                  >Tìm hiểu cách học</a
+                >
+              </div>
+              <p class="hero-footnote">
+                <span aria-hidden="true">学</span> Một nhịp học vừa sức, một nền
+                tảng vững vàng.
+              </p>
+            </div>
+
+            <figure
+              class="learning-scene"
+              aria-label="Minh họa một trang ghi chú học Kanji"
+            >
+              <div class="scene-caption">
+                GHI CHÚ HỌC TẬP <span>01 / 05</span>
+              </div>
+              <div class="scene-sheet">
+                <div class="sheet-heading">
+                  <span>今日の漢字</span><span class="sheet-level">N5</span>
+                </div>
+                <div class="sheet-kanji">日</div>
+                <div class="sheet-reading">
+                  <span>にち · ひ</span><span>mặt trời · ngày</span>
+                </div>
+                <div class="sheet-rule">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="sheet-example">
+                  <strong>日本語</strong><span>tiếng Nhật</span>
+                </div>
+              </div>
+              <div class="scene-note scene-note-top">HỌC THEO CHỦ ĐỀ</div>
+              <div class="scene-note scene-note-bottom">
+                <span>5 phút</span> mỗi ngày
+              </div>
+              <div class="scene-index" aria-hidden="true">あ</div>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section-block" aria-labelledby="features-title">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">CHỌN ĐIỀU BẠN MUỐN HỌC</p>
+                <h2 id="features-title">Một nơi cho cả hành trình</h2>
+              </div>
+              <p class="section-summary">
+                Bắt đầu từ một chủ đề, rồi mở rộng từng bước.
+              </p>
+            </div>
+            <div class="feature-grid">
+              <a class="feature-card" href="pages/kanji/index.html">
+                <span class="feature-symbol symbol-kanji" aria-hidden="true"
+                  >漢</span
+                >
+                <span class="feature-title">Kanji</span>
+                <span class="feature-description"
+                  >Hiểu mặt chữ, âm đọc và cách các bộ phận tạo nên ý
+                  nghĩa.</span
+                >
+                <span class="feature-link"
+                  >Khám phá Kanji <span aria-hidden="true">→</span></span
+                >
+              </a>
+              <a class="feature-card" href="pages/vocabulary/index.html">
+                <span
+                  class="feature-symbol symbol-vocabulary"
+                  aria-hidden="true"
+                  >語</span
+                >
+                <span class="feature-title">Từ vựng</span>
+                <span class="feature-description"
+                  >Tích lũy từ mới theo chủ đề và đặt chúng vào ngữ cảnh.</span
+                >
+                <span class="feature-link"
+                  >Học từ vựng <span aria-hidden="true">→</span></span
+                >
+              </a>
+              <a class="feature-card" href="pages/grammar/index.html">
+                <span class="feature-symbol symbol-grammar" aria-hidden="true"
+                  >文</span
+                >
+                <span class="feature-title">Ngữ pháp</span>
+                <span class="feature-description"
+                  >Nắm cấu trúc câu và cách diễn đạt tự nhiên hơn.</span
+                >
+                <span class="feature-link"
+                  >Xem ngữ pháp <span aria-hidden="true">→</span></span
+                >
+              </a>
+              <a class="feature-card" href="pages/lessons/index.html">
+                <span class="feature-symbol symbol-lessons" aria-hidden="true"
+                  >学</span
+                >
+                <span class="feature-title">Bài học</span>
+                <span class="feature-description"
+                  >Theo lộ trình từ nền tảng cơ bản đến những chủ đề mới.</span
+                >
+                <span class="feature-link"
+                  >Tới bài học <span aria-hidden="true">→</span></span
+                >
+              </a>
+              <a class="feature-card" href="pages/exercises/index.html">
+                <span class="feature-symbol symbol-exercises" aria-hidden="true"
+                  >練</span
+                >
+                <span class="feature-title">Bài tập</span>
+                <span class="feature-description"
+                  >Ôn lại kiến thức đã học và củng cố từng kỹ năng.</span
+                >
+                <span class="feature-link"
+                  >Luyện tập <span aria-hidden="true">→</span></span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="learning-guide"
+          id="learning-path"
+          aria-labelledby="guide-title"
+        >
+          <div class="container guide-layout">
+            <div class="guide-intro">
+              <p class="section-kicker">HỌC CÓ ĐỊNH HƯỚNG</p>
+              <h2 id="guide-title">
+                Tiến bộ được tạo nên từ những lần quay lại.
+              </h2>
+              <p>
+                Chia hành trình thành những phần vừa sức để việc học tiếng Nhật
+                trở nên rõ ràng và bền vững.
+              </p>
+            </div>
+            <div class="guide-steps">
+              <article class="guide-step">
+                <span class="step-number">01</span>
+                <h3>Chọn chủ đề</h3>
+                <p>Bắt đầu với điều bạn cần hoặc yêu thích.</p>
+              </article>
+              <article class="guide-step">
+                <span class="step-number">02</span>
+                <h3>Học từng phần</h3>
+                <p>Khám phá kiến thức theo các bước rõ ràng.</p>
+              </article>
+              <article class="guide-step">
+                <span class="step-number">03</span>
+                <h3>Ôn và ứng dụng</h3>
+                <p>Quay lại nội dung và biến nó thành kỹ năng.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="section-block spotlight-section"
+          aria-labelledby="spotlight-title"
+        >
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">GỢI Ý BẮT ĐẦU</p>
+                <h2 id="spotlight-title">Một vài điểm dừng thú vị</h2>
+              </div>
+              <p class="section-summary">
+                Nội dung mẫu để bạn bắt đầu khám phá.
+              </p>
+            </div>
+            <div class="spotlight-grid">
+              <article class="spotlight-card spotlight-kanji">
+                <p class="spotlight-type">KANJI · N5</p>
+                <p class="spotlight-japanese">山</p>
+                <h3>Núi</h3>
+                <p>
+                  Làm quen với một chữ Kanji quen thuộc trong những từ chỉ thiên
+                  nhiên.
+                </p>
+                <a href="pages/kanji/index.html"
+                  >Tìm hiểu Kanji <span aria-hidden="true">→</span></a
+                >
+              </article>
+              <article class="spotlight-card spotlight-vocabulary">
+                <p class="spotlight-type">TỪ VỰNG · ĐỊA ĐIỂM</p>
+                <p class="spotlight-japanese spotlight-word">図書館</p>
+                <h3>としょかん · thư viện</h3>
+                <p>Một từ hữu ích để nói về nơi đọc và mượn sách.</p>
+                <a href="pages/vocabulary/index.html"
+                  >Xem từ vựng <span aria-hidden="true">→</span></a
+                >
+              </article>
+              <article class="spotlight-card spotlight-lesson">
+                <p class="spotlight-type">BÀI HỌC · LÀM QUEN</p>
+                <p class="spotlight-japanese spotlight-phrase">はじめまして</p>
+                <h3>Rất vui được gặp bạn</h3>
+                <p>Khởi đầu một cuộc trò chuyện bằng lời chào phù hợp.</p>
+                <a href="pages/lessons/index.html"
+                  >Mở bài học <span aria-hidden="true">→</span></a
+                >
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block feedback-section" aria-labelledby="feedback-title">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">CỘNG ĐỒNG HỌC TẬP</p>
+                <h2 id="feedback-title">Chia sẻ từ học viên</h2>
+              </div>
+              <p class="section-summary">Chỉ nhận xét của học viên đã xác minh và được duyệt mới xuất hiện công khai.</p>
+            </div>
+            <p id="feedback-status" class="form-notice" role="status" aria-live="polite"></p>
+            <div id="feedback-list" class="feedback-grid" aria-live="polite">
+              <p class="feedback-empty">Đang tải nhận xét…</p>
+            </div>
+            <p id="feedback-login-note" class="feedback-login-note" hidden>
+              <a href="pages/auth/login.html">Đăng nhập</a> để gửi nhận xét sau khi học.
+            </p>
+            <form id="feedback-form" class="feedback-form" hidden>
+              <h3>Gửi nhận xét của bạn</h3>
+              <label>Đánh giá
+                <select name="rating" required>
+                  <option value="5">5 sao - Rất hài lòng</option>
+                  <option value="4">4 sao - Hài lòng</option>
+                  <option value="3">3 sao - Bình thường</option>
+                  <option value="2">2 sao</option>
+                  <option value="1">1 sao</option>
+                </select>
+              </label>
+              <label>Khóa học đã tham gia (không bắt buộc)
+                <select name="courseId"><option value="">Nhận xét chung</option></select>
+              </label>
+              <label>Chia sẻ trải nghiệm học tập
+                <textarea name="message" minlength="10" maxlength="1200" required placeholder="Viết ít nhất 10 ký tự..."></textarea>
+              </label>
+              <button class="button button-primary" type="submit">Gửi nhận xét</button>
+              <p class="feedback-form-note">Nhận xét sẽ được kiểm duyệt; chỉ đánh giá học tập đã xác minh mới hiển thị công khai.</p>
+            </form>
+            <section id="feedback-moderation-panel" class="feedback-moderation-panel" aria-labelledby="feedback-moderation-title" hidden>
+              <h3 id="feedback-moderation-title">Duyệt nhận xét học viên</h3>
+              <p id="feedback-moderation-status" class="form-notice" role="status" aria-live="polite"></p>
+              <div id="feedback-moderation-list" class="feedback-moderation-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <!-- ── Ngoại khóa tiếng Nhật — slideshow ──────────────────────── -->
+        <section class="extracurricular-section section-block" aria-labelledby="extracurricular-title">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">NGOẠI KHÓA TIẾNG NHẬT</p>
+                <h2 id="extracurricular-title">Tiếng Nhật ngoài lớp học</h2>
+              </div>
+              <p class="section-summary">Văn hóa, lễ hội, ẩm thực và cuộc sống đời thường tại Nhật Bản.</p>
+            </div>
+          </div>
+
+          <div class="slideshow-track-wrap" aria-label="Slideshow hoạt động ngoại khóa tiếng Nhật" role="region">
+            <div class="slideshow-track" id="slideshow-track" aria-live="off">
+
+              <!-- Lần 1 — 10 ảnh gốc -->
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=620&q=80"
+                  alt="Lớp học tiếng Nhật — học viên đang viết Kanji"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Lớp học Kanji</strong>
+                  <span>Viết từng nét, hiểu từng nghĩa</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=620&q=80"
+                  alt="Phố đêm Tokyo với biển quảng cáo tiếng Nhật"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Tokyo về đêm</strong>
+                  <span>Chữ Nhật hiện diện khắp nơi</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=620&q=80"
+                  alt="Lễ hội mùa hè Nhật Bản — Matsuri với đèn lồng"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Lễ hội Matsuri</strong>
+                  <span>Học văn hóa qua những ngày hội</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1504474298956-5b1aa9bfe0a2?auto=format&fit=crop&w=620&q=80"
+                  alt="Ramen Nhật Bản — học từ vựng ẩm thực"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Ẩm thực Nhật — 食べ物</strong>
+                  <span>Từ vựng qua bữa ăn hàng ngày</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=620&q=80"
+                  alt="Đền thờ Nhật Bản — Torii đỏ giữa rừng cây"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Đền thờ — 神社</strong>
+                  <span>Linh thiêng và bình yên</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=620&q=80"
+                  alt="Hoa anh đào Sakura nở rộ ở Nhật Bản"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Mùa Sakura — 桜</strong>
+                  <span>Mùa xuân và những câu chuyện mới</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=620&q=80"
+                  alt="Phố Shibuya ban ngày với người qua lại"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Giao lộ Shibuya</strong>
+                  <span>Ngôn ngữ sống trong nhịp phố</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1509315811345-672d83ef2fbc?auto=format&fit=crop&w=620&q=80"
+                  alt="Trà đạo Nhật Bản — nghi lễ pha trà matcha"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Trà đạo — 茶道</strong>
+                  <span>Nghệ thuật trong từng cử chỉ</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=620&q=80"
+                  alt="Làng cổ Kyoto với mái nhà truyền thống"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Kyoto cổ kính — 京都</strong>
+                  <span>Nơi lịch sử gặp ngôn ngữ</span>
+                </div>
+              </article>
+
+              <article class="slide-card">
+                <img
+                  src="https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?auto=format&fit=crop&w=620&q=80"
+                  alt="Núi Phú Sĩ phản chiếu trên mặt hồ"
+                  loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption">
+                  <strong>Núi Phú Sĩ — 富士山</strong>
+                  <span>Biểu tượng của đất nước mặt trời mọc</span>
+                </div>
+              </article>
+
+              <!-- Lần 2 — nhân đôi để loop liền mạch -->
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Lớp học Kanji</strong><span>Viết từng nét, hiểu từng nghĩa</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Tokyo về đêm</strong><span>Chữ Nhật hiện diện khắp nơi</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Lễ hội Matsuri</strong><span>Học văn hóa qua những ngày hội</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1504474298956-5b1aa9bfe0a2?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Ẩm thực Nhật — 食べ物</strong><span>Từ vựng qua bữa ăn hàng ngày</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Đền thờ — 神社</strong><span>Linh thiêng và bình yên</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Mùa Sakura — 桜</strong><span>Mùa xuân và những câu chuyện mới</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Giao lộ Shibuya</strong><span>Ngôn ngữ sống trong nhịp phố</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1509315811345-672d83ef2fbc?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Trà đạo — 茶道</strong><span>Nghệ thuật trong từng cử chỉ</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Kyoto cổ kính — 京都</strong><span>Nơi lịch sử gặp ngôn ngữ</span></div>
+              </article>
+              <article class="slide-card" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?auto=format&fit=crop&w=620&q=80" alt="" loading="lazy" width="310" height="220" />
+                <div class="slide-card-caption"><strong>Núi Phú Sĩ — 富士山</strong><span>Biểu tượng của đất nước mặt trời mọc</span></div>
+              </article>
+
+            </div><!-- /slideshow-track -->
+          </div><!-- /slideshow-track-wrap -->
+
+          <div class="container">
+            <nav class="slideshow-nav" aria-label="Điều hướng slideshow">
+              <button class="slideshow-btn" id="slide-prev" type="button" aria-label="Chậm lại">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="slideshow-dots" role="list" aria-label="Slide hiện tại">
+                <button class="slideshow-dot is-active" role="listitem" aria-label="Slide 1" data-index="0"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 2" data-index="1"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 3" data-index="2"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 4" data-index="3"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 5" data-index="4"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 6" data-index="5"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 7" data-index="6"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 8" data-index="7"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 9" data-index="8"></button>
+                <button class="slideshow-dot" role="listitem" aria-label="Slide 10" data-index="9"></button>
+              </div>
+              <button class="slideshow-btn" id="slide-next" type="button" aria-label="Nhanh hơn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </nav>
+          </div>
+        </section>
+        <!-- ── /Ngoại khóa ────────────────────────────────────────────── -->
+
+        <section class="final-cta" aria-labelledby="cta-title">
+          <div class="container cta-layout">
+            <div>
+              <p class="section-kicker">BẮT ĐẦU TỪ HÔM NAY</p>
+              <h2 id="cta-title">Dành một chút thời gian cho tiếng Nhật.</h2>
+            </div>
+            <div class="hero-actions">
+              <a class="button button-light" href="pages/lessons/index.html">Khám phá bài học <span aria-hidden="true">→</span></a>
+              <a class="button button-light" href="pages/training/index.html">Xem khóa học <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-main">
+            <div class="footer-about">
+              <a class="footer-brand" href="index.html"
+                ><span class="brand-mark" aria-hidden="true">あ</span> NIHONGO
+                LEARNING</a
+              >
+              <p>
+                Một góc nhỏ để bạn học, luyện tập và tiến gần hơn tới tiếng Nhật
+                mỗi ngày.
+              </p>
+            </div>
+            <nav class="footer-navigation" aria-label="Điều hướng website">
+              <h2>Khám phá</h2>
+              <a href="index.html">Trang chủ</a>
+              <a href="pages/kanji/index.html">Kanji</a>
+              <a href="pages/vocabulary/index.html">Từ vựng</a>
+              <a href="pages/training/index.html">Khóa học</a>
+              <a href="pages/resources/index.html">Thư viện tài liệu</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Chủ đề học tập">
+              <h2>Học tiếng Nhật</h2>
+              <a href="pages/grammar/index.html">Ngữ pháp</a>
+              <a href="pages/lessons/index.html">Bài học</a>
+              <a href="pages/exercises/index.html">Bài tập</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Thông tin">
+              <h2>Thông tin</h2>
+              <a href="pages/other/index.html">Về website</a>
+              <a href="pages/other/index.html">Lộ trình học</a>
+              <a href="pages/auth/login.html">Tài khoản</a>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 Nihongo Learning. All rights reserved.</p>
+            <p>Học một chút, vững thêm mỗi ngày.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/feedback.js" defer></script>
+    <script src="js/slideshow.js" defer></script>
+  </body>
+</html>

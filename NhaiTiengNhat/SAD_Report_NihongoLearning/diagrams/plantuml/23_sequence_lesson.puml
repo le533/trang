@@ -1,0 +1,38 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+actor Learner
+participant "Lessons Page" as UI
+participant "GET /api/lessons/:id" as API
+participant "optionalAuth" as Auth
+participant lessonsController as C
+database MySQL as DB
+Learner -> UI : chọn bài học
+UI -> API : GET /lessons/:id + token nếu có
+API -> Auth : xác minh JWT (nếu gửi)
+Auth --> API : current user / anonymous
+API -> C : getOne(id)
+C -> DB : lesson + course + subscription
+DB --> C : lesson, has_access
+alt nội dung được phép
+  C --> UI : detail + playbackUrl/progress
+else nội dung trả phí bị khóa
+  C --> UI : detail đã ẩn content và video
+end
+@enduml

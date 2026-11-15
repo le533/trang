@@ -1,0 +1,71 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+class Role  {
+   +id: int 
+  +name: enum 
+}
+class User  {
+   +id: bigint 
+  +roleId: int 
+  +username: string
+  +email: string
+  +status: enum 
+}
+class Vocabulary  {
+   +id: bigint 
+  +word: string
+  +reading: string
+  +level: JLPT 
+}
+class VocabularyMeaning  {
+   +id: bigint 
+  +vocabularyId: bigint 
+  +languageCode: string
+  +meaning: string 
+}
+class Kanji  {
+   +id: bigint 
+  +character: string
+  +level: JLPT
+  +strokeCount: int 
+}
+class KanjiReading  {
+   +id: bigint 
+  +kanjiId: bigint 
+  +readingType: enum
+  +reading: string 
+}
+class GrammarPoint  {
+   +id: bigint 
+  +title: string
+  +level: JLPT
+  +meaning: string 
+}
+class GrammarExample  {
+   +id: bigint 
+  +grammarPointId: bigint 
+  +japaneseText: text
+  +meaningVi: text 
+}
+Role "1" -- "0..*" User
+Vocabulary "1" -- "0..*" VocabularyMeaning
+Kanji "1" -- "0..*" KanjiReading
+GrammarPoint "1" -- "0..*" GrammarExample
+@enduml

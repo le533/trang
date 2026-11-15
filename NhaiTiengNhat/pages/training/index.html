@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Chọn khóa học tiếng Nhật JLPT từ N5 đến N1. N5 miễn phí, các lộ trình nâng cao được mở sau khi đăng ký." />
+    <meta property="og:title" content="Khóa học tiếng Nhật | Nihongo Learning" />
+    <meta property="og:description" content="Lộ trình học JLPT có theo dõi tiến độ và tài liệu học tập." />
+    <meta name="theme-color" content="#f5f7f3" />
+    <title>Khóa học tiếng Nhật | Nihongo Learning</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/learning-content.css" />
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/nav-mobile.js" defer></script>
+    <script src="../../js/courses.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../../index.html" aria-label="Nihongo Learning - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../../index.html">Trang chủ</a>
+            <a class="navigation-link" href="../lessons/index.html">Bài học</a>
+            <a class="navigation-link" href="../resources/index.html">Thư viện</a>
+            <a class="navigation-link is-active" href="index.html" aria-current="page">Khóa học</a>
+          </nav>
+          <div class="account-links" data-auth-ui data-login-href="../auth/login.html"
+            data-register-href="../auth/register.html" data-dashboard-href="../dashboard.html"
+            data-admin-dashboard-href="../admin/index.html" data-profile-href="../auth/profile.html"
+            data-home-href="../../index.html"></div>
+        </div>
+      </header>
+      <main class="learning-main">
+        <section class="learning-page-intro">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Trang chủ</a><span aria-hidden="true">/</span><span aria-current="page">Khóa học</span></nav>
+            <div class="learning-heading-row">
+              <div>
+                <p class="section-kicker">LỘ TRÌNH JLPT</p>
+                <h1>Chọn chặng đường phù hợp</h1>
+                <p class="learning-intro-copy">Học thử miễn phí ở N5. Các khóa N4–N1 mở nội dung nâng cao sau khi thanh toán và được VNPay xác nhận.</p>
+              </div>
+              <div class="learning-count"><span>5</span><span>lộ trình</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="learning-content container">
+          <p id="courses-message" class="form-notice" role="status" aria-live="polite"></p>
+          <div id="course-grid" class="course-grid" aria-live="polite"></div>
+          <p id="courses-error" class="learning-load-error" role="alert" hidden></p>
+        </section>
+      </main>
+      <footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nihongo Learning</p><p><a href="../resources/index.html">Thư viện tài liệu</a></p></div></footer>
+    </div>
+  </body>
+</html>

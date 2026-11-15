@@ -1,0 +1,60 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+package "REST routes" {
+  [auth / admin] as R1
+  [vocabulary / kanji / grammar] as R2
+  [lessons / exercises / stats] as R3
+  [courses / payments / feedback] as R4
+  [documents / uploads] as R5
+}
+package "Middleware" {
+  [authMiddleware] as Auth
+  [adminMiddleware] as Admin
+  [express-validator + validate] as Validate
+}
+package "Controllers" {
+  [authController + adminController] as C1
+  [vocabulary + kanji + grammar] as C2
+  [lessons + exercises + stats] as C3
+  [courses + payments + feedback] as C4
+  [documents + media] as C5
+}
+database "MySQL pool" as DB
+R1 --> Auth
+R1 --> Admin
+R2 --> Admin
+R3 --> Auth
+R4 --> Auth
+R5 --> Admin
+R1 --> Validate
+R2 --> Validate
+R3 --> Validate
+R1 --> C1
+R2 --> C2
+R3 --> C3
+R4 --> C4
+R5 --> C5
+C1 --> DB
+C2 --> DB
+C3 --> DB
+C4 --> DB
+C5 --> DB
+@enduml

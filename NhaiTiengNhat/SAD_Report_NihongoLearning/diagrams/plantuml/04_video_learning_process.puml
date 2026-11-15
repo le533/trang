@@ -1,0 +1,36 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+start
+:Quản trị mở form bài học;
+:Chọn tệp MP4 hoặc WebM từ máy;
+:API kiểm tra quyền admin, định dạng, chữ ký tệp và kích thước;
+:ffprobe lấy thời lượng;
+:ffmpeg tạo bản preview tối đa 300 giây;
+:Lưu video asset và bài học vào MySQL;
+:Học viên mở bài học;
+:Backend xác định quyền khóa học;
+if (Có quyền đầy đủ?) then (Có)
+  :Cấp URL phát có chữ ký hết hạn;
+  :Phát video đầy đủ;
+else (Không)
+  :Phát tệp preview tối đa 5 phút;
+endif
+stop
+@enduml

@@ -1,0 +1,74 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+class User
+class Course  {
+   +id: bigint
+  +priceVnd: decimal
+  +durationDays: int? 
+}
+class PaymentOrder  {
+   +id: bigint
+  +orderRef: string
+  +amountVnd: decimal
+  +status: enum 
+}
+class CourseSubscription  {
+   +id: bigint
+  +userId: bigint
+  +courseId: bigint
+  +status: enum
+  +endsAt: datetime? 
+}
+class VideoAsset  {
+   +id: uuid
+  +fileName: string
+  +previewFileName: string
+  +durationSeconds: decimal 
+}
+class LearningDocument  {
+   +id: uuid
+  +title: string
+  +fileType: enum
+  +courseId: bigint? 
+}
+class DocumentProgress  {
+   +userId: bigint
+  +documentId: uuid
+  +pageNumber: int
+  +scrollRatio: decimal 
+}
+class LearnerFeedback  {
+   +id: bigint
+  +userId: bigint
+  +courseId: bigint?
+  +rating: 1..5
+  +status: enum 
+}
+User "1" -- "0..*" PaymentOrder
+Course "1" -- "0..*" PaymentOrder
+PaymentOrder "1" -- "0..1" CourseSubscription
+User "1" -- "0..*" CourseSubscription
+Course "1" -- "0..*" CourseSubscription
+Course "0..1" -- "0..*" LearningDocument
+LearningDocument "1" -- "0..*" DocumentProgress
+User "1" -- "0..*" DocumentProgress
+User "1" -- "0..*" LearnerFeedback
+Course "0..1" -- "0..*" LearnerFeedback
+@enduml

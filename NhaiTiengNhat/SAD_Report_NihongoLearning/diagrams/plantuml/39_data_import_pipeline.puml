@@ -1,0 +1,34 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+artifact "data/*.json\nnguồn vocabulary / kanji" as JSON
+artifact "database/schema.sql" as Schema
+artifact "database/seed.sql" as Seed
+component "backend/scripts/migrate.js" as Migrate
+component "backend/scripts/seed.js" as Import
+database "MySQL 8\nnihongo_learning" as DB
+component "REST controllers" as API
+JSON --> Import : parse + normalize
+Schema --> DB : cấu trúc bảng / FK / index
+Migrate --> DB : bảng commerce / document / payment
+Seed --> DB : roles + sample configuration
+Import --> DB : batch upsert học liệu
+DB --> API : dữ liệu phục vụ web
+@enduml

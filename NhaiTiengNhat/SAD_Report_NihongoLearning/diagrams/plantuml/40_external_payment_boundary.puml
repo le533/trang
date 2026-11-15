@@ -1,0 +1,41 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as U
+node "Website / API" {
+  component "Checkout API\nHMAC-SHA512" as Checkout
+  component "IPN endpoint\nHTTPS public URL" as IPN
+  database "payment_orders + subscriptions" as DB
+}
+cloud "VNPay Sandbox" as V
+component "Browser return page\nchỉ hiển thị trạng thái" as Return
+U --> Checkout : đăng nhập + courseId
+Checkout --> DB : tạo pending order
+Checkout --> V : redirect paymentUrl
+V --> Return : query signed response
+V --> IPN : server-to-server callback
+IPN --> DB : verify + update + activate
+Return --> DB : GET order status (cùng user)
+note bottom of IPN
+localhost không nhận được IPN;
+phải dùng HTTPS URL công khai
+và đăng ký endpoint với merchant.
+end note
+@enduml

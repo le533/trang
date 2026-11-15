@@ -1,0 +1,46 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+start
+:Nhận request;
+if (Có token?) then (Có)
+  :Kiểm tra chữ ký và hạn JWT;
+  if (User active trong DB?) then (Có)
+    :Gắn user hiện hành vào request;
+    if (Route yêu cầu admin?) then (Có)
+      if (role=admin?) then (Có)
+        :Thực thi handler;
+      else (Không)
+        :Trả 403;
+      endif
+    else (Không)
+      :Thực thi handler theo quyền user;
+    endif
+  else (Không)
+    :Trả 401;
+  endif
+else (Không)
+  if (Route public?) then (Có)
+    :Xử lý anonymous;
+  else (Không)
+    :Trả 401;
+  endif
+endif
+stop
+@enduml

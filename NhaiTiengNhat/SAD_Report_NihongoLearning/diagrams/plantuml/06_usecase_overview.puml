@@ -1,0 +1,48 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as U
+actor "Quản trị viên" as A
+actor "VNPay" as V
+rectangle "Nihongo Learning" {
+  usecase "Tài khoản và hồ sơ" as UC1
+  usecase "Tra cứu học liệu" as UC2
+  usecase "Học bài và lưu tiến độ" as UC3
+  usecase "Làm bài tập" as UC4
+  usecase "Đăng ký khóa học" as UC5
+  usecase "Đọc tài liệu" as UC6
+  usecase "Gửi nhận xét" as UC7
+  usecase "Quản trị nội dung" as UC8
+  usecase "Quản trị tài khoản và báo cáo" as UC9
+  usecase "Xác nhận giao dịch qua IPN" as UC10
+}
+U --> UC1
+U --> UC2
+U --> UC3
+U --> UC4
+U --> UC5
+U --> UC6
+U --> UC7
+A --> UC1
+A --> UC8
+A --> UC9
+V --> UC10
+UC5 ..> UC10 : <<include>>
+@enduml

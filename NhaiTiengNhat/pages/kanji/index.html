@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <title>Tra cứu Kanji tiếng Nhật N5–N1 | Nihongo Learning</title>
+    <meta name="description" content="Tra cứu Kanji tiếng Nhật theo cấp độ JLPT với âm On, Kun, Hán Việt, số nét, bộ thủ và từ vựng liên quan." />
+    <meta property="og:title" content="Tra cứu Kanji tiếng Nhật | Nihongo Learning" />
+    <meta property="og:description" content="Khám phá cách đọc, ý nghĩa, bộ thủ và từ vựng liên quan đến Kanji." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/kanji.css" />
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/nav-mobile.js" defer></script>
+    <script src="../../js/admin-guard.js" defer></script>
+    <script src="../../js/kanji.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a
+            class="brand"
+            href="../../index.html"
+            aria-label="Nihongo Learning - Trang chủ"
+          >
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../../index.html">Trang chủ</a>
+            <a
+              class="navigation-link is-active"
+              href="index.html"
+              aria-current="page"
+              >Kanji</a
+            >
+            <a class="navigation-link" href="../vocabulary/index.html"
+              >Từ vựng</a
+            >
+            <a class="navigation-link" href="../grammar/index.html">Ngữ pháp</a>
+            <a class="navigation-link" href="../lessons/index.html">Bài học</a>
+            <a class="navigation-link" href="../exercises/index.html"
+              >Bài tập</a
+            >
+            <a class="navigation-link" href="../training/index.html">Khóa học</a>
+            <a class="navigation-link" href="../resources/index.html">Thư viện</a>
+          </nav>
+
+          <div
+            class="account-links"
+            data-auth-ui
+            data-login-href="../auth/login.html"
+            data-register-href="../auth/register.html"
+            data-dashboard-href="../dashboard.html"
+            data-profile-href="../auth/profile.html"
+            data-home-href="../../index.html"
+          >
+            <a class="button button-login" href="../auth/login.html"
+              >Đăng nhập</a
+            >
+            <a class="button button-register" href="../auth/register.html"
+              >Đăng ký</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content" class="kanji-main">
+        <section class="kanji-page-intro" aria-labelledby="kanji-title">
+          <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="../../index.html">Trang chủ</a>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Kanji</span>
+            </nav>
+            <div class="kanji-heading-row">
+              <div>
+                <p class="section-kicker">KHO TỪ VỰNG HÁN TỰ</p>
+                <h1 id="kanji-title">Kanji tiếng Nhật</h1>
+                <p class="kanji-intro-copy">
+                  Học và ôn tập Kanji theo từng cấp độ JLPT. Bắt đầu với những
+                  chữ cơ bản, cách đọc và ý nghĩa thường gặp.
+                </p>
+              </div>
+              <div class="kanji-count" aria-label="Danh sách Kanji N5">
+                <span id="kanji-total">118</span>
+                <span>Kanji N5</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="kanji-content container" aria-label="Tra cứu Kanji">
+          <div class="kanji-level-row">
+            <div>
+              <p class="control-label">CẤP ĐỘ JLPT</p>
+              <div
+                class="level-selector"
+                role="group"
+                aria-label="Lọc theo cấp độ JLPT"
+              >
+                <button
+                  class="level-option is-selected"
+                  type="button"
+                  data-level="all"
+                  aria-pressed="true"
+                >
+                  Tất cả
+                </button>
+                <button
+                  class="level-option"
+                  type="button"
+                  data-level="N5"
+                  aria-pressed="false"
+                >
+                  N5
+                </button>
+                <button
+                  class="level-option"
+                  type="button"
+                  data-level="N4"
+                  aria-pressed="false"
+                >
+                  N4
+                </button>
+                <button
+                  class="level-option"
+                  type="button"
+                  data-level="N3"
+                  aria-pressed="false"
+                >
+                  N3
+                </button>
+                <button
+                  class="level-option"
+                  type="button"
+                  data-level="N2"
+                  aria-pressed="false"
+                >
+                  N2
+                </button>
+                <button
+                  class="level-option"
+                  type="button"
+                  data-level="N1"
+                  aria-pressed="false"
+                >
+                  N1
+                </button>
+              </div>
+            </div>
+            <p class="sample-note">Danh sách hiện có 118 Kanji N5</p>
+          </div>
+
+          <div class="kanji-toolbar">
+            <form class="kanji-search" id="kanji-search-form">
+              <label class="visually-hidden" for="kanji-search-input"
+                >Tìm Kanji, cách đọc, âm Hán Việt hoặc nghĩa</label
+              >
+              <input
+                type="search"
+                id="kanji-search-input"
+                placeholder="Tìm Kanji hoặc cách đọc..."
+              />
+              <button class="button button-primary" type="submit">
+                Tìm kiếm
+              </button>
+            </form>
+            <div class="kanji-filters">
+              <label>
+                <span>Số nét</span>
+                <select aria-label="Lọc theo số nét" id="kanji-stroke-filter">
+                  <option value="all">Tất cả số nét</option>
+                </select>
+              </label>
+              <label>
+                <span>Bộ thủ</span>
+                <select aria-label="Lọc theo bộ thủ" id="kanji-radical-filter">
+                  <option value="all">Tất cả bộ thủ</option>
+                </select>
+              </label>
+              <button
+                class="button button-secondary clear-filters-button"
+                id="clear-kanji-filters"
+                type="button"
+              >
+                Xóa bộ lọc
+              </button>
+            </div>
+          </div>
+
+          <div class="kanji-results-heading" id="kanji-list">
+            <h2>Kanji cơ bản</h2>
+            <p id="kanji-grid-count" role="status" aria-live="polite">
+              Đang tải danh sách...
+            </p>
+          </div>
+
+          <div
+            class="kanji-grid"
+            id="kanji-grid"
+            aria-label="Danh sách Kanji"
+          ></div>
+          <p
+            class="kanji-empty-state"
+            id="kanji-empty-state"
+            role="status"
+            hidden
+          >
+            Không tìm thấy Kanji phù hợp. Thử thay đổi hoặc xóa bộ lọc.
+          </p>
+          <p
+            class="kanji-load-error"
+            id="kanji-load-error"
+            role="status"
+            hidden
+          >
+            Không thể tải dữ liệu Kanji: <span data-kanji-error-message></span>
+            <button class="button button-secondary" type="button" id="retry-kanji-load">Thử lại</button>
+          </p>
+          <noscript>Trang Kanji cần JavaScript để tải dữ liệu học tập từ máy chủ.</noscript>
+        </section>
+      </main>
+
+      <dialog
+        class="kanji-dialog"
+        id="kanji-dialog"
+        aria-labelledby="detail-title"
+      >
+        <div class="kanji-dialog-header">
+          <p class="section-kicker">CHI TIẾT KANJI</p>
+          <button
+            class="dialog-close"
+            id="close-kanji-detail"
+            type="button"
+            aria-label="Đóng chi tiết"
+          >
+            Đóng <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="kanji-detail-content" id="kanji-detail-content"></div>
+      </dialog>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-main">
+            <div class="footer-about">
+              <a class="footer-brand" href="../../index.html">
+                <span class="brand-mark" aria-hidden="true">あ</span>
+                NIHONGO LEARNING
+              </a>
+              <p>
+                Một góc nhỏ để bạn học, luyện tập và tiến gần hơn tới tiếng Nhật
+                mỗi ngày.
+              </p>
+            </div>
+            <nav class="footer-navigation" aria-label="Điều hướng website">
+              <h2>Khám phá</h2>
+              <a href="../../index.html">Trang chủ</a>
+              <a href="index.html" aria-current="page">Kanji</a>
+              <a href="../vocabulary/index.html">Từ vựng</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Chủ đề học tập">
+              <h2>Học tiếng Nhật</h2>
+              <a href="../grammar/index.html">Ngữ pháp</a>
+              <a href="../lessons/index.html">Bài học</a>
+              <a href="../exercises/index.html">Bài tập</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Thông tin">
+              <h2>Thông tin</h2>
+              <a href="../other/index.html">Về website</a>
+              <a href="../other/index.html">Lộ trình học</a>
+              <a href="../auth/login.html">Tài khoản</a>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 Nihongo Learning. All rights reserved.</p>
+            <p>Học một chút, vững thêm mỗi ngày.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

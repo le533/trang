@@ -1,0 +1,41 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+actor Learner
+participant "Library Page" as UI
+participant "GET /api/documents/:id" as API
+participant authMiddleware as Auth
+participant documentsController as C
+database MySQL as DB
+Learner -> UI : mở PDF / DOCX / TXT
+UI -> API : GET /documents/:id + JWT
+API -> Auth : xác thực user
+API -> C : read()
+C -> DB : lấy tài liệu + khóa + subscription + vị trí đọc
+DB --> C : content, has_access, page, scroll
+alt has_access
+  C --> UI : nội dung trích xuất + progress
+  UI -> UI : mở file và khôi phục trang/cuộn
+  UI -> API : PUT /documents/:id/progress
+  API -> C : validate pageNumber, scrollRatio
+  C -> DB : upsert document_progress
+else bị khóa
+  C --> UI : 403
+end
+@enduml

@@ -1,0 +1,194 @@
+.site-header {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.header-inner {
+  display: grid;
+  min-height: 82px;
+  align-items: center;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  column-gap: 22px;
+}
+
+.brand {
+  display: inline-flex;
+  min-width: max-content;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--color-surface);
+  background: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1;
+}
+
+.brand-name {
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.brand-name span {
+  color: var(--color-primary);
+}
+
+.site-navigation,
+.account-links {
+  display: flex;
+  align-items: center;
+}
+
+.site-navigation {
+  min-width: 0;
+  justify-content: center;
+  gap: 2px;
+}
+
+.navigation-link {
+  position: relative;
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 0 11px;
+  border-radius: 6px;
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.navigation-link:hover,
+.navigation-link.is-active {
+  color: var(--color-primary-dark);
+  background: #edf4f0;
+}
+
+.navigation-link:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+
+.account-links {
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.account-links[data-auth-state="logged-in"] {
+  gap: 7px;
+}
+
+.account-greeting {
+  max-width: 122px;
+  overflow: hidden;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-nav-link {
+  color: var(--color-primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.account-nav-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.account-logout {
+  min-height: 36px;
+  padding: 7px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ── Nút hamburger (ẩn mặc định trên desktop) ────────────────────── */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.nav-toggle:hover {
+  background: #edf4f0;
+  border-color: #aac5b8;
+}
+
+.nav-toggle[aria-expanded="true"] {
+  background: #edf4f0;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Icon 3 gạch → X */
+.nav-toggle-icon {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: background 220ms ease;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 220ms ease, top 220ms ease;
+}
+
+.nav-toggle-icon::before { top: -6px; }
+.nav-toggle-icon::after  { top:  6px; }
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Đảm bảo .site-header không clip dropdown */
+.site-header {
+  overflow: visible;
+}

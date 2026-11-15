@@ -1,0 +1,42 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+actor User
+participant "Login Page" as UI
+participant "Auth API" as API
+participant "authController" as C
+participant "MySQL" as DB
+User -> UI : nhập email/username + mật khẩu
+UI -> API : POST /api/auth/login
+API -> C : validate input
+C -> DB : tìm user + role + status
+DB --> C : user, password_hash, role
+C -> C : bcrypt.compare()
+alt tài khoản active và mật khẩu đúng
+  C -> DB : cập nhật last_active_at
+  C -> C : ký JWT
+  C --> UI : token + user + role
+  UI -> API : GET /api/auth/me (Bearer)
+  API -> DB : load user đang active
+  DB --> API : user hiện hành
+  API --> UI : role được xác minh
+else sai thông tin / inactive
+  C --> UI : 401 lỗi xác thực
+end
+@enduml

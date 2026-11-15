@@ -1,0 +1,40 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as U
+actor "Quản trị viên" as A
+rectangle "Feedback" {
+  usecase "Gửi số sao và nhận xét" as Submit
+  usecase "Xác minh hoạt động học / mua hàng" as Verify
+  usecase "Lưu ở trạng thái chờ duyệt" as Pending
+  usecase "Xem hàng chờ" as Queue
+  usecase "Duyệt nhận xét đã xác minh" as Approve
+  usecase "Từ chối nhận xét" as Reject
+  usecase "Hiển thị nhận xét đã duyệt" as Public
+}
+U --> Submit
+A --> Queue
+A --> Approve
+A --> Reject
+Submit ..> Verify : <<include>>
+Submit ..> Pending : <<include>>
+Approve ..> Verify : <<include>>
+Approve ..> Public : <<include>>
+@enduml

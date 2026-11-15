@@ -1,0 +1,38 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as Learner
+actor "Quản trị viên" as Admin
+cloud "Cổng VNPay Sandbox" as VNP
+rectangle "Nihongo Learning" {
+  component "Website HTML/CSS/JS" as Web
+  component "REST API\nNode.js + Express" as API
+  database "MySQL 8" as DB
+  folder "Kho tệp\nvideo / tài liệu" as Files
+}
+Learner --> Web : học, làm bài, đọc tài liệu
+Admin --> Web : quản trị nội dung, người dùng
+Web --> API : HTTPS / JSON
+API --> DB : truy vấn / transaction
+API --> Files : lưu và phát tệp
+API --> VNP : tạo giao dịch
+VNP --> API : IPN có chữ ký
+VNP --> Web : trả trình duyệt
+@enduml

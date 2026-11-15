@@ -1,0 +1,14 @@
+{
+  "name": "nihongo-learning-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/prepare-vercel.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

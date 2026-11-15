@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <title>Thanh toán | Nihongo Learning</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2327675d'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='42' fill='white'%3Eあ%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <style>
+      /* ── Layout ───────────────────────────────────────────────── */
+      .mock-pay-main {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 48px 24px 80px;
+        background: var(--color-paper);
+      }
+
+      .mock-pay-shell {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 24px;
+        width: min(100%, 860px);
+        align-items: start;
+      }
+
+      /* ── Card chung ─────────────────────────────────────────── */
+      .mock-card {
+        padding: 28px 28px 24px;
+        border: 1px solid var(--color-border);
+        border-radius: 14px;
+        background: var(--color-surface);
+        box-shadow: 0 4px 20px rgb(29 48 45 / 6%);
+      }
+
+      .mock-card-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 20px;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--color-ink);
+      }
+
+      .mock-card-title-icon {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border-radius: 8px;
+        background: #e7f0e9;
+        color: var(--color-primary-dark);
+        font-family: var(--font-display);
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      /* ── Thông tin đơn hàng ──────────────────────────────────── */
+      .mock-order-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-border);
+        font-size: 14px;
+      }
+
+      .mock-order-row:last-child { border-bottom: none; }
+
+      .mock-order-label { color: var(--color-muted); }
+
+      .mock-order-value {
+        font-weight: 700;
+        color: var(--color-ink);
+        text-align: right;
+      }
+
+      .mock-order-ref {
+        font-family: monospace;
+        font-size: 12px;
+        color: var(--color-muted);
+        background: var(--color-paper);
+        padding: 2px 7px;
+        border-radius: 4px;
+        border: 1px solid var(--color-border);
+      }
+
+      .mock-price {
+        font-family: var(--font-display);
+        font-size: 22px;
+        color: var(--color-primary-dark);
+      }
+
+      /* ── QR ảo ───────────────────────────────────────────────── */
+      .mock-qr-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 20px;
+        border: 1px dashed #aac5b8;
+        border-radius: 10px;
+        background: #f7fbf9;
+        margin-bottom: 20px;
+      }
+
+      .mock-qr-svg {
+        width: 160px;
+        height: 160px;
+        border-radius: 8px;
+        border: 3px solid var(--color-primary);
+        padding: 8px;
+        background: #fff;
+      }
+
+      .mock-qr-label {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--color-primary);
+        letter-spacing: 0.08em;
+      }
+
+      .mock-qr-note {
+        font-size: 11px;
+        color: var(--color-muted);
+        text-align: center;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* ── Đếm ngược ───────────────────────────────────────────── */
+      .mock-timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 8px;
+        background: #fff8ed;
+        border: 1px solid #f0d9a0;
+        margin-bottom: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #8a5c1f;
+      }
+
+      .mock-timer-value {
+        font-family: var(--font-display);
+        font-size: 18px;
+        color: #a86f32;
+        min-width: 42px;
+        text-align: center;
+      }
+
+      .mock-timer.is-urgent {
+        background: #fff0ee;
+        border-color: #f5b8b0;
+        color: #a54338;
+      }
+
+      .mock-timer.is-urgent .mock-timer-value { color: #c0392b; }
+
+      /* ── Nút xác nhận ────────────────────────────────────────── */
+      .mock-confirm-btn {
+        width: 100%;
+        min-height: 52px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: background 160ms ease, transform 160ms ease, opacity 160ms ease;
+      }
+
+      .mock-confirm-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none !important;
+      }
+
+      .mock-cancel-link {
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--color-muted);
+        cursor: pointer;
+      }
+
+      .mock-cancel-link:hover { color: var(--color-primary); }
+
+      /* ── Trạng thái ──────────────────────────────────────────── */
+      .mock-status {
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 16px;
+        display: none;
+      }
+
+      .mock-status.is-loading {
+        display: block;
+        background: #edf4f0;
+        color: var(--color-primary-dark);
+      }
+
+      .mock-status.is-success {
+        display: block;
+        background: #f0f9f4;
+        border: 1px solid #c9dfd2;
+        color: #245f43;
+      }
+
+      .mock-status.is-error {
+        display: block;
+        background: #fff5f2;
+        border: 1px solid #ebc8c2;
+        color: #8d342b;
+      }
+
+      /* ── Hướng dẫn ───────────────────────────────────────────── */
+      .mock-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .mock-step {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .mock-step-num {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border-radius: 50%;
+        background: #e7f0e9;
+        color: var(--color-primary-dark);
+        font-size: 12px;
+        font-weight: 900;
+        flex-shrink: 0;
+      }
+
+      .mock-step-text {
+        font-size: 13px;
+        color: var(--color-muted);
+        line-height: 1.6;
+        padding-top: 4px;
+      }
+
+      .mock-step-text strong {
+        display: block;
+        color: var(--color-ink);
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+
+      /* ── Responsive ──────────────────────────────────────────── */
+      @media (max-width: 720px) {
+        .mock-pay-shell {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .mock-pay-main { padding: 24px 16px 60px; }
+        .mock-card { padding: 20px 18px; }
+      }
+    </style>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/nav-mobile.js" defer></script>
+    <script src="../js/payment-mock.js" defer></script>
+  </head>
+  <body data-require-login="true"
+    data-login-href="auth/login.html"
+    data-home-href="../index.html"
+    data-dashboard-href="dashboard.html">
+    <div class="site-shell">
+
+      <!-- Header -->
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../index.html" aria-label="Nihongo Learning - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../index.html">Trang chủ</a>
+            <a class="navigation-link" href="kanji/index.html">Kanji</a>
+            <a class="navigation-link" href="vocabulary/index.html">Từ vựng</a>
+            <a class="navigation-link" href="grammar/index.html">Ngữ pháp</a>
+            <a class="navigation-link" href="lessons/index.html">Bài học</a>
+            <a class="navigation-link" href="exercises/index.html">Bài tập</a>
+            <a class="navigation-link is-active" href="training/index.html">Khóa học</a>
+            <a class="navigation-link" href="resources/index.html">Thư viện</a>
+          </nav>
+          <div class="account-links" data-auth-ui
+            data-login-href="auth/login.html"
+            data-register-href="auth/register.html"
+            data-dashboard-href="dashboard.html"
+            data-profile-href="auth/profile.html"
+            data-home-href="../index.html"></div>
+        </div>
+      </header>
+
+      <main class="mock-pay-main" id="main-content">
+        <div class="mock-pay-shell">
+
+          <!-- CỘT TRÁI: Thông tin + QR + Nút xác nhận -->
+          <div style="display:flex; flex-direction:column; gap:16px;">
+
+            <!-- Thông tin đơn hàng -->
+            <div class="mock-card" aria-labelledby="order-info-title">
+              <h1 class="mock-card-title" id="order-info-title">
+                <span class="mock-card-title-icon" aria-hidden="true">学</span>
+                Thông tin đơn hàng
+              </h1>
+              <div id="order-skeleton" style="color:var(--color-muted);font-size:13px;">Đang tải thông tin đơn hàng…</div>
+              <div id="order-details" hidden>
+                <div class="mock-order-row">
+                  <span class="mock-order-label">Khóa học</span>
+                  <span class="mock-order-value" id="order-course-title">—</span>
+                </div>
+                <div class="mock-order-row">
+                  <span class="mock-order-label">Cấp độ</span>
+                  <span class="mock-order-value" id="order-course-level">—</span>
+                </div>
+                <div class="mock-order-row">
+                  <span class="mock-order-label">Thời hạn truy cập</span>
+                  <span class="mock-order-value" id="order-duration">—</span>
+                </div>
+                <div class="mock-order-row">
+                  <span class="mock-order-label">Mã đơn hàng</span>
+                  <span class="mock-order-value"><code class="mock-order-ref" id="order-ref">—</code></span>
+                </div>
+                <div class="mock-order-row">
+                  <span class="mock-order-label">Số tiền</span>
+                  <span class="mock-order-value mock-price" id="order-price">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- QR ảo + đếm ngược + nút xác nhận -->
+            <div class="mock-card">
+              <h2 class="mock-card-title">
+                <span class="mock-card-title-icon" aria-hidden="true">💳</span>
+                Xác nhận thanh toán
+              </h2>
+
+              <!-- QR ảo -->
+              <div class="mock-qr-wrap" aria-label="Mã QR thanh toán giả lập">
+                <svg class="mock-qr-svg" viewBox="0 0 100 100" aria-hidden="true">
+                  <!-- QR pattern trang trí -->
+                  <rect width="100" height="100" fill="white"/>
+                  <!-- top-left finder -->
+                  <rect x="5" y="5" width="30" height="30" fill="none" stroke="#27675d" stroke-width="4"/>
+                  <rect x="13" y="13" width="14" height="14" fill="#27675d"/>
+                  <!-- top-right finder -->
+                  <rect x="65" y="5" width="30" height="30" fill="none" stroke="#27675d" stroke-width="4"/>
+                  <rect x="73" y="13" width="14" height="14" fill="#27675d"/>
+                  <!-- bottom-left finder -->
+                  <rect x="5" y="65" width="30" height="30" fill="none" stroke="#27675d" stroke-width="4"/>
+                  <rect x="13" y="73" width="14" height="14" fill="#27675d"/>
+                  <!-- data dots pattern -->
+                  <rect x="40" y="5"  width="5" height="5" fill="#27675d"/>
+                  <rect x="50" y="5"  width="5" height="5" fill="#27675d"/>
+                  <rect x="40" y="15" width="5" height="5" fill="#27675d"/>
+                  <rect x="55" y="15" width="5" height="5" fill="#27675d"/>
+                  <rect x="45" y="25" width="5" height="5" fill="#27675d"/>
+                  <rect x="40" y="40" width="5" height="5" fill="#27675d"/>
+                  <rect x="50" y="40" width="5" height="5" fill="#27675d"/>
+                  <rect x="60" y="40" width="5" height="5" fill="#27675d"/>
+                  <rect x="70" y="40" width="5" height="5" fill="#27675d"/>
+                  <rect x="80" y="40" width="5" height="5" fill="#27675d"/>
+                  <rect x="90" y="40" width="5" height="5" fill="#27675d"/>
+                  <rect x="40" y="50" width="5" height="5" fill="#27675d"/>
+                  <rect x="60" y="50" width="5" height="5" fill="#27675d"/>
+                  <rect x="80" y="50" width="5" height="5" fill="#27675d"/>
+                  <rect x="45" y="60" width="5" height="5" fill="#27675d"/>
+                  <rect x="55" y="60" width="5" height="5" fill="#27675d"/>
+                  <rect x="75" y="60" width="5" height="5" fill="#27675d"/>
+                  <rect x="40" y="70" width="5" height="5" fill="#27675d"/>
+                  <rect x="65" y="70" width="5" height="5" fill="#27675d"/>
+                  <rect x="85" y="70" width="5" height="5" fill="#27675d"/>
+                  <rect x="50" y="80" width="5" height="5" fill="#27675d"/>
+                  <rect x="70" y="80" width="5" height="5" fill="#27675d"/>
+                  <rect x="90" y="80" width="5" height="5" fill="#27675d"/>
+                  <rect x="40" y="90" width="5" height="5" fill="#27675d"/>
+                  <rect x="60" y="90" width="5" height="5" fill="#27675d"/>
+                  <rect x="80" y="90" width="5" height="5" fill="#27675d"/>
+                  <!-- center logo -->
+                  <rect x="43" y="43" width="14" height="14" rx="3" fill="#27675d"/>
+                  <text x="50" y="53" text-anchor="middle" font-size="9" fill="white" font-family="serif">あ</text>
+                </svg>
+                <span class="mock-qr-label">MÃ QR THANH TOÁN</span>
+                <p class="mock-qr-note">Đây là môi trường demo — không quét thật.<br>Nhấn nút bên dưới để xác nhận thanh toán.</p>
+              </div>
+
+              <!-- Đếm ngược -->
+              <div class="mock-timer" id="mock-timer" role="timer" aria-live="polite" aria-label="Thời gian còn lại">
+                <span>⏱</span>
+                <span>Hết hạn sau</span>
+                <span class="mock-timer-value" id="timer-display">15:00</span>
+              </div>
+
+              <!-- Nút xác nhận -->
+              <button class="button button-primary mock-confirm-btn" id="confirm-btn" type="button">
+                ✓ Xác nhận đã thanh toán
+              </button>
+
+              <div class="mock-status" id="mock-status" role="status" aria-live="polite"></div>
+
+              <a class="mock-cancel-link" id="cancel-link" href="training/index.html">
+                Hủy và quay lại
+              </a>
+            </div>
+          </div>
+
+          <!-- CỘT PHẢI: Hướng dẫn -->
+          <div class="mock-card">
+            <h2 class="mock-card-title">
+              <span class="mock-card-title-icon" aria-hidden="true">ℹ</span>
+              Hướng dẫn
+            </h2>
+            <div class="mock-steps">
+              <div class="mock-step">
+                <span class="mock-step-num">1</span>
+                <div class="mock-step-text">
+                  <strong>Kiểm tra thông tin</strong>
+                  Xem lại tên khóa học, cấp độ và số tiền bên trái trước khi xác nhận.
+                </div>
+              </div>
+              <div class="mock-step">
+                <span class="mock-step-num">2</span>
+                <div class="mock-step-text">
+                  <strong>Xác nhận thanh toán</strong>
+                  Nhấn nút "Xác nhận đã thanh toán" — hệ thống sẽ mở khóa khóa học ngay lập tức.
+                </div>
+              </div>
+              <div class="mock-step">
+                <span class="mock-step-num">3</span>
+                <div class="mock-step-text">
+                  <strong>Bắt đầu học</strong>
+                  Sau khi xác nhận thành công, bạn sẽ được chuyển tới trang bài học.
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:24px; padding:14px 16px; border-radius:8px; background:#fff8ed; border:1px solid #f0d9a0;">
+              <p style="margin:0; font-size:12px; color:#8a5c1f; font-weight:700;">⚠ Môi trường demo</p>
+              <p style="margin:6px 0 0; font-size:12px; color:#a07030; line-height:1.6;">Đây là thanh toán giả lập để kiểm thử. Không có tiền thật được chuyển khoản.</p>
+            </div>
+
+            <div style="margin-top:16px; padding:14px 16px; border-radius:8px; background:var(--color-paper); border:1px solid var(--color-border);">
+              <p style="margin:0; font-size:12px; color:var(--color-muted); font-weight:700;">Hỗ trợ</p>
+              <p style="margin:6px 0 0; font-size:12px; color:var(--color-muted); line-height:1.6;">
+                Gặp vấn đề? Liên hệ quản trị viên hoặc quay lại trang <a href="training/index.html" style="color:var(--color-primary);font-weight:700;">Khóa học</a>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-bottom">
+          <p>© 2026 Nihongo Learning. All rights reserved.</p>
+          <p><a href="training/index.html">Quay lại Khóa học</a></p>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+</html>

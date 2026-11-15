@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <title>Trang học của tôi | Nihongo Learning</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2327675d'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='42' fill='white'%3Eあ%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <style>
+      /* ── Dashboard layout ───────────────────────────────────────── */
+      .dash-main {
+        flex: 1;
+        padding-block: 0 80px;
+        background: var(--color-paper);
+      }
+
+      /* ── Hero chào mừng ─────────────────────────────────────────── */
+      .dash-hero {
+        padding-block: 40px 36px;
+        background: linear-gradient(135deg, #204f47 0%, #27675d 100%);
+        color: #fff;
+      }
+
+      .dash-hero-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .dash-greeting {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .dash-avatar {
+        display: grid;
+        width: 60px;
+        height: 60px;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        font-family: var(--font-display);
+        font-size: 26px;
+        font-weight: 700;
+        flex-shrink: 0;
+        border: 2px solid rgba(255,255,255,0.3);
+      }
+
+      .dash-greeting-text p {
+        margin: 0;
+        color: rgba(255,255,255,0.72);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .dash-greeting-text h1 {
+        margin: 4px 0 0;
+        font-family: var(--font-display);
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #fff;
+      }
+
+      .dash-streak {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.15);
+      }
+
+      .dash-streak-icon {
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .dash-streak-info strong {
+        display: block;
+        color: #e0bc78;
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .dash-streak-info span {
+        color: rgba(255,255,255,0.7);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      /* ── Stat cards ─────────────────────────────────────────────── */
+      .dash-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .dash-stat-card {
+        padding: 20px 20px 18px;
+        border-radius: 10px;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        transition: box-shadow 160ms ease, transform 160ms ease;
+      }
+
+      .dash-stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgb(29 48 45 / 8%);
+      }
+
+      .dash-stat-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--color-muted);
+        font-size: 11px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      .dash-stat-icon {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border-radius: 6px;
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .si-green  { background: #e7f0e9; color: var(--color-primary-dark); }
+      .si-yellow { background: var(--color-yellow-soft); color: #8a5c1f; }
+      .si-blue   { background: var(--color-blue-soft); color: #456473; }
+      .si-red    { background: #fdf0ee; color: #a54338; }
+
+      .dash-stat-value {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--color-ink);
+        line-height: 1;
+      }
+
+      .dash-stat-sub {
+        display: block;
+        margin-top: 4px;
+        color: var(--color-muted);
+        font-size: 12px;
+      }
+
+      /* ── Các phần chính ─────────────────────────────────────────── */
+      .dash-body {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      /* ── Section tiêu đề ────────────────────────────────────────── */
+      .dash-section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .dash-section-title h2 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .dash-section-title a {
+        color: var(--color-primary);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .dash-section-title a:hover { text-decoration: underline; }
+
+      /* ── Lưới khóa học / mục học ────────────────────────────────── */
+      .dash-menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .dash-menu-card {
+        display: flex;
+        flex-direction: column;
+        padding: 18px 18px 16px;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        background: var(--color-surface);
+        transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+        text-decoration: none;
+      }
+
+      .dash-menu-card:hover {
+        transform: translateY(-3px);
+        border-color: #aac5b8;
+        box-shadow: 0 8px 20px rgb(29 48 45 / 8%);
+      }
+
+      .dash-menu-sym {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border-radius: 8px;
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .sym-green  { background: #e7f0e9; color: var(--color-primary-dark); }
+      .sym-yellow { background: var(--color-yellow-soft); color: #8a5c1f; }
+      .sym-blue   { background: var(--color-blue-soft); color: #456473; }
+      .sym-pink   { background: #fdeef0; color: #9e3d52; }
+
+      .dash-menu-card h3 {
+        margin: 0 0 4px;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--color-ink);
+      }
+
+      .dash-menu-card p {
+        margin: 0 0 auto;
+        color: var(--color-muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .dash-menu-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 14px;
+        color: var(--color-primary);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      /* ── Sidebar phải ───────────────────────────────────────────── */
+      .dash-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .dash-widget {
+        padding: 20px;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        background: var(--color-surface);
+      }
+
+      .dash-widget-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 14px;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--color-ink);
+      }
+
+      .dash-widget-icon {
+        display: grid;
+        width: 26px;
+        height: 26px;
+        place-items: center;
+        border-radius: 5px;
+        background: #e7f0e9;
+        color: var(--color-primary-dark);
+        font-family: var(--font-display);
+        font-size: 13px;
+      }
+
+      /* tiến độ JLPT */
+      .jlpt-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .jlpt-row {
+        display: grid;
+        grid-template-columns: 32px 1fr 36px;
+        gap: 8px;
+        align-items: center;
+        font-size: 12px;
+      }
+
+      .jlpt-badge {
+        display: grid;
+        place-items: center;
+        height: 24px;
+        border-radius: 4px;
+        background: #edf4f0;
+        color: var(--color-primary-dark);
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .jlpt-bar-wrap {
+        height: 6px;
+        border-radius: 3px;
+        background: var(--color-border);
+        overflow: hidden;
+      }
+
+      .jlpt-bar {
+        height: 100%;
+        border-radius: 3px;
+        background: var(--color-primary);
+        transition: width 600ms ease;
+      }
+
+      .jlpt-pct {
+        color: var(--color-muted);
+        font-size: 11px;
+        font-weight: 700;
+        text-align: right;
+      }
+
+      /* khóa học của tôi */
+      .my-course-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .my-course-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .my-course-item:first-child { padding-top: 0; }
+
+      .my-course-badge {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border-radius: 6px;
+        background: #e7f0e9;
+        color: var(--color-primary-dark);
+        font-size: 11px;
+        font-weight: 900;
+        flex-shrink: 0;
+      }
+
+      .my-course-info { flex: 1; min-width: 0; }
+
+      .my-course-info strong {
+        display: block;
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .my-course-info span {
+        display: block;
+        margin-top: 3px;
+        color: var(--color-muted);
+        font-size: 11px;
+      }
+
+      .my-course-status {
+        font-size: 10px;
+        font-weight: 800;
+        padding: 3px 7px;
+        border-radius: 4px;
+        background: #e7f0e9;
+        color: var(--color-primary-dark);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* panel quản trị */
+      .dash-admin-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 20px;
+        border: 1px solid rgba(39,103,93,0.2);
+        border-radius: 10px;
+        background: linear-gradient(135deg, #f4faf8 0%, #edf5f1 100%);
+      }
+
+      .dash-admin-banner[hidden] { display: none; }
+
+      .dash-admin-banner p {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-primary-dark);
+      }
+
+      .dash-admin-banner span {
+        display: block;
+        margin-top: 3px;
+        color: var(--color-muted);
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      /* Trạng thái đang tải */
+      .dash-loading {
+        text-align: center;
+        padding: 24px;
+        color: var(--color-muted);
+        font-size: 13px;
+      }
+
+      /* ── Responsive ─────────────────────────────────────────────── */
+      @media (max-width: 1024px) {
+        .dash-stats { grid-template-columns: repeat(2, 1fr); }
+        .dash-body  { grid-template-columns: 1fr; }
+        .dash-menu-grid { grid-template-columns: repeat(3, 1fr); }
+      }
+
+      @media (max-width: 640px) {
+        .dash-hero { padding-block: 28px 24px; }
+        .dash-hero-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+        .dash-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .dash-menu-grid { grid-template-columns: repeat(2, 1fr); }
+        .dash-greeting-text h1 { font-size: 22px; }
+      }
+
+      @media (max-width: 400px) {
+        .dash-menu-grid { grid-template-columns: 1fr; }
+        .dash-stats { grid-template-columns: 1fr; }
+      }
+    </style>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/nav-mobile.js" defer></script>
+    <script src="../js/dashboard.js" defer></script>
+  </head>
+  <body
+    data-require-login="true"
+    data-login-href="auth/login.html"
+    data-home-href="../index.html"
+    data-dashboard-href="dashboard.html"
+    data-admin-dashboard-href="admin/index.html"
+  >
+    <div class="site-shell">
+
+      <!-- ── Header ───────────────────────────────────────────────── -->
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../index.html" aria-label="Nihongo Learning - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../index.html">Trang chủ</a>
+            <a class="navigation-link" href="kanji/index.html">Kanji</a>
+            <a class="navigation-link" href="vocabulary/index.html">Từ vựng</a>
+            <a class="navigation-link" href="grammar/index.html">Ngữ pháp</a>
+            <a class="navigation-link" href="lessons/index.html">Bài học</a>
+            <a class="navigation-link" href="exercises/index.html">Bài tập</a>
+            <a class="navigation-link" href="training/index.html">Khóa học</a>
+            <a class="navigation-link" href="resources/index.html">Thư viện</a>
+          </nav>
+          <div class="account-links" data-auth-ui
+            data-login-href="auth/login.html"
+            data-register-href="auth/register.html"
+            data-dashboard-href="dashboard.html"
+            data-admin-dashboard-href="admin/index.html"
+            data-profile-href="auth/profile.html"
+            data-home-href="../index.html">
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content" class="dash-main">
+
+        <!-- ── Hero chào mừng ──────────────────────────────────────── -->
+        <section class="dash-hero" aria-label="Thông tin học viên">
+          <div class="container">
+            <div class="dash-hero-inner">
+              <div class="dash-greeting">
+                <div class="dash-avatar" id="dash-avatar" aria-hidden="true">学</div>
+                <div class="dash-greeting-text">
+                  <p id="dash-time-greeting">Chào mừng trở lại</p>
+                  <h1>Xin chào, <span id="dash-user-name">bạn</span>!</h1>
+                </div>
+              </div>
+              <div class="dash-streak" aria-label="Chuỗi ngày học">
+                <span class="dash-streak-icon" aria-hidden="true">🔥</span>
+                <div class="dash-streak-info">
+                  <strong id="dash-streak-count">—</strong>
+                  <span>ngày học liên tiếp</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stat cards -->
+            <div class="dash-stats" role="list" aria-label="Thống kê học tập">
+              <div class="dash-stat-card" role="listitem">
+                <div class="dash-stat-label">
+                  <span class="dash-stat-icon si-green">学</span>
+                  BÀI HỌC ĐÃ HOÀN THÀNH
+                </div>
+                <span class="dash-stat-value" id="stat-lessons">—</span>
+                <span class="dash-stat-sub">bài học</span>
+              </div>
+              <div class="dash-stat-card" role="listitem">
+                <div class="dash-stat-label">
+                  <span class="dash-stat-icon si-yellow">語</span>
+                  TỪ VỰNG ĐÃ HỌC
+                </div>
+                <span class="dash-stat-value" id="stat-vocab">—</span>
+                <span class="dash-stat-sub">từ vựng</span>
+              </div>
+              <div class="dash-stat-card" role="listitem">
+                <div class="dash-stat-label">
+                  <span class="dash-stat-icon si-blue">漢</span>
+                  KANJI ĐÃ NẮM
+                </div>
+                <span class="dash-stat-value" id="stat-kanji">—</span>
+                <span class="dash-stat-sub">chữ Kanji</span>
+              </div>
+              <div class="dash-stat-card" role="listitem">
+                <div class="dash-stat-label">
+                  <span class="dash-stat-icon si-red">練</span>
+                  BÀI TẬP ĐÃ LÀM
+                </div>
+                <span class="dash-stat-value" id="stat-exercises">—</span>
+                <span class="dash-stat-sub">lượt luyện tập</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Nội dung chính ──────────────────────────────────────── -->
+        <div class="container dash-body">
+
+          <!-- CỘT TRÁI: menu + khóa học -->
+          <div>
+
+            <!-- Banner quản trị (chỉ hiện với admin) -->
+            <div class="dash-admin-banner" id="dash-admin-banner" hidden>
+              <div>
+                <p>Bảng điều khiển quản trị</p>
+                <span>Quản lý người dùng, nội dung và thống kê hệ thống</span>
+              </div>
+              <a class="button button-primary" href="admin/index.html">Mở quản trị →</a>
+            </div>
+
+            <!-- Mục học -->
+            <div style="margin-top: 28px;">
+              <div class="dash-section-title">
+                <h2>Mục học</h2>
+                <a href="../index.html">Xem tất cả →</a>
+              </div>
+              <nav class="dash-menu-grid" aria-label="Các mục học">
+                <a class="dash-menu-card" href="kanji/index.html">
+                  <span class="dash-menu-sym sym-green" aria-hidden="true">漢</span>
+                  <h3>Kanji</h3>
+                  <p>Học chữ Hán theo cấp độ JLPT, âm đọc và ý nghĩa.</p>
+                  <span class="dash-menu-arrow">Học ngay →</span>
+                </a>
+                <a class="dash-menu-card" href="vocabulary/index.html">
+                  <span class="dash-menu-sym sym-yellow" aria-hidden="true">語</span>
+                  <h3>Từ vựng</h3>
+                  <p>Tra cứu và luyện từ vựng theo chủ đề.</p>
+                  <span class="dash-menu-arrow">Học ngay →</span>
+                </a>
+                <a class="dash-menu-card" href="grammar/index.html">
+                  <span class="dash-menu-sym sym-blue" aria-hidden="true">文</span>
+                  <h3>Ngữ pháp</h3>
+                  <p>Nắm cấu trúc câu và mẫu ngữ pháp.</p>
+                  <span class="dash-menu-arrow">Học ngay →</span>
+                </a>
+                <a class="dash-menu-card" href="lessons/index.html">
+                  <span class="dash-menu-sym sym-green" aria-hidden="true">学</span>
+                  <h3>Bài học</h3>
+                  <p>Lộ trình học từng cấp độ có video bài giảng.</p>
+                  <span class="dash-menu-arrow">Học ngay →</span>
+                </a>
+                <a class="dash-menu-card" href="exercises/index.html">
+                  <span class="dash-menu-sym sym-yellow" aria-hidden="true">練</span>
+                  <h3>Bài tập</h3>
+                  <p>Ôn lại và kiểm tra những gì đã học.</p>
+                  <span class="dash-menu-arrow">Luyện tập →</span>
+                </a>
+                <a class="dash-menu-card" href="resources/index.html">
+                  <span class="dash-menu-sym sym-blue" aria-hidden="true">本</span>
+                  <h3>Thư viện</h3>
+                  <p>Tài liệu PDF, DOCX hỗ trợ học tập.</p>
+                  <span class="dash-menu-arrow">Xem tài liệu →</span>
+                </a>
+              </nav>
+            </div>
+
+            <!-- Khóa học đã đăng ký -->
+            <div style="margin-top: 28px;">
+              <div class="dash-section-title">
+                <h2>Khóa học của tôi</h2>
+                <a href="training/index.html">Xem tất cả →</a>
+              </div>
+              <div class="dash-widget" style="padding: 0 20px;">
+                <div id="my-courses-list">
+                  <div class="dash-loading">Đang tải khóa học…</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CỘT PHẢI: sidebar -->
+          <aside class="dash-sidebar" aria-label="Thông tin phụ">
+
+            <!-- Tài khoản -->
+            <div class="dash-widget">
+              <h3 class="dash-widget-title">
+                <span class="dash-widget-icon" aria-hidden="true">人</span>
+                Tài khoản
+              </h3>
+              <div style="font-size:13px; color: var(--color-muted); margin-bottom:14px;" id="dash-account-info">
+                Đang tải…
+              </div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <a class="button button-secondary" href="auth/profile.html" style="min-height:36px; font-size:12px; padding:6px 12px;">Chỉnh sửa hồ sơ</a>
+              </div>
+            </div>
+
+            <!-- Tiến độ JLPT -->
+            <div class="dash-widget">
+              <h3 class="dash-widget-title">
+                <span class="dash-widget-icon" aria-hidden="true">級</span>
+                Tiến độ JLPT
+              </h3>
+              <div class="jlpt-list" aria-label="Tiến độ từng cấp JLPT">
+                <div class="jlpt-row">
+                  <span class="jlpt-badge">N5</span>
+                  <div class="jlpt-bar-wrap"><div class="jlpt-bar" id="bar-n5" style="width:0%"></div></div>
+                  <span class="jlpt-pct" id="pct-n5">—</span>
+                </div>
+                <div class="jlpt-row">
+                  <span class="jlpt-badge">N4</span>
+                  <div class="jlpt-bar-wrap"><div class="jlpt-bar" id="bar-n4" style="width:0%"></div></div>
+                  <span class="jlpt-pct" id="pct-n4">—</span>
+                </div>
+                <div class="jlpt-row">
+                  <span class="jlpt-badge">N3</span>
+                  <div class="jlpt-bar-wrap"><div class="jlpt-bar" id="bar-n3" style="width:0%"></div></div>
+                  <span class="jlpt-pct" id="pct-n3">—</span>
+                </div>
+                <div class="jlpt-row">
+                  <span class="jlpt-badge">N2</span>
+                  <div class="jlpt-bar-wrap"><div class="jlpt-bar" id="bar-n2" style="width:0%"></div></div>
+                  <span class="jlpt-pct" id="pct-n2">—</span>
+                </div>
+                <div class="jlpt-row">
+                  <span class="jlpt-badge">N1</span>
+                  <div class="jlpt-bar-wrap"><div class="jlpt-bar" id="bar-n1" style="width:0%"></div></div>
+                  <span class="jlpt-pct" id="pct-n1">—</span>
+                </div>
+              </div>
+              <p style="margin:12px 0 0; font-size:11px; color:var(--color-muted);">Dựa trên số bài học đã hoàn thành theo từng cấp.</p>
+            </div>
+
+            <!-- Liên kết nhanh -->
+            <div class="dash-widget">
+              <h3 class="dash-widget-title">
+                <span class="dash-widget-icon" aria-hidden="true">→</span>
+                Liên kết nhanh
+              </h3>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <a href="training/index.html" class="button button-secondary" style="justify-content:flex-start; font-size:13px; min-height:40px;">🎓 Xem khóa học</a>
+                <a href="exercises/index.html" class="button button-secondary" style="justify-content:flex-start; font-size:13px; min-height:40px;">✏️ Luyện tập ngay</a>
+                <a href="resources/index.html" class="button button-secondary" style="justify-content:flex-start; font-size:13px; min-height:40px;">📚 Thư viện tài liệu</a>
+                <a href="auth/profile.html"    class="button button-secondary" style="justify-content:flex-start; font-size:13px; min-height:40px;">👤 Hồ sơ cá nhân</a>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+      </main>
+
+      <!-- ── Footer ───────────────────────────────────────────────── -->
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-main">
+            <div class="footer-about">
+              <a class="footer-brand" href="../index.html">
+                <span class="brand-mark" aria-hidden="true">あ</span> NIHONGO LEARNING
+              </a>
+              <p>Một góc nhỏ để bạn học, luyện tập và tiến gần hơn tới tiếng Nhật mỗi ngày.</p>
+            </div>
+            <nav class="footer-navigation" aria-label="Điều hướng website">
+              <h2>Khám phá</h2>
+              <a href="../index.html">Trang chủ</a>
+              <a href="kanji/index.html">Kanji</a>
+              <a href="vocabulary/index.html">Từ vựng</a>
+              <a href="training/index.html">Khóa học</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Học tiếng Nhật">
+              <h2>Học tiếng Nhật</h2>
+              <a href="grammar/index.html">Ngữ pháp</a>
+              <a href="lessons/index.html">Bài học</a>
+              <a href="exercises/index.html">Bài tập</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Tài khoản">
+              <h2>Tài khoản</h2>
+              <a href="dashboard.html" aria-current="page">Trang học của tôi</a>
+              <a href="auth/profile.html">Hồ sơ cá nhân</a>
+              <a href="../index.html" data-auth-logout>Đăng xuất</a>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 Nihongo Learning. All rights reserved.</p>
+            <p>Học một chút, vững thêm mỗi ngày.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

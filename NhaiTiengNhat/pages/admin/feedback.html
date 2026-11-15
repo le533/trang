@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Duyệt nhận xét | Nihongo Learning</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/admin.css" />
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/admin.js" defer></script>
+  </head>
+  <body
+    data-require-login="true"
+    data-require-admin="true"
+    data-login-href="../auth/login.html"
+    data-dashboard-href="../dashboard.html"
+    data-admin-dashboard-href="index.html"
+    data-page="feedback"
+  >
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <span class="admin-brand-mark" aria-hidden="true">あ</span>
+          <span>NhaiTiengNhat</span>
+        </div>
+
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
+          <a href="index.html">Tổng quan</a>
+          <a href="../lessons/index.html">Bài học</a>
+          <a href="../kanji/index.html?admin=1">Học liệu</a>
+          <a href="feedback.html" aria-current="page">Nhận xét</a>
+          <a href="users.html">Người dùng</a>
+          <a href="progress.html">Tiến độ</a>
+          <a href="reports.html">Báo cáo</a>
+          <a href="settings.html">Cài đặt</a>
+        </nav>
+
+        <div class="admin-user-card">
+          <p class="section-kicker">Đăng nhập</p>
+          <strong data-admin-user-name>Quản trị viên</strong>
+          <a href="../auth/profile.html">Hồ sơ cá nhân</a>
+        </div>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <p class="section-kicker">KIỂM DUYỆT</p>
+            <h1>Nhận xét học viên</h1>
+          </div>
+          <a class="button button-secondary" href="index.html">Quay lại tổng quan</a>
+        </header>
+
+        <section class="admin-panel" aria-labelledby="feedback-heading">
+          <div class="panel-heading">
+            <h2 id="feedback-heading">Đang chờ duyệt</h2>
+            <span class="panel-subtle">Chỉ nhận xét đã xác minh mới được công khai</span>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Học viên</th>
+                  <th>Khóa học</th>
+                  <th>Đánh giá</th>
+                  <th>Nội dung</th>
+                  <th>Ngày gửi</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="admin-feedback-body">
+                <tr><td class="empty-state" colspan="6">Đang tải nhận xét...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

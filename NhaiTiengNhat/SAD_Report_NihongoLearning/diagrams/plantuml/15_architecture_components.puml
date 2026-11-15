@@ -1,0 +1,51 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor User
+package "Presentation" {
+  component "HTML pages" as Pages
+  component "CSS" as CSS
+  component "Browser JS modules" as JS
+}
+package "Application" {
+  component "Express REST API" as API
+  component "Auth / role middleware" as Auth
+  component "Controllers" as C
+  component "Domain utilities" as Util
+}
+package "Infrastructure" {
+  database "MySQL 8" as DB
+  folder "Video and document storage" as Storage
+  component "FFmpeg / FFprobe" as MediaTools
+}
+cloud "VNPay Sandbox" as VNP
+User --> Pages
+Pages --> CSS
+Pages --> JS
+JS --> API : JSON + bearer token
+API --> Auth
+API --> C
+C --> Util
+C --> DB : mysql2
+C --> Storage
+API --> MediaTools : spawn ffmpeg/ffprobe
+C --> VNP : signed checkout
+VNP --> API : IPN
+@enduml

@@ -1,0 +1,92 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+entity vocabulary  {
+   * id : BIGINT <<PK>>
+  --
+  word : VARCHAR
+  reading : VARCHAR
+  level : ENUM
+  is_deleted : BOOLEAN 
+}
+entity vocabulary_meanings  {
+   * id : BIGINT <<PK>>
+  --
+  vocabulary_id : BIGINT <<FK>>
+  language_code : CHAR
+  meaning : VARCHAR 
+}
+entity vocabulary_parts_of_speech  {
+   * id : BIGINT <<PK>>
+  --
+  vocabulary_id : BIGINT <<FK>>
+  code : VARCHAR
+  label : VARCHAR 
+}
+entity vocabulary_examples  {
+   * id : BIGINT <<PK>>
+  --
+  vocabulary_id : BIGINT <<FK>>
+  japanese_text : TEXT
+  meaning_vi : TEXT 
+}
+entity vocabulary_forms  {
+   * id : BIGINT <<PK>>
+  --
+  vocabulary_id : BIGINT <<FK>>
+  form_type : ENUM
+  value : VARCHAR 
+}
+entity kanji  {
+   * id : BIGINT <<PK>>
+  --
+  character : VARCHAR
+  jlpt_level : ENUM
+  stroke_count : SMALLINT 
+}
+entity kanji_readings  {
+   * id : BIGINT <<PK>>
+  --
+  kanji_id : BIGINT <<FK>>
+  reading_type : ENUM
+  reading : VARCHAR 
+}
+entity radicals  {
+   * id : BIGINT <<PK>>
+  --
+  character : VARCHAR <<UQ>> 
+}
+entity kanji_radicals  {
+   * kanji_id : BIGINT <<PK,FK>>
+  * radical_id : BIGINT <<PK,FK>> 
+}
+entity kanji_vocabulary  {
+   * kanji_id : BIGINT <<PK,FK>>
+  * vocabulary_id : BIGINT <<PK,FK>> 
+}
+vocabulary ||--o{ vocabulary_meanings
+vocabulary ||--o{ vocabulary_parts_of_speech
+vocabulary ||--o{ vocabulary_examples
+vocabulary ||--o{ vocabulary_forms
+kanji ||--o{ kanji_readings
+kanji ||--o{ kanji_radicals
+radicals ||--o{ kanji_radicals
+kanji ||--o{ kanji_vocabulary
+vocabulary ||--o{ kanji_vocabulary
+@enduml

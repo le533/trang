@@ -1,0 +1,2253 @@
+[
+    {
+        "id":  1,
+        "kanji":  "一",
+        "hanViet":  "Nhất",
+        "meaning":  "Một",
+        "jlpt":  "N5",
+        "strokes":  1,
+        "kun":  [
+                    "ひと",
+                    "ひとつ"
+                ],
+        "on":  [
+                   "いち",
+                   "いつ"
+               ],
+        "radicals":  [
+                         "一"
+                     ]
+    },
+    {
+        "id":  2,
+        "kanji":  "二",
+        "hanViet":  "Nhị",
+        "meaning":  "Hai",
+        "jlpt":  "N5",
+        "strokes":  2,
+        "kun":  [
+                    "ふた",
+                    "ふたつ"
+                ],
+        "on":  [
+                   "に",
+                   "じ"
+               ],
+        "radicals":  [
+                         "二"
+                     ]
+    },
+    {
+        "id":  3,
+        "kanji":  "八",
+        "hanViet":  "Bát",
+        "meaning":  "Tám",
+        "jlpt":  "N5",
+        "strokes":  2,
+        "kun":  [
+                    "や",
+                    "やつ",
+                    "やっつ",
+                    "よう"
+                ],
+        "on":  [
+                   "はち"
+               ],
+        "radicals":  [
+                         "八"
+                     ]
+    },
+    {
+        "id":  4,
+        "kanji":  "六",
+        "hanViet":  "Lục",
+        "meaning":  "Sáu",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "む",
+                    "むつ",
+                    "むっつ",
+                    "むい"
+                ],
+        "on":  [
+                   "ろく",
+                   "りく"
+               ],
+        "radicals":  [
+                         "八"
+                     ]
+    },
+    {
+        "id":  5,
+        "kanji":  "日",
+        "hanViet":  "Nhật",
+        "meaning":  "Mặt trời, ngày",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "ひ",
+                    "か"
+                ],
+        "on":  [
+                   "にち",
+                   "じつ"
+               ],
+        "vocabulary":  [
+                           {
+                               "word":  "日本",
+                               "reading":  "にほん",
+                               "meaning":  "Nhật Bản"
+                           },
+                           {
+                               "word":  "日曜日",
+                               "reading":  "にちようび",
+                               "meaning":  "Chủ nhật"
+                           }
+                       ],
+        "radicals":  [
+                         "日"
+                     ]
+    },
+    {
+        "id":  6,
+        "kanji":  "目",
+        "hanViet":  "Mục",
+        "meaning":  "Mắt",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "め",
+                    "ま"
+                ],
+        "on":  [
+                   "もく",
+                   "ぼく"
+               ],
+        "radicals":  [
+                         "目"
+                     ]
+    },
+    {
+        "id":  7,
+        "kanji":  "三",
+        "hanViet":  "Tam",
+        "meaning":  "Ba",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "み",
+                    "みつ",
+                    "みっつ"
+                ],
+        "on":  [
+                   "さん"
+               ],
+        "radicals":  [
+                         "一"
+                     ]
+    },
+    {
+        "id":  8,
+        "kanji":  "手",
+        "hanViet":  "Thủ",
+        "meaning":  "Tay",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "て",
+                    "た"
+                ],
+        "on":  [
+                   "しゅ"
+               ],
+        "radicals":  [
+                         "手"
+                     ]
+    },
+    {
+        "id":  9,
+        "kanji":  "十",
+        "hanViet":  "Thập",
+        "meaning":  "Mười",
+        "jlpt":  "N5",
+        "strokes":  2,
+        "kun":  [
+                    "とお"
+                ],
+        "on":  [
+                   "じゅう",
+                   "じっ",
+                   "じゅっ"
+               ],
+        "radicals":  [
+                         "十"
+                     ]
+    },
+    {
+        "id":  10,
+        "kanji":  "千",
+        "hanViet":  "Thiên",
+        "meaning":  "Một nghìn",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "ち"
+                ],
+        "on":  [
+                   "せん"
+               ],
+        "radicals":  [
+                         "十"
+                     ]
+    },
+    {
+        "id":  11,
+        "kanji":  "土",
+        "hanViet":  "Thổ",
+        "meaning":  "Đất",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "つち"
+                ],
+        "on":  [
+                   "ど",
+                   "と"
+               ],
+        "radicals":  [
+                         "土"
+                     ]
+    },
+    {
+        "id":  12,
+        "kanji":  "上",
+        "hanViet":  "Thượng",
+        "meaning":  "Trên",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "うえ",
+                    "かみ",
+                    "あげる",
+                    "あがる"
+                ],
+        "on":  [
+                   "じょう",
+                   "しょう"
+               ],
+        "radicals":  [
+                         "一"
+                     ]
+    },
+    {
+        "id":  13,
+        "kanji":  "下",
+        "hanViet":  "Hạ",
+        "meaning":  "Dưới",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "した",
+                    "しも",
+                    "もと",
+                    "さげる",
+                    "さがる",
+                    "くだる",
+                    "おろす",
+                    "おりる"
+                ],
+        "on":  [
+                   "か",
+                   "げ"
+               ],
+        "radicals":  [
+                         "一"
+                     ]
+    },
+    {
+        "id":  14,
+        "kanji":  "万",
+        "hanViet":  "Vạn",
+        "meaning":  "Mười nghìn",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "よろず"
+                ],
+        "on":  [
+                   "まん",
+                   "ばん"
+               ],
+        "radicals":  [
+                         "一"
+                     ]
+    },
+    {
+        "id":  15,
+        "kanji":  "九",
+        "hanViet":  "Cửu",
+        "meaning":  "Chín",
+        "jlpt":  "N5",
+        "strokes":  2,
+        "kun":  [
+                    "ここの",
+                    "ここのつ"
+                ],
+        "on":  [
+                   "きゅう",
+                   "く"
+               ],
+        "radicals":  [
+                         "乙"
+                     ]
+    },
+    {
+        "id":  16,
+        "kanji":  "口",
+        "hanViet":  "Khẩu",
+        "meaning":  "Miệng",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "くち"
+                ],
+        "on":  [
+                   "こう",
+                   "く"
+               ],
+        "radicals":  [
+                         "口"
+                     ]
+    },
+    {
+        "id":  17,
+        "kanji":  "四",
+        "hanViet":  "Tứ",
+        "meaning":  "Bốn",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "よ",
+                    "よつ",
+                    "よっつ",
+                    "よん"
+                ],
+        "on":  [
+                   "し"
+               ],
+        "radicals":  [
+                         "囗"
+                     ]
+    },
+    {
+        "id":  18,
+        "kanji":  "西",
+        "hanViet":  "Tây",
+        "meaning":  "Phía tây",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "にし"
+                ],
+        "on":  [
+                   "せい",
+                   "さい"
+               ],
+        "radicals":  [
+                         "襾"
+                     ]
+    },
+    {
+        "id":  19,
+        "kanji":  "七",
+        "hanViet":  "Thất",
+        "meaning":  "Bảy",
+        "jlpt":  "N5",
+        "strokes":  2,
+        "kun":  [
+                    "なな",
+                    "ななつ",
+                    "なの"
+                ],
+        "on":  [
+                   "しち"
+               ],
+        "radicals":  [
+                         "一"
+                     ]
+    },
+    {
+        "id":  20,
+        "kanji":  "北",
+        "hanViet":  "Bắc",
+        "meaning":  "Phía bắc",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "きた"
+                ],
+        "on":  [
+                   "ほく"
+               ],
+        "radicals":  [
+                         "匕"
+                     ]
+    },
+    {
+        "id":  21,
+        "kanji":  "円",
+        "hanViet":  "Viên",
+        "meaning":  "Tròn, yên Nhật",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "まる",
+                    "まるい"
+                ],
+        "on":  [
+                   "えん"
+               ],
+        "radicals":  [
+                         "冂"
+                     ]
+    },
+    {
+        "id":  22,
+        "kanji":  "五",
+        "hanViet":  "Ngũ",
+        "meaning":  "Năm",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "いつ",
+                    "いつつ"
+                ],
+        "on":  [
+                   "ご"
+               ],
+        "radicals":  [
+                         "二"
+                     ]
+    },
+    {
+        "id":  23,
+        "kanji":  "竹",
+        "hanViet":  "Trúc",
+        "meaning":  "Tre",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "たけ"
+                ],
+        "on":  [
+                   "ちく"
+               ],
+        "radicals":  [
+                         "竹"
+                     ]
+    },
+    {
+        "id":  24,
+        "kanji":  "気",
+        "hanViet":  "Khí",
+        "meaning":  "Không khí, tinh thần",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "いき"
+                ],
+        "on":  [
+                   "き",
+                   "け"
+               ],
+        "radicals":  [
+                         "气"
+                     ]
+    },
+    {
+        "id":  25,
+        "kanji":  "左",
+        "hanViet":  "Tả",
+        "meaning":  "Bên trái",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "ひだり"
+                ],
+        "on":  [
+                   "さ",
+                   "しゃ"
+               ],
+        "radicals":  [
+                         "工"
+                     ]
+    },
+    {
+        "id":  26,
+        "kanji":  "右",
+        "hanViet":  "Hữu",
+        "meaning":  "Bên phải",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "みぎ"
+                ],
+        "on":  [
+                   "う",
+                   "ゆう"
+               ],
+        "radicals":  [
+                         "口"
+                     ]
+    },
+    {
+        "id":  27,
+        "kanji":  "石",
+        "hanViet":  "Thạch",
+        "meaning":  "Đá",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "いし"
+                ],
+        "on":  [
+                   "せき",
+                   "しゃく",
+                   "こく"
+               ],
+        "radicals":  [
+                         "石"
+                     ]
+    },
+    {
+        "id":  28,
+        "kanji":  "岩",
+        "hanViet":  "Nham",
+        "meaning":  "Đá tảng",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "いわ"
+                ],
+        "on":  [
+                   "がん"
+               ],
+        "radicals":  [
+                         "山"
+                     ]
+    },
+    {
+        "id":  29,
+        "kanji":  "年",
+        "hanViet":  "Niên",
+        "meaning":  "Năm",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "とし"
+                ],
+        "on":  [
+                   "ねん"
+               ],
+        "radicals":  [
+                         "干"
+                     ]
+    },
+    {
+        "id":  30,
+        "kanji":  "人",
+        "hanViet":  "Nhân",
+        "meaning":  "Người",
+        "jlpt":  "N5",
+        "strokes":  2,
+        "kun":  [
+                    "ひと",
+                    "り",
+                    "と"
+                ],
+        "on":  [
+                   "じん",
+                   "にん"
+               ],
+        "radicals":  [
+                         "人"
+                     ]
+    },
+    {
+        "id":  31,
+        "kanji":  "入",
+        "hanViet":  "Nhập",
+        "meaning":  "Vào, nhập",
+        "jlpt":  "N5",
+        "strokes":  2,
+        "kun":  [
+                    "いる",
+                    "いれる",
+                    "はいる"
+                ],
+        "on":  [
+                   "にゅう",
+                   "じゅ"
+               ],
+        "radicals":  [
+                         "入"
+                     ]
+    },
+    {
+        "id":  32,
+        "kanji":  "大",
+        "hanViet":  "Đại",
+        "meaning":  "Lớn",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "おお",
+                    "おおきい"
+                ],
+        "on":  [
+                   "だい",
+                   "たい"
+               ],
+        "radicals":  [
+                         "大"
+                     ]
+    },
+    {
+        "id":  33,
+        "kanji":  "犬",
+        "hanViet":  "Khuyển",
+        "meaning":  "Chó",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "いぬ"
+                ],
+        "on":  [
+                   "けん"
+               ],
+        "radicals":  [
+                         "犬"
+                     ]
+    },
+    {
+        "id":  34,
+        "kanji":  "子",
+        "hanViet":  "Tử",
+        "meaning":  "Trẻ, con",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "こ",
+                    "ね"
+                ],
+        "on":  [
+                   "し",
+                   "す"
+               ],
+        "radicals":  [
+                         "子"
+                     ]
+    },
+    {
+        "id":  35,
+        "kanji":  "字",
+        "hanViet":  "Tự",
+        "meaning":  "Chữ",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "あざ",
+                    "あざな"
+                ],
+        "on":  [
+                   "じ"
+               ],
+        "vocabulary":  [
+                           {
+                               "word":  "文字",
+                               "reading":  "もじ",
+                               "meaning":  "Chữ, ký tự"
+                           },
+                           {
+                               "word":  "漢字",
+                               "reading":  "かんじ",
+                               "meaning":  "Chữ Hán"
+                           }
+                       ],
+        "radicals":  [
+                         "子"
+                     ]
+    },
+    {
+        "id":  36,
+        "kanji":  "学",
+        "hanViet":  "Học",
+        "meaning":  "Học tập",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "まなぶ"
+                ],
+        "on":  [
+                   "がく"
+               ],
+        "vocabulary":  [
+                           {
+                               "word":  "学校",
+                               "reading":  "がっこう",
+                               "meaning":  "Trường học"
+                           },
+                           {
+                               "word":  "学生",
+                               "reading":  "がくせい",
+                               "meaning":  "Học sinh, sinh viên"
+                           }
+                       ],
+        "radicals":  [
+                         "子"
+                     ]
+    },
+    {
+        "id":  37,
+        "kanji":  "月",
+        "hanViet":  "Nguyệt",
+        "meaning":  "Mặt trăng, tháng",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "つき"
+                ],
+        "on":  [
+                   "げつ",
+                   "がつ"
+               ],
+        "radicals":  [
+                         "月"
+                     ]
+    },
+    {
+        "id":  38,
+        "kanji":  "言",
+        "hanViet":  "Ngôn",
+        "meaning":  "Nói, lời nói",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "いう",
+                    "こと"
+                ],
+        "on":  [
+                   "げん",
+                   "ごん"
+               ],
+        "radicals":  [
+                         "言"
+                     ]
+    },
+    {
+        "id":  39,
+        "kanji":  "牛",
+        "hanViet":  "Ngưu",
+        "meaning":  "Bò",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "うし"
+                ],
+        "on":  [
+                   "ぎゅう"
+               ],
+        "radicals":  [
+                         "牛"
+                     ]
+    },
+    {
+        "id":  40,
+        "kanji":  "花",
+        "hanViet":  "Hoa",
+        "meaning":  "Hoa",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "はな"
+                ],
+        "on":  [
+                   "か",
+                   "け"
+               ],
+        "radicals":  [
+                         "艸"
+                     ]
+    },
+    {
+        "id":  41,
+        "kanji":  "今",
+        "hanViet":  "Kim",
+        "meaning":  "Bây giờ",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "いま"
+                ],
+        "on":  [
+                   "こん",
+                   "きん"
+               ],
+        "radicals":  [
+                         "人"
+                     ]
+    },
+    {
+        "id":  42,
+        "kanji":  "米",
+        "hanViet":  "Mễ",
+        "meaning":  "Gạo",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "こめ",
+                    "よね"
+                ],
+        "on":  [
+                   "べい",
+                   "まい"
+               ],
+        "radicals":  [
+                         "米"
+                     ]
+    },
+    {
+        "id":  43,
+        "kanji":  "来",
+        "hanViet":  "Lai",
+        "meaning":  "Đến",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "くる",
+                    "きたる",
+                    "きたす"
+                ],
+        "on":  [
+                   "らい",
+                   "たい"
+               ],
+        "radicals":  [
+                         "木"
+                     ]
+    },
+    {
+        "id":  44,
+        "kanji":  "木",
+        "hanViet":  "Mộc",
+        "meaning":  "Cây, gỗ",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "き",
+                    "こ"
+                ],
+        "on":  [
+                   "もく",
+                   "ぼく"
+               ],
+        "radicals":  [
+                         "木"
+                     ]
+    },
+    {
+        "id":  45,
+        "kanji":  "林",
+        "hanViet":  "Lâm",
+        "meaning":  "Rừng thưa",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "はやし"
+                ],
+        "on":  [
+                   "りん"
+               ],
+        "radicals":  [
+                         "木"
+                     ]
+    },
+    {
+        "id":  46,
+        "kanji":  "森",
+        "hanViet":  "Sâm",
+        "meaning":  "Rừng",
+        "jlpt":  "N5",
+        "strokes":  12,
+        "kun":  [
+                    "もり"
+                ],
+        "on":  [
+                   "しん"
+               ],
+        "radicals":  [
+                         "木"
+                     ]
+    },
+    {
+        "id":  47,
+        "kanji":  "休",
+        "hanViet":  "Hưu",
+        "meaning":  "Nghỉ ngơi",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "やすむ",
+                    "やすまる",
+                    "やすめる"
+                ],
+        "on":  [
+                   "きゅう"
+               ],
+        "radicals":  [
+                         "人"
+                     ]
+    },
+    {
+        "id":  48,
+        "kanji":  "本",
+        "hanViet":  "Bản",
+        "meaning":  "Sách, gốc",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "もと"
+                ],
+        "on":  [
+                   "ほん"
+               ],
+        "radicals":  [
+                         "木"
+                     ]
+    },
+    {
+        "id":  49,
+        "kanji":  "体",
+        "hanViet":  "Thể",
+        "meaning":  "Cơ thể",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "からだ",
+                    "かたち"
+                ],
+        "on":  [
+                   "たい",
+                   "てい"
+               ],
+        "radicals":  [
+                         "人"
+                     ]
+    },
+    {
+        "id":  50,
+        "kanji":  "音",
+        "hanViet":  "Âm",
+        "meaning":  "Âm thanh",
+        "jlpt":  "N5",
+        "strokes":  9,
+        "kun":  [
+                    "おと",
+                    "ね"
+                ],
+        "on":  [
+                   "おん",
+                   "いん"
+               ],
+        "radicals":  [
+                         "音"
+                     ]
+    },
+    {
+        "id":  51,
+        "kanji":  "暗",
+        "hanViet":  "Ám",
+        "meaning":  "Tối, u ám",
+        "jlpt":  "N5",
+        "strokes":  13,
+        "kun":  [
+                    "くらい",
+                    "くらむ",
+                    "くれる"
+                ],
+        "on":  [
+                   "あん"
+               ],
+        "radicals":  [
+                         "日"
+                     ]
+    },
+    {
+        "id":  52,
+        "kanji":  "水",
+        "hanViet":  "Thủy",
+        "meaning":  "Nước",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "みず"
+                ],
+        "on":  [
+                   "すい"
+               ],
+        "radicals":  [
+                         "水"
+                     ]
+    },
+    {
+        "id":  53,
+        "kanji":  "泳",
+        "hanViet":  "Vịnh",
+        "meaning":  "Bơi",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "およぐ"
+                ],
+        "on":  [
+                   "えい"
+               ],
+        "radicals":  [
+                         "水"
+                     ]
+    },
+    {
+        "id":  54,
+        "kanji":  "火",
+        "hanViet":  "Hỏa",
+        "meaning":  "Lửa",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "ひ",
+                    "ほ"
+                ],
+        "on":  [
+                   "か"
+               ],
+        "radicals":  [
+                         "火"
+                     ]
+    },
+    {
+        "id":  55,
+        "kanji":  "立",
+        "hanViet":  "Lập",
+        "meaning":  "Đứng, dựng lên",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "たつ",
+                    "たてる"
+                ],
+        "on":  [
+                   "りつ",
+                   "りゅう"
+               ],
+        "radicals":  [
+                         "立"
+                     ]
+    },
+    {
+        "id":  56,
+        "kanji":  "話",
+        "hanViet":  "Thoại",
+        "meaning":  "Nói chuyện",
+        "jlpt":  "N5",
+        "strokes":  13,
+        "kun":  [
+                    "はなす",
+                    "はなし"
+                ],
+        "on":  [
+                   "わ"
+               ],
+        "radicals":  [
+                         "言"
+                     ]
+    },
+    {
+        "id":  57,
+        "kanji":  "門",
+        "hanViet":  "Môn",
+        "meaning":  "Cổng",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "かど",
+                    "と"
+                ],
+        "on":  [
+                   "もん"
+               ],
+        "radicals":  [
+                         "門"
+                     ]
+    },
+    {
+        "id":  58,
+        "kanji":  "聞",
+        "hanViet":  "Văn",
+        "meaning":  "Nghe, hỏi",
+        "jlpt":  "N5",
+        "strokes":  14,
+        "kun":  [
+                    "きく",
+                    "きこえる"
+                ],
+        "on":  [
+                   "ぶん",
+                   "もん"
+               ],
+        "radicals":  [
+                         "耳"
+                     ]
+    },
+    {
+        "id":  59,
+        "kanji":  "間",
+        "hanViet":  "Gian",
+        "meaning":  "Khoảng, giữa",
+        "jlpt":  "N5",
+        "strokes":  12,
+        "kun":  [
+                    "あいだ",
+                    "ま",
+                    "あい"
+                ],
+        "on":  [
+                   "かん",
+                   "けん"
+               ],
+        "radicals":  [
+                         "門"
+                     ]
+    },
+    {
+        "id":  60,
+        "kanji":  "金",
+        "hanViet":  "Kim",
+        "meaning":  "Vàng, tiền",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "かね",
+                    "かな"
+                ],
+        "on":  [
+                   "きん",
+                   "こん",
+                   "ごん"
+               ],
+        "radicals":  [
+                         "金"
+                     ]
+    },
+    {
+        "id":  61,
+        "kanji":  "貝",
+        "hanViet":  "Bối",
+        "meaning":  "Vỏ sò",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "かい"
+                ],
+        "on":  [
+                   "ばい"
+               ],
+        "radicals":  [
+                         "貝"
+                     ]
+    },
+    {
+        "id":  62,
+        "kanji":  "買",
+        "hanViet":  "Mãi",
+        "meaning":  "Mua",
+        "jlpt":  "N5",
+        "strokes":  12,
+        "kun":  [
+                    "かう"
+                ],
+        "on":  [
+                   "ばい"
+               ],
+        "radicals":  [
+                         "貝"
+                     ]
+    },
+    {
+        "id":  63,
+        "kanji":  "生",
+        "hanViet":  "Sinh",
+        "meaning":  "Sống, sinh ra",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "いきる",
+                    "いかす",
+                    "うまれる",
+                    "うむ",
+                    "なま"
+                ],
+        "on":  [
+                   "せい",
+                   "しょう"
+               ],
+        "radicals":  [
+                         "生"
+                     ]
+    },
+    {
+        "id":  64,
+        "kanji":  "寺",
+        "hanViet":  "Tự",
+        "meaning":  "Chùa",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "てら"
+                ],
+        "on":  [
+                   "じ"
+               ],
+        "radicals":  [
+                         "寸"
+                     ]
+    },
+    {
+        "id":  65,
+        "kanji":  "時",
+        "hanViet":  "Thời",
+        "meaning":  "Thời gian, giờ",
+        "jlpt":  "N5",
+        "strokes":  10,
+        "kun":  [
+                    "とき",
+                    "どき"
+                ],
+        "on":  [
+                   "じ"
+               ],
+        "radicals":  [
+                         "日"
+                     ]
+    },
+    {
+        "id":  66,
+        "kanji":  "魚",
+        "hanViet":  "Ngư",
+        "meaning":  "Cá",
+        "jlpt":  "N5",
+        "strokes":  11,
+        "kun":  [
+                    "うお",
+                    "さかな"
+                ],
+        "on":  [
+                   "ぎょ"
+               ],
+        "radicals":  [
+                         "魚"
+                     ]
+    },
+    {
+        "id":  67,
+        "kanji":  "雨",
+        "hanViet":  "Vũ",
+        "meaning":  "Mưa",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "あめ",
+                    "あま"
+                ],
+        "on":  [
+                   "う"
+               ],
+        "radicals":  [
+                         "雨"
+                     ]
+    },
+    {
+        "id":  68,
+        "kanji":  "電",
+        "hanViet":  "Điện",
+        "meaning":  "Điện",
+        "jlpt":  "N5",
+        "strokes":  13,
+        "kun":  [
+
+                ],
+        "on":  [
+                   "でん"
+               ],
+        "radicals":  [
+                         "雨"
+                     ]
+    },
+    {
+        "id":  69,
+        "kanji":  "新",
+        "hanViet":  "Tân",
+        "meaning":  "Mới",
+        "jlpt":  "N5",
+        "strokes":  13,
+        "kun":  [
+                    "あたらしい",
+                    "あらた",
+                    "にい"
+                ],
+        "on":  [
+                   "しん"
+               ],
+        "radicals":  [
+                         "斤"
+                     ]
+    },
+    {
+        "id":  70,
+        "kanji":  "中",
+        "hanViet":  "Trung",
+        "meaning":  "Trong, giữa",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "なか",
+                    "うち",
+                    "あたる"
+                ],
+        "on":  [
+                   "ちゅう"
+               ],
+        "radicals":  [
+                         "丨"
+                     ]
+    },
+    {
+        "id":  71,
+        "kanji":  "半",
+        "hanViet":  "Bán",
+        "meaning":  "Một nửa",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "なかば"
+                ],
+        "on":  [
+                   "はん"
+               ],
+        "vocabulary":  [
+                           {
+                               "word":  "半分",
+                               "reading":  "はんぶん",
+                               "meaning":  "Một nửa"
+                           },
+                           {
+                               "word":  "半年",
+                               "reading":  "はんとし",
+                               "meaning":  "Nửa năm"
+                           }
+                       ],
+        "radicals":  [
+                         "十"
+                     ]
+    },
+    {
+        "id":  72,
+        "kanji":  "母",
+        "hanViet":  "Mẫu",
+        "meaning":  "Mẹ",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "はは",
+                    "も"
+                ],
+        "on":  [
+                   "ぼ"
+               ],
+        "radicals":  [
+                         "毋"
+                     ]
+    },
+    {
+        "id":  73,
+        "kanji":  "方",
+        "hanViet":  "Phương",
+        "meaning":  "Phương hướng, cách",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "かた"
+                ],
+        "on":  [
+                   "ほう"
+               ],
+        "radicals":  [
+                         "方"
+                     ]
+    },
+    {
+        "id":  74,
+        "kanji":  "友",
+        "hanViet":  "Hữu",
+        "meaning":  "Bạn bè",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "とも"
+                ],
+        "on":  [
+                   "ゆう"
+               ],
+        "radicals":  [
+                         "又"
+                     ]
+    },
+    {
+        "id":  75,
+        "kanji":  "分",
+        "hanViet":  "Phân",
+        "meaning":  "Chia, phần, phút",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "わける",
+                    "わかれる",
+                    "わかる",
+                    "わかつ"
+                ],
+        "on":  [
+                   "ぶん",
+                   "ふん",
+                   "ぶ"
+               ],
+        "radicals":  [
+                         "刀"
+                     ]
+    },
+    {
+        "id":  76,
+        "kanji":  "食",
+        "hanViet":  "Thực",
+        "meaning":  "Ăn, thức ăn",
+        "jlpt":  "N5",
+        "strokes":  9,
+        "kun":  [
+                    "くう",
+                    "たべる",
+                    "はむ"
+                ],
+        "on":  [
+                   "しょく",
+                   "じき"
+               ],
+        "vocabulary":  [
+                           {
+                               "word":  "食べる",
+                               "reading":  "たべる",
+                               "meaning":  "Ăn"
+                           },
+                           {
+                               "word":  "食事",
+                               "reading":  "しょくじ",
+                               "meaning":  "Bữa ăn"
+                           }
+                       ],
+        "radicals":  [
+                         "食"
+                     ]
+    },
+    {
+        "id":  77,
+        "kanji":  "父",
+        "hanViet":  "Phụ",
+        "meaning":  "Cha, bố",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "ちち"
+                ],
+        "on":  [
+                   "ふ"
+               ],
+        "radicals":  [
+                         "父"
+                     ]
+    },
+    {
+        "id":  78,
+        "kanji":  "校",
+        "hanViet":  "Hiệu",
+        "meaning":  "Trường học",
+        "jlpt":  "N5",
+        "strokes":  10,
+        "kun":  [
+
+                ],
+        "on":  [
+                   "こう",
+                   "きょう"
+               ],
+        "radicals":  [
+                         "木"
+                     ]
+    },
+    {
+        "id":  79,
+        "kanji":  "百",
+        "hanViet":  "Bách",
+        "meaning":  "Một trăm",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "もも"
+                ],
+        "on":  [
+                   "ひゃく",
+                   "びゃく"
+               ],
+        "radicals":  [
+                         "白"
+                     ]
+    },
+    {
+        "id":  80,
+        "kanji":  "読",
+        "hanViet":  "Độc",
+        "meaning":  "Đọc",
+        "jlpt":  "N5",
+        "strokes":  14,
+        "kun":  [
+                    "よむ"
+                ],
+        "on":  [
+                   "どく",
+                   "とく",
+                   "とう"
+               ],
+        "radicals":  [
+                         "言"
+                     ]
+    },
+    {
+        "id":  81,
+        "kanji":  "車",
+        "hanViet":  "Xa",
+        "meaning":  "Xe",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "くるま"
+                ],
+        "on":  [
+                   "しゃ"
+               ],
+        "radicals":  [
+                         "車"
+                     ]
+    },
+    {
+        "id":  82,
+        "kanji":  "明",
+        "hanViet":  "Minh",
+        "meaning":  "Sáng, rõ",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "あかるい",
+                    "あける",
+                    "あく",
+                    "あかす"
+                ],
+        "on":  [
+                   "めい",
+                   "みょう",
+                   "みん"
+               ],
+        "radicals":  [
+                         "日"
+                     ]
+    },
+    {
+        "id":  83,
+        "kanji":  "出",
+        "hanViet":  "Xuất",
+        "meaning":  "Ra, đi ra",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "でる",
+                    "だす",
+                    "いでる",
+                    "いだす"
+                ],
+        "on":  [
+                   "しゅつ",
+                   "すい"
+               ],
+        "radicals":  [
+                         "凵"
+                     ]
+    },
+    {
+        "id":  84,
+        "kanji":  "書",
+        "hanViet":  "Thư",
+        "meaning":  "Viết, sách",
+        "jlpt":  "N5",
+        "strokes":  10,
+        "kun":  [
+                    "かく"
+                ],
+        "on":  [
+                   "しょ"
+               ],
+        "radicals":  [
+                         "曰"
+                     ]
+    },
+    {
+        "id":  85,
+        "kanji":  "元",
+        "hanViet":  "Nguyên",
+        "meaning":  "Gốc, ban đầu",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "もと"
+                ],
+        "on":  [
+                   "げん",
+                   "がん"
+               ],
+        "radicals":  [
+                         "儿"
+                     ]
+    },
+    {
+        "id":  86,
+        "kanji":  "古",
+        "hanViet":  "Cổ",
+        "meaning":  "Cũ, xưa",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "ふるい",
+                    "ふるす"
+                ],
+        "on":  [
+                   "こ"
+               ],
+        "radicals":  [
+                         "口"
+                     ]
+    },
+    {
+        "id":  87,
+        "kanji":  "何",
+        "hanViet":  "Hà",
+        "meaning":  "Gì, nào",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "なに",
+                    "なん"
+                ],
+        "on":  [
+                   "か"
+               ],
+        "radicals":  [
+                         "人"
+                     ]
+    },
+    {
+        "id":  88,
+        "kanji":  "夕",
+        "hanViet":  "Tịch",
+        "meaning":  "Buổi tối",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "ゆう"
+                ],
+        "on":  [
+                   "せき"
+               ],
+        "radicals":  [
+                         "夕"
+                     ]
+    },
+    {
+        "id":  89,
+        "kanji":  "外",
+        "hanViet":  "Ngoại",
+        "meaning":  "Bên ngoài",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "そと",
+                    "ほか",
+                    "はずす",
+                    "はずれる"
+                ],
+        "on":  [
+                   "がい",
+                   "げ"
+               ],
+        "radicals":  [
+                         "夕"
+                     ]
+    },
+    {
+        "id":  90,
+        "kanji":  "多",
+        "hanViet":  "Đa",
+        "meaning":  "Nhiều",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "おおい",
+                    "まさる"
+                ],
+        "on":  [
+                   "た"
+               ],
+        "radicals":  [
+                         "夕"
+                     ]
+    },
+    {
+        "id":  91,
+        "kanji":  "名",
+        "hanViet":  "Danh",
+        "meaning":  "Tên",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "な"
+                ],
+        "on":  [
+                   "めい",
+                   "みょう"
+               ],
+        "radicals":  [
+                         "口"
+                     ]
+    },
+    {
+        "id":  92,
+        "kanji":  "小",
+        "hanViet":  "Tiểu",
+        "meaning":  "Nhỏ",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "ちいさい",
+                    "こ",
+                    "お",
+                    "さ"
+                ],
+        "on":  [
+                   "しょう"
+               ],
+        "radicals":  [
+                         "小"
+                     ]
+    },
+    {
+        "id":  93,
+        "kanji":  "少",
+        "hanViet":  "Thiểu",
+        "meaning":  "Ít",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "すくない",
+                    "すこし"
+                ],
+        "on":  [
+                   "しょう"
+               ],
+        "radicals":  [
+                         "小"
+                     ]
+    },
+    {
+        "id":  94,
+        "kanji":  "帰",
+        "hanViet":  "Quy",
+        "meaning":  "Trở về",
+        "jlpt":  "N5",
+        "strokes":  10,
+        "kun":  [
+                    "かえる",
+                    "かえす"
+                ],
+        "on":  [
+                   "き"
+               ],
+        "radicals":  [
+                         "巾"
+                     ]
+    },
+    {
+        "id":  95,
+        "kanji":  "内",
+        "hanViet":  "Nội",
+        "meaning":  "Bên trong",
+        "jlpt":  "N5",
+        "strokes":  4,
+        "kun":  [
+                    "うち"
+                ],
+        "on":  [
+                   "ない",
+                   "だい"
+               ],
+        "radicals":  [
+                         "冂"
+                     ]
+    },
+    {
+        "id":  96,
+        "kanji":  "肉",
+        "hanViet":  "Nhục",
+        "meaning":  "Thịt",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "しし"
+                ],
+        "on":  [
+                   "にく"
+               ],
+        "radicals":  [
+                         "肉"
+                     ]
+    },
+    {
+        "id":  97,
+        "kanji":  "見",
+        "hanViet":  "Kiến",
+        "meaning":  "Nhìn, thấy",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "みる",
+                    "みえる",
+                    "みせる"
+                ],
+        "on":  [
+                   "けん"
+               ],
+        "radicals":  [
+                         "見"
+                     ]
+    },
+    {
+        "id":  98,
+        "kanji":  "女",
+        "hanViet":  "Nữ",
+        "meaning":  "Nữ, phụ nữ",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "おんな",
+                    "め"
+                ],
+        "on":  [
+                   "じょ",
+                   "にょ",
+                   "にょう"
+               ],
+        "radicals":  [
+                         "女"
+                     ]
+    },
+    {
+        "id":  99,
+        "kanji":  "好",
+        "hanViet":  "Hảo",
+        "meaning":  "Thích, tốt",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "このむ",
+                    "すく",
+                    "よい"
+                ],
+        "on":  [
+                   "こう"
+               ],
+        "radicals":  [
+                         "女"
+                     ]
+    },
+    {
+        "id":  100,
+        "kanji":  "安",
+        "hanViet":  "An",
+        "meaning":  "Yên bình, rẻ",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "やすい",
+                    "やすまる",
+                    "やすらか"
+                ],
+        "on":  [
+                   "あん"
+               ],
+        "radicals":  [
+                         "宀"
+                     ]
+    },
+    {
+        "id":  101,
+        "kanji":  "町",
+        "hanViet":  "Đinh",
+        "meaning":  "Thị trấn, khu phố",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "まち"
+                ],
+        "on":  [
+                   "ちょう"
+               ],
+        "radicals":  [
+                         "田"
+                     ]
+    },
+    {
+        "id":  102,
+        "kanji":  "東",
+        "hanViet":  "Đông",
+        "meaning":  "Phía đông",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "ひがし"
+                ],
+        "on":  [
+                   "とう"
+               ],
+        "radicals":  [
+                         "木"
+                     ]
+    },
+    {
+        "id":  103,
+        "kanji":  "高",
+        "hanViet":  "Cao",
+        "meaning":  "Cao, đắt",
+        "jlpt":  "N5",
+        "strokes":  10,
+        "kun":  [
+                    "たかい",
+                    "たか",
+                    "たかまる",
+                    "たかめる"
+                ],
+        "on":  [
+                   "こう"
+               ],
+        "radicals":  [
+                         "高"
+                     ]
+    },
+    {
+        "id":  104,
+        "kanji":  "山",
+        "hanViet":  "Sơn",
+        "meaning":  "Núi",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "やま"
+                ],
+        "on":  [
+                   "さん",
+                   "せん"
+               ],
+        "radicals":  [
+                         "山"
+                     ]
+    },
+    {
+        "id":  105,
+        "kanji":  "足",
+        "hanViet":  "Túc",
+        "meaning":  "Chân, đủ",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "あし",
+                    "たりる",
+                    "たる",
+                    "たす"
+                ],
+        "on":  [
+                   "そく"
+               ],
+        "radicals":  [
+                         "足"
+                     ]
+    },
+    {
+        "id":  106,
+        "kanji":  "南",
+        "hanViet":  "Nam",
+        "meaning":  "Phía nam",
+        "jlpt":  "N5",
+        "strokes":  9,
+        "kun":  [
+                    "みなみ"
+                ],
+        "on":  [
+                   "なん",
+                   "な"
+               ],
+        "radicals":  [
+                         "十"
+                     ]
+    },
+    {
+        "id":  107,
+        "kanji":  "飲",
+        "hanViet":  "Ẩm",
+        "meaning":  "Uống",
+        "jlpt":  "N5",
+        "strokes":  12,
+        "kun":  [
+                    "のむ",
+                    "のみ"
+                ],
+        "on":  [
+                   "いん",
+                   "おん"
+               ],
+        "radicals":  [
+                         "食"
+                     ]
+    },
+    {
+        "id":  108,
+        "kanji":  "田",
+        "hanViet":  "Điền",
+        "meaning":  "Ruộng",
+        "jlpt":  "N5",
+        "strokes":  5,
+        "kun":  [
+                    "た"
+                ],
+        "on":  [
+                   "でん"
+               ],
+        "radicals":  [
+                         "田"
+                     ]
+    },
+    {
+        "id":  109,
+        "kanji":  "畑",
+        "hanViet":  "",
+        "meaning":  "Ruộng, cánh đồng",
+        "jlpt":  "N5",
+        "strokes":  9,
+        "kun":  [
+                    "はた",
+                    "はたけ"
+                ],
+        "on":  [
+
+               ],
+        "radicals":  [
+                         "火"
+                     ]
+    },
+    {
+        "id":  110,
+        "kanji":  "物",
+        "hanViet":  "Vật",
+        "meaning":  "Vật, đồ vật",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "もの"
+                ],
+        "on":  [
+                   "ぶつ",
+                   "もつ"
+               ],
+        "radicals":  [
+                         "牛"
+                     ]
+    },
+    {
+        "id":  111,
+        "kanji":  "茶",
+        "hanViet":  "Trà",
+        "meaning":  "Trà",
+        "jlpt":  "N5",
+        "strokes":  9,
+        "kun":  [
+
+                ],
+        "on":  [
+                   "ちゃ",
+                   "さ"
+               ],
+        "radicals":  [
+                         "艸"
+                     ]
+    },
+    {
+        "id":  112,
+        "kanji":  "行",
+        "hanViet":  "Hành",
+        "meaning":  "Đi, thực hiện",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "いく",
+                    "ゆく",
+                    "おこなう"
+                ],
+        "on":  [
+                   "こう",
+                   "ぎょう",
+                   "あん"
+               ],
+        "vocabulary":  [
+                           {
+                               "word":  "行く",
+                               "reading":  "いく",
+                               "meaning":  "Đi"
+                           },
+                           {
+                               "word":  "旅行",
+                               "reading":  "りょこう",
+                               "meaning":  "Du lịch"
+                           }
+                       ],
+        "radicals":  [
+                         "行"
+                     ]
+    },
+    {
+        "id":  113,
+        "kanji":  "川",
+        "hanViet":  "Xuyên",
+        "meaning":  "Sông",
+        "jlpt":  "N5",
+        "strokes":  3,
+        "kun":  [
+                    "かわ"
+                ],
+        "on":  [
+                   "せん"
+               ],
+        "radicals":  [
+                         "川"
+                     ]
+    },
+    {
+        "id":  114,
+        "kanji":  "耳",
+        "hanViet":  "Nhĩ",
+        "meaning":  "Tai",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "みみ"
+                ],
+        "on":  [
+                   "じ"
+               ],
+        "radicals":  [
+                         "耳"
+                     ]
+    },
+    {
+        "id":  115,
+        "kanji":  "男",
+        "hanViet":  "Nam",
+        "meaning":  "Nam, đàn ông",
+        "jlpt":  "N5",
+        "strokes":  7,
+        "kun":  [
+                    "おとこ",
+                    "お"
+                ],
+        "on":  [
+                   "だん",
+                   "なん"
+               ],
+        "radicals":  [
+                         "田"
+                     ]
+    },
+    {
+        "id":  116,
+        "kanji":  "先",
+        "hanViet":  "Tiên",
+        "meaning":  "Trước, phía trước",
+        "jlpt":  "N5",
+        "strokes":  6,
+        "kun":  [
+                    "さき",
+                    "まず"
+                ],
+        "on":  [
+                   "せん"
+               ],
+        "radicals":  [
+                         "儿"
+                     ]
+    },
+    {
+        "id":  117,
+        "kanji":  "長",
+        "hanViet":  "Trường",
+        "meaning":  "Dài, trưởng",
+        "jlpt":  "N5",
+        "strokes":  8,
+        "kun":  [
+                    "ながい",
+                    "おさ"
+                ],
+        "on":  [
+                   "ちょう"
+               ],
+        "radicals":  [
+                         "長"
+                     ]
+    },
+    {
+        "id":  118,
+        "kanji":  "鳥",
+        "hanViet":  "Điểu",
+        "meaning":  "Chim",
+        "jlpt":  "N5",
+        "strokes":  11,
+        "kun":  [
+                    "とり"
+                ],
+        "on":  [
+                   "ちょう"
+               ],
+        "radicals":  [
+                         "鳥"
+                     ]
+    }
+]

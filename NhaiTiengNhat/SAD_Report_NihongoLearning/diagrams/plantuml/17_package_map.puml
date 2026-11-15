@@ -1,0 +1,53 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+package "Frontend" {
+  [pages/*] as Pages
+  [css/*] as Styles
+  [js/auth.js + admin-guard.js] as AuthUI
+  [js/lessons, exercises, vocabulary, grammar, kanji] as LearningUI
+  [js/courses, payments, document-reader] as CommerceUI
+}
+package "Backend" {
+  [server.js] as Server
+  [routes/*] as Routes
+  [controllers/*] as Controllers
+  [middleware/auth + validate] as Middleware
+  [utils/*] as Utils
+  [config/database.js] as DBConfig
+}
+package "Persistence and assets" {
+  [database/schema.sql + seed.sql] as SQL
+  [uploads/videos + documents] as Uploads
+}
+Pages --> Styles
+Pages --> AuthUI
+Pages --> LearningUI
+Pages --> CommerceUI
+LearningUI --> Routes
+CommerceUI --> Routes
+Server --> Routes
+Routes --> Middleware
+Routes --> Controllers
+Controllers --> Utils
+Controllers --> DBConfig
+DBConfig --> SQL
+Controllers --> Uploads
+@enduml

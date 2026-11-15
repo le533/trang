@@ -1,0 +1,40 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+start
+:Chọn khóa học trả phí;
+:Backend kiểm tra đăng nhập, giá và quyền hiện có;
+:Tạo payment order ở trạng thái pending;
+:Ký tham số và chuyển tới VNPay Sandbox;
+if (VNPay chấp nhận website?) then (Có)
+  :Học viên thanh toán trong Sandbox;
+  :VNPay gọi IPN HTTPS;
+  :Backend kiểm tra chữ ký, mã merchant, số tiền, order;
+  if (IPN hợp lệ và mã 00?) then (Có)
+    :Transaction cập nhật paid;
+    :Tạo hoặc kích hoạt course subscription;
+  else (Không)
+    :Ghi nhận giao dịch thất bại / từ chối;
+  endif
+else (Không)
+  :Hiển thị lỗi cấu hình/phê duyệt Sandbox;
+endif
+:Trang trả về hỏi trạng thái order từ backend;
+stop
+@enduml

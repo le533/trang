@@ -1,0 +1,42 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+participant "VNPay Sandbox" as VNP
+participant "GET /api/payments/vnpay/ipn" as API
+participant paymentsController as C
+database MySQL as DB
+VNP -> API : query có SecureHash
+API -> C : confirmIpn()
+C -> C : xác minh SecureHash + TmnCode
+alt chữ ký sai
+  C --> VNP : RspCode 97
+else chữ ký đúng
+  C -> DB : BEGIN; khóa order theo orderRef
+  C -> C : đối chiếu amount và response code
+  alt mã giao dịch 00 và amount đúng
+    C -> DB : update paid + transaction metadata
+    C -> DB : upsert active subscription
+    C -> DB : COMMIT
+    C --> VNP : RspCode 00
+  else order/amount/trạng thái sai
+    C -> DB : ROLLBACK hoặc ghi failed
+    C --> VNP : mã lỗi tương ứng
+  end
+end
+@enduml

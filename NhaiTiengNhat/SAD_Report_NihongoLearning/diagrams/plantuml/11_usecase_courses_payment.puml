@@ -1,0 +1,44 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as U
+actor "VNPay Sandbox" as V
+rectangle "Khóa học và thanh toán" {
+  usecase "Xem danh sách khóa học" as List
+  usecase "Xem khóa học đang sở hữu" as Mine
+  usecase "Tạo đơn hàng" as Order
+  usecase "Ký tham số VNPay" as Sign
+  usecase "Thanh toán tại cổng Sandbox" as Pay
+  usecase "Nhận IPN và xác thực chữ ký" as IPN
+  usecase "Đối chiếu order / số tiền / merchant" as Verify
+  usecase "Kích hoạt subscription" as Enroll
+  usecase "Tra cứu trạng thái đơn hàng" as Status
+}
+U --> List
+U --> Mine
+U --> Order
+U --> Pay
+U --> Status
+V --> IPN
+Order ..> Sign : <<include>>
+Order ..> Pay : <<include>>
+IPN ..> Verify : <<include>>
+IPN ..> Enroll : <<extend>>
+@enduml

@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <meta name="description" content="Giới thiệu về Nihongo Learning – nền tảng học tiếng Nhật theo lộ trình JLPT từ N5 đến N1 với bài học, từ vựng, Kanji và ngữ pháp." />
+    <meta property="og:title" content="Về Nihongo Learning | Nihongo Learning" />
+    <meta property="og:description" content="Tìm hiểu về Nihongo Learning và lộ trình học tiếng Nhật hiệu quả từ N5 đến N1." />
+    <meta property="og:type" content="website" />
+    <title>Về Nihongo Learning | Nihongo Learning</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2327675d'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='42' fill='white'%3Eあ%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/learning-content.css" />
+    <style>
+      /* ── Page-intro ─────────────────────────────────────────── */
+      .about-intro {
+        padding-block: 56px 48px;
+        border-bottom: 1px solid var(--color-border);
+        background: #f0f4ef;
+      }
+
+      .about-intro-inner {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 0.75fr;
+        gap: 72px;
+      }
+
+      .about-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 18px;
+        color: var(--color-primary);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .about-eyebrow span {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        background: var(--color-accent);
+      }
+
+      .about-intro h1 {
+        margin: 0 0 14px;
+        font-family: var(--font-display);
+        font-size: 46px;
+        font-weight: 600;
+        line-height: 1.18;
+      }
+
+      .about-intro-lead {
+        max-width: 540px;
+        margin: 0;
+        color: var(--color-muted);
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .about-stat-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .about-stat {
+        padding: 22px 20px;
+        border: 1px solid #d5e1d9;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .about-stat-number {
+        display: block;
+        color: var(--color-primary-dark);
+        font-family: var(--font-display);
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .about-stat-label {
+        display: block;
+        margin-top: 6px;
+        color: var(--color-muted);
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      /* ── Mission ─────────────────────────────────────────────── */
+      .about-mission {
+        padding-block: 80px;
+        background: #fff;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .mission-layout {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+      }
+
+      .mission-copy h2 {
+        margin: 10px 0 18px;
+        font-family: var(--font-display);
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      .mission-copy p {
+        margin: 0 0 14px;
+        color: var(--color-muted);
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .mission-copy p:last-child { margin-bottom: 0; }
+
+      .mission-values {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .value-item {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        align-items: start;
+        padding: 20px;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        background: var(--color-paper);
+      }
+
+      .value-icon {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border-radius: 8px;
+        background: #e7f0e9;
+        color: var(--color-primary-dark);
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      .value-icon.icon-accent { background: var(--color-yellow-soft); color: #8a5c1f; }
+      .value-icon.icon-blue   { background: var(--color-blue-soft);   color: #456473; }
+
+      .value-item h3 {
+        margin: 0 0 4px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .value-item p {
+        margin: 0;
+        color: var(--color-muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      /* ── Lộ trình ─────────────────────────────────────────────── */
+      .about-roadmap {
+        padding-block: 80px;
+        background: #204f47;
+        color: #f8faf7;
+      }
+
+      .roadmap-heading h2 {
+        margin: 10px 0 10px;
+        font-family: var(--font-display);
+        font-size: 32px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .roadmap-heading p {
+        margin: 0 0 48px;
+        color: #d2e0d9;
+        font-size: 15px;
+        max-width: 540px;
+      }
+
+      .roadmap-heading .section-kicker { color: #dcb66f; }
+
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+      }
+
+      .roadmap-card {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 20px;
+        border: 1px solid #3a6e64;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.05);
+        transition: background 180ms ease, border-color 180ms ease;
+      }
+
+      .roadmap-card:hover {
+        background: rgba(255,255,255,0.1);
+        border-color: #69a898;
+      }
+
+      .roadmap-level {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.12);
+        color: #e0bc78;
+        font-size: 15px;
+        font-weight: 900;
+        margin-bottom: 16px;
+      }
+
+      .roadmap-card h3 {
+        margin: 0 0 6px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .roadmap-card p {
+        margin: 0 0 auto;
+        color: #c0d8d0;
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .roadmap-card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 16px;
+      }
+
+      .roadmap-tag {
+        padding: 3px 8px;
+        border-radius: 4px;
+        background: rgba(255,255,255,0.1);
+        color: #d2e0d9;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .roadmap-tag.free {
+        background: rgba(39,103,93,0.5);
+        color: #a8e6de;
+      }
+
+      /* ── FAQ ─────────────────────────────────────────────────── */
+      .about-faq {
+        padding-block: 80px;
+        background: #fbfcfa;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .faq-layout {
+        display: grid;
+        grid-template-columns: 0.75fr 1fr;
+        gap: 72px;
+        align-items: start;
+      }
+
+      .faq-intro h2 {
+        margin: 10px 0 14px;
+        font-family: var(--font-display);
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      .faq-intro p {
+        color: var(--color-muted);
+        font-size: 14px;
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      details.faq-item {
+        border: 1px solid var(--color-border);
+        border-radius: 7px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      details.faq-item + details.faq-item { margin-top: 8px; }
+
+      details.faq-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 18px 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+        list-style: none;
+        user-select: none;
+      }
+
+      details.faq-item summary::-webkit-details-marker { display: none; }
+
+      details.faq-item summary::after {
+        content: '+';
+        flex-shrink: 0;
+        color: var(--color-primary);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+        transition: transform 200ms ease;
+      }
+
+      details.faq-item[open] summary::after { transform: rotate(45deg); }
+
+      .faq-answer {
+        padding: 0 20px 18px;
+        color: var(--color-muted);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      /* ── CTA bottom ─────────────────────────────────────────── */
+      .about-cta {
+        padding-block: 56px;
+        background: #a86f32;
+        color: #fff;
+      }
+
+      .about-cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .about-cta .section-kicker { color: #fae6c3; }
+
+      .about-cta h2 {
+        margin: 10px 0 0;
+        font-family: var(--font-display);
+        font-size: 30px;
+        font-weight: 600;
+        max-width: 600px;
+      }
+
+      /* ── Responsive ──────────────────────────────────────────── */
+      @media (max-width: 900px) {
+        .about-intro-inner,
+        .mission-layout,
+        .faq-layout { grid-template-columns: 1fr; gap: 40px; }
+        .about-stat-box { grid-template-columns: repeat(2, 1fr); }
+        .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+        .about-intro h1 { font-size: 34px; }
+        .about-cta-inner { flex-direction: column; align-items: flex-start; }
+      }
+
+      @media (max-width: 540px) {
+        .roadmap-grid { grid-template-columns: 1fr; }
+        .about-stat-box { grid-template-columns: 1fr; }
+      }
+    </style>
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/nav-mobile.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <!-- ── Header ─────────────────────────────────────────────── -->
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="../../index.html" aria-label="Nihongo Learning - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../../index.html">Trang chủ</a>
+            <a class="navigation-link" href="../kanji/index.html">Kanji</a>
+            <a class="navigation-link" href="../vocabulary/index.html">Từ vựng</a>
+            <a class="navigation-link" href="../grammar/index.html">Ngữ pháp</a>
+            <a class="navigation-link" href="../lessons/index.html">Bài học</a>
+            <a class="navigation-link" href="../exercises/index.html">Bài tập</a>
+            <a class="navigation-link" href="../training/index.html">Khóa học</a>
+            <a class="navigation-link" href="../resources/index.html">Thư viện</a>
+          </nav>
+          <div class="account-links" data-auth-ui
+            data-login-href="../auth/login.html"
+            data-register-href="../auth/register.html"
+            data-dashboard-href="../dashboard.html"
+            data-admin-dashboard-href="../admin/index.html"
+            data-profile-href="../auth/profile.html"
+            data-home-href="../../index.html"></div>
+        </div>
+      </header>
+
+      <main id="main-content">
+
+        <!-- ── Intro hero ─────────────────────────────────────────── -->
+        <section class="about-intro" aria-labelledby="about-title">
+          <div class="container about-intro-inner">
+            <div>
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../index.html">Trang chủ</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Về website</span>
+              </nav>
+              <p class="about-eyebrow"><span aria-hidden="true"></span>NIHONGO LEARNING</p>
+              <h1 id="about-title">Học tiếng Nhật — đúng cách, đúng nhịp.</h1>
+              <p class="about-intro-lead">
+                Nihongo Learning xây dựng lộ trình học tiếng Nhật rõ ràng từ N5 đến N1, kết hợp từ vựng, Kanji, ngữ pháp và bài tập trong một nền tảng thống nhất. Mỗi nội dung được chọn lọc để học viên tiến bộ bền vững, không bị lạc hướng.
+              </p>
+            </div>
+            <div class="about-stat-box" aria-label="Số liệu thống kê">
+              <div class="about-stat">
+                <span class="about-stat-number">118+</span>
+                <span class="about-stat-label">Kanji N5 có sẵn</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-number">5</span>
+                <span class="about-stat-label">Lộ trình JLPT</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-number">N5→N1</span>
+                <span class="about-stat-label">Lộ trình đầy đủ</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-number">∞</span>
+                <span class="about-stat-label">Luyện tập mỗi ngày</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Mission ───────────────────────────────────────────── -->
+        <section class="about-mission" aria-labelledby="mission-title">
+          <div class="container mission-layout">
+            <div class="mission-copy">
+              <p class="section-kicker">SỨ MỆNH</p>
+              <h2 id="mission-title">Một nơi học tiếng Nhật thực sự hiệu quả.</h2>
+              <p>
+                Chúng tôi tin rằng học ngoại ngữ không cần phức tạp. Nihongo Learning được thiết kế để học viên có thể bắt đầu ngay hôm nay, với nội dung được tổ chức theo lộ trình rõ ràng và phù hợp với từng cấp độ JLPT.
+              </p>
+              <p>
+                Mỗi bài học, mỗi từ vựng, mỗi mẫu ngữ pháp đều được chọn lọc kỹ lưỡng để xây dựng nền tảng vững chắc, giúp bạn tự tin sử dụng tiếng Nhật trong thực tế.
+              </p>
+              <p>
+                Từ người mới bắt đầu đến học viên đang ôn JLPT, Nihongo Learning đồng hành cùng bạn ở mỗi bước trên hành trình đó.
+              </p>
+            </div>
+            <div class="mission-values" aria-label="Giá trị cốt lõi">
+              <div class="value-item">
+                <span class="value-icon" aria-hidden="true">学</span>
+                <div>
+                  <h3>Học có lộ trình</h3>
+                  <p>Nội dung được sắp xếp từ cơ bản đến nâng cao theo đúng khung JLPT, giúp bạn không bao giờ bị lạc hướng.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon icon-accent" aria-hidden="true">語</span>
+                <div>
+                  <h3>Ngữ cảnh thực tế</h3>
+                  <p>Mỗi từ vựng và mẫu câu đều có ví dụ thực tế, giúp bạn hiểu và nhớ lâu hơn so với học thuần lý thuyết.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <span class="value-icon icon-blue" aria-hidden="true">練</span>
+                <div>
+                  <h3>Luyện tập đều đặn</h3>
+                  <p>Bài tập và ôn tập được thiết kế để giúp bạn củng cố kiến thức sau mỗi bài học, tránh quên lãng theo thời gian.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Lộ trình học ───────────────────────────────────────── -->
+        <section class="about-roadmap" aria-labelledby="roadmap-title">
+          <div class="container">
+            <div class="roadmap-heading">
+              <p class="section-kicker">LỘ TRÌNH HỌC TẬP</p>
+              <h2 id="roadmap-title">Từ N5 đến N1 — từng bước một.</h2>
+              <p>Mỗi cấp độ được xây dựng độc lập nhưng liên kết chặt chẽ với nhau. Học viên có thể bắt đầu ở bất kỳ cấp nào phù hợp với trình độ hiện tại.</p>
+            </div>
+            <div class="roadmap-grid">
+              <article class="roadmap-card">
+                <span class="roadmap-level">N5</span>
+                <h3>Sơ cấp 1</h3>
+                <p>Bảng chữ Hiragana, Katakana, Kanji cơ bản và những mẫu câu giao tiếp hàng ngày đơn giản nhất.</p>
+                <div class="roadmap-card-tags">
+                  <span class="roadmap-tag free">Miễn phí</span>
+                  <span class="roadmap-tag">Kanji: 103</span>
+                  <span class="roadmap-tag">Từ vựng: 800+</span>
+                </div>
+              </article>
+              <article class="roadmap-card">
+                <span class="roadmap-level">N4</span>
+                <h3>Sơ cấp 2</h3>
+                <p>Mở rộng từ vựng, nắm vững ngữ pháp cơ bản và bắt đầu đọc hiểu các đoạn văn ngắn trong sinh hoạt hàng ngày.</p>
+                <div class="roadmap-card-tags">
+                  <span class="roadmap-tag">Kanji: 300</span>
+                  <span class="roadmap-tag">Từ vựng: 1500+</span>
+                </div>
+              </article>
+              <article class="roadmap-card">
+                <span class="roadmap-level">N3</span>
+                <h3>Trung cấp</h3>
+                <p>Hiểu được các tình huống thực tế, đọc tin tức đơn giản và giao tiếp thông thường với người bản ngữ.</p>
+                <div class="roadmap-card-tags">
+                  <span class="roadmap-tag">Kanji: 650</span>
+                  <span class="roadmap-tag">Từ vựng: 3000+</span>
+                </div>
+              </article>
+              <article class="roadmap-card">
+                <span class="roadmap-level">N2</span>
+                <h3>Trung cao cấp</h3>
+                <p>Đọc hiểu báo chí, văn bản chuyên ngành. Nghe và hiểu hội thoại với tốc độ tự nhiên trong nhiều ngữ cảnh.</p>
+                <div class="roadmap-card-tags">
+                  <span class="roadmap-tag">Kanji: 1000</span>
+                  <span class="roadmap-tag">Từ vựng: 6000+</span>
+                </div>
+              </article>
+              <article class="roadmap-card">
+                <span class="roadmap-level">N1</span>
+                <h3>Nâng cao</h3>
+                <p>Thành thạo tiếng Nhật ở mức độ học thuật và chuyên nghiệp. Hiểu văn học, tài liệu chuyên sâu và ngôn ngữ văn phong cao.</p>
+                <div class="roadmap-card-tags">
+                  <span class="roadmap-tag">Kanji: 2000+</span>
+                  <span class="roadmap-tag">Từ vựng: 10000+</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── FAQ ───────────────────────────────────────────────── -->
+        <section class="about-faq" aria-labelledby="faq-title">
+          <div class="container faq-layout">
+            <div class="faq-intro">
+              <p class="section-kicker">CÂU HỎI THƯỜNG GẶP</p>
+              <h2 id="faq-title">Bạn đang thắc mắc điều gì?</h2>
+              <p>Những câu hỏi phổ biến nhất từ học viên mới bắt đầu hành trình học tiếng Nhật cùng Nihongo Learning.</p>
+            </div>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Tôi nên bắt đầu từ cấp độ nào?</summary>
+                <p class="faq-answer">Nếu bạn chưa biết gì về tiếng Nhật, hãy bắt đầu từ N5. Nếu bạn đã có nền tảng, bạn có thể thử luyện tập N4 hoặc N3 để xác định cấp độ phù hợp trước khi đăng ký khóa học.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Khóa học N5 có thực sự miễn phí không?</summary>
+                <p class="faq-answer">Có. Toàn bộ nội dung N5 — bài học, từ vựng, Kanji, ngữ pháp và bài tập — đều miễn phí. Các khóa N4 đến N1 yêu cầu đăng ký và thanh toán để mở khóa nội dung nâng cao.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Tôi cần học bao lâu để đạt N5?</summary>
+                <p class="faq-answer">Trung bình khoảng 150–200 giờ học. Nếu bạn dành 30–45 phút mỗi ngày, bạn có thể đạt nền tảng N5 sau khoảng 6–9 tháng. Điều quan trọng là học đều đặn hơn là học nhiều một lần.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Có thể học trên điện thoại không?</summary>
+                <p class="faq-answer">Có. Nihongo Learning được thiết kế responsive, hoạt động tốt trên mọi thiết bị từ điện thoại, máy tính bảng đến máy tính. Bạn không cần cài thêm ứng dụng nào.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Nội dung học có cập nhật thường xuyên không?</summary>
+                <p class="faq-answer">Có. Chúng tôi liên tục bổ sung bài học mới, bài tập và tài liệu tham khảo. Học viên đã đăng ký sẽ tự động được truy cập nội dung mới trong thời hạn gói học.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Làm sao theo dõi tiến độ học tập của mình?</summary>
+                <p class="faq-answer">Sau khi đăng nhập, bạn có thể xem tiến độ học tập trong trang Dashboard. Mỗi bài học hoàn thành đều được ghi nhận và bạn có thể xem lại lịch sử học tập của mình bất kỳ lúc nào.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── CTA cuối trang ──────────────────────────────────────── -->
+        <section class="about-cta" aria-labelledby="about-cta-title">
+          <div class="container about-cta-inner">
+            <div>
+              <p class="section-kicker">BẮT ĐẦU NGAY HÔM NAY</p>
+              <h2 id="about-cta-title">Hành trình tiếng Nhật của bạn bắt đầu từ một bước nhỏ.</h2>
+            </div>
+            <div class="hero-actions">
+              <a class="button button-light" href="../training/index.html">Xem khóa học <span aria-hidden="true">→</span></a>
+              <a class="button button-light" href="../lessons/index.html">Bắt đầu học <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ── Footer ─────────────────────────────────────────────── -->
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-main">
+            <div class="footer-about">
+              <a class="footer-brand" href="../../index.html">
+                <span class="brand-mark" aria-hidden="true">あ</span> NIHONGO LEARNING
+              </a>
+              <p>Một góc nhỏ để bạn học, luyện tập và tiến gần hơn tới tiếng Nhật mỗi ngày.</p>
+            </div>
+            <nav class="footer-navigation" aria-label="Điều hướng website">
+              <h2>Khám phá</h2>
+              <a href="../../index.html">Trang chủ</a>
+              <a href="../kanji/index.html">Kanji</a>
+              <a href="../vocabulary/index.html">Từ vựng</a>
+              <a href="../training/index.html">Khóa học</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Học tiếng Nhật">
+              <h2>Học tiếng Nhật</h2>
+              <a href="../grammar/index.html">Ngữ pháp</a>
+              <a href="../lessons/index.html">Bài học</a>
+              <a href="../exercises/index.html">Bài tập</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Thông tin">
+              <h2>Thông tin</h2>
+              <a href="index.html" aria-current="page">Về website</a>
+              <a href="../resources/index.html">Thư viện tài liệu</a>
+              <a href="../auth/login.html">Tài khoản</a>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 Nihongo Learning. All rights reserved.</p>
+            <p>Học một chút, vững thêm mỗi ngày.</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>

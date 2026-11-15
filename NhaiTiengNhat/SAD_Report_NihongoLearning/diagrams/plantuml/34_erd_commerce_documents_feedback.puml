@@ -1,0 +1,88 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+entity users  {
+   * id : BIGINT <<PK>> 
+}
+entity courses  {
+   * id : BIGINT <<PK>>
+  --
+  price_vnd : DECIMAL
+  duration_days : INT 
+}
+entity payment_orders  {
+   * id : BIGINT <<PK>>
+  --
+  user_id : BIGINT <<FK>>
+  course_id : BIGINT <<FK>>
+  order_ref : VARCHAR <<UQ>>
+  amount_vnd : DECIMAL
+  status : ENUM 
+}
+entity course_subscriptions  {
+   * id : BIGINT <<PK>>
+  --
+  user_id : BIGINT <<FK>>
+  course_id : BIGINT <<FK>>
+  payment_order_id : BIGINT <<FK>>
+  status : ENUM
+  ends_at : DATETIME 
+}
+entity video_assets  {
+   * id : CHAR(36) <<PK>>
+  --
+  file_name : VARCHAR
+  preview_file_name : VARCHAR
+  duration_seconds : DECIMAL 
+}
+entity learning_documents  {
+   * id : CHAR(36) <<PK>>
+  --
+  course_id : BIGINT <<FK>>
+  file_type : ENUM
+  is_published : BOOLEAN 
+}
+entity document_progress  {
+   * id : BIGINT <<PK>>
+  --
+  user_id : BIGINT <<FK>>
+  document_id : CHAR(36) <<FK>>
+  page_number : INT
+  scroll_ratio : DECIMAL 
+}
+entity learner_feedback  {
+   * id : BIGINT <<PK>>
+  --
+  user_id : BIGINT <<FK>>
+  course_id : BIGINT <<FK>>
+  rating : TINYINT
+  is_verified : BOOLEAN
+  status : ENUM 
+}
+users ||--o{ payment_orders
+courses ||--o{ payment_orders
+users ||--o{ course_subscriptions
+courses ||--o{ course_subscriptions
+payment_orders ||--o| course_subscriptions
+courses |o--o{ learning_documents
+users ||--o{ document_progress
+learning_documents ||--o{ document_progress
+users ||--o{ learner_feedback
+courses |o--o{ learner_feedback
+@enduml

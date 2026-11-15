@@ -1,0 +1,39 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+actor Learner
+actor Admin
+participant "Feedback UI" as UI
+participant "Feedback API" as API
+participant feedbackController as C
+database MySQL as DB
+Learner -> UI : gửi rating, message, courseId
+UI -> API : POST /feedback + JWT
+API -> C : submit()
+C -> DB : kiểm tra mua khóa / lesson progress / attempt
+C -> DB : insert pending feedback
+Admin -> UI : mở trang kiểm duyệt
+UI -> API : GET /feedback/moderation + JWT
+API -> C : moderationQueue()
+C -> DB : select pending rows
+Admin -> UI : duyệt hoặc từ chối
+UI -> API : PUT /feedback/:id/moderation
+API -> C : kiểm tra trạng thái và is_verified
+C -> DB : update approved / rejected
+@enduml

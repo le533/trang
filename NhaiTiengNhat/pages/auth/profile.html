@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f3" />
+    <title>Hồ sơ cá nhân | Nihongo Learning</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/auth.css" />
+    <script src="../../js/auth.js" defer></script>
+    <script src="../../js/nav-mobile.js" defer></script>
+  </head>
+  <body
+    data-require-login="true"
+    data-login-href="login.html"
+    data-home-href="../../index.html"
+    data-dashboard-href="../dashboard.html"
+  >
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a
+            class="brand"
+            href="../../index.html"
+            aria-label="Nihongo Learning - Trang chủ"
+          >
+            <span class="brand-mark" aria-hidden="true">あ</span>
+            <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+          </a>
+          <nav class="site-navigation" aria-label="Điều hướng chính">
+            <a class="navigation-link" href="../../index.html">Trang chủ</a>
+            <a class="navigation-link" href="../kanji/index.html">Kanji</a>
+            <a class="navigation-link" href="../vocabulary/index.html">Từ vựng</a>
+            <a class="navigation-link" href="../grammar/index.html">Ngữ pháp</a>
+            <a class="navigation-link" href="../lessons/index.html">Bài học</a>
+            <a class="navigation-link" href="../exercises/index.html">Bài tập</a>
+            <a class="navigation-link" href="../training/index.html">Khóa học</a>
+            <a class="navigation-link" href="../resources/index.html">Thư viện</a>
+          </nav>
+          <div
+            class="account-links"
+            data-auth-ui
+            data-login-href="login.html"
+            data-register-href="register.html"
+            data-dashboard-href="../dashboard.html"
+            data-profile-href="profile.html"
+            data-home-href="../../index.html"
+          >
+            <a class="button button-login" href="login.html">Đăng nhập</a>
+            <a class="button button-register" href="register.html">Đăng ký</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content" class="auth-main">
+        <section
+          class="auth-card auth-card-wide"
+          aria-labelledby="profile-title"
+        >
+          <a class="auth-back-link" href="../dashboard.html">← Trang học của tôi</a>
+          <div class="auth-heading">
+            <p class="section-kicker">TÀI KHOẢN HỌC TẬP</p>
+            <h1 id="profile-title">Hồ sơ cá nhân</h1>
+            <p>Thông tin cơ bản của tài khoản.</p>
+          </div>
+          <dl class="profile-summary-grid">
+            <div class="profile-detail">
+              <dt>Họ và tên</dt>
+              <dd id="profile-full-name"></dd>
+            </div>
+            <div class="profile-detail">
+              <dt>Tên đăng nhập</dt>
+              <dd id="profile-username"></dd>
+            </div>
+            <div class="profile-detail">
+              <dt>Email</dt>
+              <dd id="profile-email"></dd>
+            </div>
+            <div class="profile-detail">
+              <dt>Vai trò</dt>
+              <dd id="profile-role"></dd>
+            </div>
+            <div class="profile-detail">
+              <dt>Ngày tạo tài khoản</dt>
+              <dd id="profile-created-at"></dd>
+            </div>
+          </dl>
+          <div class="profile-actions">
+            <button
+              class="button button-secondary"
+              id="edit-profile-button"
+              type="button"
+            >
+              Chỉnh sửa thông tin
+            </button>
+            <button class="button button-login" type="button" data-auth-logout>
+              Đăng xuất
+            </button>
+          </div>
+          <form
+            class="profile-edit-form"
+            id="profile-edit-form"
+            hidden
+            novalidate
+          >
+            <div class="auth-field">
+              <label for="profile-edit-full-name">Họ và tên</label>
+              <input
+                class="auth-input"
+                id="profile-edit-full-name"
+                name="fullName"
+                type="text"
+                autocomplete="name"
+              />
+              <span
+                class="field-error"
+                data-error-for="fullName"
+                aria-live="polite"
+              ></span>
+            </div>
+            <div class="auth-field">
+              <label for="profile-edit-email">Email</label>
+              <input
+                class="auth-input"
+                id="profile-edit-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+              />
+              <span
+                class="field-error"
+                data-error-for="email"
+                aria-live="polite"
+              ></span>
+            </div>
+            <p class="form-notice" role="status" aria-live="polite"></p>
+            <div class="profile-edit-actions">
+              <button class="button button-primary" type="submit">
+                Lưu thay đổi
+              </button>
+              <button
+                class="button button-secondary"
+                id="cancel-profile-edit"
+                type="button"
+              >
+                Hủy
+              </button>
+            </div>
+          </form>
+          <p class="auth-security-note">
+            Thông tin hồ sơ được lưu trên máy chủ. Thay đổi có hiệu lực ngay sau khi lưu.
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-main">
+            <div class="footer-about">
+              <a class="footer-brand" href="../../index.html"
+                ><span class="brand-mark" aria-hidden="true">あ</span> NIHONGO
+                LEARNING</a
+              >
+              <p>
+                Một góc nhỏ để bạn học, luyện tập và tiến gần hơn tới tiếng Nhật
+                mỗi ngày.
+              </p>
+            </div>
+            <nav class="footer-navigation" aria-label="Điều hướng website">
+              <h2>Khám phá</h2>
+              <a href="../../index.html">Trang chủ</a>
+              <a href="../kanji/index.html">Kanji</a>
+              <a href="../vocabulary/index.html">Từ vựng</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Chủ đề học tập">
+              <h2>Học tiếng Nhật</h2>
+              <a href="../grammar/index.html">Ngữ pháp</a>
+              <a href="../lessons/index.html">Bài học</a>
+              <a href="../exercises/index.html">Bài tập</a>
+            </nav>
+            <nav class="footer-navigation" aria-label="Tài khoản">
+              <h2>Tài khoản</h2>
+              <a href="../dashboard.html">Trang học của tôi</a>
+              <a href="profile.html" aria-current="page">Hồ sơ cá nhân</a>
+              <a href="login.html" data-auth-logout>Đăng xuất</a>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2026 Nihongo Learning. All rights reserved.</p>
+            <p>Học một chút, vững thêm mỗi ngày.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

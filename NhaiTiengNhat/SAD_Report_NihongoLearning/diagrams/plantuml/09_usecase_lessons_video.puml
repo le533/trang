@@ -1,0 +1,45 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+actor "Học viên" as U
+actor "Quản trị viên" as A
+rectangle "Bài học và video" {
+  usecase "Tìm và lọc bài học" as List
+  usecase "Xem chi tiết bài học" as Detail
+  usecase "Kiểm tra quyền khóa học" as Entitlement
+  usecase "Phát video" as Play
+  usecase "Tua lùi / tiến 10 giây" as Seek
+  usecase "Xem preview tối đa 5 phút" as Preview
+  usecase "Đánh dấu đang học / hoàn thành" as Progress
+  usecase "Tạo / sửa / xóa bài học" as CRUD
+  usecase "Tải video MP4/WebM lên máy chủ" as Upload
+  usecase "Tạo preview bằng FFmpeg" as Encode
+}
+U --> List
+U --> Detail
+U --> Play
+U --> Seek
+U --> Progress
+A --> CRUD
+A --> Upload
+Play ..> Entitlement : <<include>>
+Play ..> Preview : <<extend>>
+Upload ..> Encode : <<include>>
+@enduml

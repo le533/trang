@@ -1,0 +1,37 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+left to right direction
+node "Máy người dùng" {
+  artifact "Browser\nHTML/CSS/JS"
+}
+node "Máy chủ ứng dụng" {
+  artifact "Node.js + Express\n:3000"
+  folder "backend/uploads\nvideo, preview, documents"
+}
+database "MySQL 8\n127.0.0.1:3306" as DB
+cloud "VNPay Sandbox\nInternet" as VNP
+cloud "HTTPS public URL / tunnel\nrequired for IPN" as PUB
+"Browser\nHTML/CSS/JS" --> "Node.js + Express\n:3000" : HTTP in local dev / HTTPS deploy
+"Node.js + Express\n:3000" --> DB : MySQL protocol
+"Node.js + Express\n:3000" --> "video, preview, documents" : filesystem
+"Node.js + Express\n:3000" --> VNP : payment redirect
+VNP --> PUB : HTTPS IPN
+PUB --> "Node.js + Express\n:3000" : reverse proxy
+@enduml

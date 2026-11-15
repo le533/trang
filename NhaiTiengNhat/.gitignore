@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+!backend/.env.example
+backend/.env
+backend/node_modules/
+/node_modules/
+backend/uploads/videos/*
+!backend/uploads/videos/.gitkeep
+/public/

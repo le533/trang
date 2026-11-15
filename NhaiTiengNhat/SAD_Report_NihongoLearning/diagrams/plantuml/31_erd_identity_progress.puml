@@ -1,0 +1,69 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+entity roles {
+  * id : TINYINT <<PK>>
+  --
+  name : VARCHAR <<UQ>>
+}
+entity users {
+  * id : BIGINT <<PK>>
+  --
+  role_id : TINYINT <<FK>>
+  username : VARCHAR <<UQ>>
+  email : VARCHAR <<UQ>>
+  password_hash : VARCHAR
+  status : ENUM
+}
+entity lessons  {
+   * id : BIGINT <<PK>> 
+}
+entity lesson_progress {
+  * id : BIGINT <<PK>>
+  --
+  user_id : BIGINT <<FK>>
+  lesson_id : BIGINT <<FK>>
+  status : ENUM
+  completed_at : DATETIME
+}
+entity exercises  {
+   * id : BIGINT <<PK>> 
+}
+entity exercise_attempts {
+  * id : BIGINT <<PK>>
+  --
+  user_id : BIGINT <<FK>>
+  exercise_id : BIGINT <<FK>>
+  attempt_number : INT
+  score : DECIMAL
+}
+entity user_learning_stats {
+  * user_id : BIGINT <<PK,FK>>
+  --
+  completed_lessons : INT
+  accuracy : DECIMAL
+  streak_days : INT
+}
+roles ||--o{ users
+users ||--o{ lesson_progress
+lessons ||--o{ lesson_progress
+users ||--o{ exercise_attempts
+exercises ||--o{ exercise_attempts
+users ||--o| user_learning_stats
+@enduml

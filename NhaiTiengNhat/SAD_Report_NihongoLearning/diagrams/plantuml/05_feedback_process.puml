@@ -1,0 +1,36 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #236B61
+skinparam ArrowThickness 1.1
+skinparam BorderColor #315C55
+skinparam ActorBorderColor #315C55
+skinparam ActorFontColor #203D39
+skinparam UsecaseBorderColor #315C55
+skinparam UsecaseBackgroundColor #F1F7F3
+skinparam ComponentBorderColor #315C55
+skinparam ComponentBackgroundColor #F1F7F3
+skinparam ClassBorderColor #315C55
+skinparam ClassBackgroundColor #F8FAF8
+skinparam DatabaseBorderColor #315C55
+skinparam DatabaseBackgroundColor #F1F7F3
+skinparam linetype ortho
+start
+:Học viên nhập đánh giá 1–5 sao và nội dung;
+:Backend xác minh hoạt động học / thanh toán;
+:Lưu feedback ở trạng thái pending;
+:Quản trị mở hàng chờ kiểm duyệt;
+if (Feedback đã xác minh?) then (Có)
+  if (Nội dung được chấp nhận?) then (Duyệt)
+    :Cập nhật approved;
+    :Hiển thị trong khu vực nhận xét công khai;
+  else (Từ chối)
+    :Cập nhật rejected;
+  endif
+else (Không)
+  :Không cho công khai;
+endif
+stop
+@enduml

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f7f3" />
+  <title>Ngữ pháp tiếng Nhật N5–N1 | Nihongo Learning</title>
+  <meta name="description" content="Tra cứu cấu trúc ngữ pháp tiếng Nhật theo cấp độ JLPT, học qua ví dụ có bản dịch, nghe phát âm bằng giọng đọc trên trình duyệt và xem video bài giảng." />
+  <meta name="keywords" content="ngữ pháp tiếng Nhật, JLPT N5 N4 N3, cấu trúc câu Nhật, học tiếng Nhật" />
+  <meta property="og:title" content="Ngữ pháp tiếng Nhật | Nihongo Learning" />
+  <meta property="og:description" content="Học cấu trúc ngữ pháp tiếng Nhật qua ví dụ, phát âm và video do người dạy cấu hình." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/header.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/footer.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+  <link rel="stylesheet" href="../../css/learning-content.css" />
+  <link rel="stylesheet" href="../../css/grammar.css" />
+  <script src="../../js/auth.js" defer></script>
+  <script src="../../js/nav-mobile.js" defer></script>
+  <script src="../../js/admin-guard.js" defer></script>
+  <script src="../../js/video-upload.js" defer></script>
+  <script src="../../js/grammar.js" defer></script>
+</head>
+<body>
+<div class="site-shell">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html" aria-label="Nihongo Learning - Trang chủ">
+        <span class="brand-mark" aria-hidden="true">あ</span>
+        <span class="brand-name">NIHONGO <span>LEARNING</span></span>
+      </a>
+      <nav class="site-navigation" aria-label="Điều hướng chính">
+        <a class="navigation-link" href="../../index.html">Trang chủ</a>
+        <a class="navigation-link" href="../kanji/index.html">Kanji</a>
+        <a class="navigation-link" href="../vocabulary/index.html">Từ vựng</a>
+        <a class="navigation-link is-active" href="index.html" aria-current="page">Ngữ pháp</a>
+        <a class="navigation-link" href="../lessons/index.html">Bài học</a>
+        <a class="navigation-link" href="../exercises/index.html">Bài tập</a>
+        <a class="navigation-link" href="../training/index.html">Khóa học</a>
+        <a class="navigation-link" href="../resources/index.html">Thư viện</a>
+      </nav>
+      <div class="account-links" data-auth-ui
+        data-login-href="../auth/login.html"
+        data-register-href="../auth/register.html"
+        data-dashboard-href="../dashboard.html"
+        data-admin-dashboard-href="../admin/index.html"
+        data-profile-href="../auth/profile.html"
+        data-home-href="../../index.html"></div>
+    </div>
+  </header>
+
+  <main id="main-content" class="learning-main">
+
+    <!-- Page intro -->
+    <section class="learning-page-intro" aria-labelledby="grammar-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html">Trang chủ</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Ngữ pháp</span>
+        </nav>
+        <div class="learning-heading-row">
+          <div>
+            <p class="section-kicker">CẤU TRÚC CÂU</p>
+            <h1 id="grammar-title">Ngữ pháp tiếng Nhật</h1>
+            <p class="learning-intro-copy">
+              Nắm vững mẫu câu theo cấp độ JLPT qua ví dụ thực tế, giọng đọc tiếng Nhật trên trình duyệt và video bài giảng.
+            </p>
+          </div>
+          <div class="learning-count" aria-label="Tổng ngữ pháp">
+            <span id="grammar-total">0</span>
+            <span>mẫu ngữ pháp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolbar -->
+    <section class="learning-content container" aria-label="Tra cứu ngữ pháp">
+      <div class="learning-toolbar">
+        <form class="learning-search" id="grammar-search-form" role="search">
+          <label class="visually-hidden" for="grammar-search-input">Tìm kiếm ngữ pháp</label>
+          <input type="search" id="grammar-search-input" placeholder="Tìm mẫu câu, ý nghĩa…" autocomplete="off" />
+          <button class="button button-primary" type="submit">Tìm</button>
+        </form>
+
+        <div class="level-filter-group" role="group" aria-label="Lọc theo cấp độ JLPT">
+          <button class="level-pill is-current" data-level="all" aria-pressed="true">Tất cả</button>
+          <button class="level-pill" data-level="N5" aria-pressed="false">N5</button>
+          <button class="level-pill" data-level="N4" aria-pressed="false">N4</button>
+          <button class="level-pill" data-level="N3" aria-pressed="false">N3</button>
+          <button class="level-pill" data-level="N2" aria-pressed="false">N2</button>
+          <button class="level-pill" data-level="N1" aria-pressed="false">N1</button>
+        </div>
+
+        <button class="button button-ghost icon-btn" id="clear-grammar-filters" type="button">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Xóa bộ lọc
+        </button>
+      </div>
+
+      <div class="learning-results-heading">
+        <h2>Danh sách ngữ pháp</h2>
+        <p id="grammar-grid-count" role="status" aria-live="polite">Đang tải…</p>
+      </div>
+
+      <div class="learning-grid grammar-grid" id="grammar-grid" aria-label="Danh sách ngữ pháp"></div>
+
+      <p class="learning-empty-state" id="grammar-empty-state" role="status" hidden>
+        Không tìm thấy ngữ pháp phù hợp.
+      </p>
+      <p class="learning-load-error" id="grammar-load-error" role="alert" hidden>
+        Không thể tải dữ liệu ngữ pháp.
+        <button class="button button-ghost" id="retry-grammar-load" type="button">Thử lại</button>
+      </p>
+
+      <!-- Pagination -->
+      <nav class="pagination" id="grammar-pagination" hidden aria-label="Phân trang ngữ pháp">
+        <button class="button button-ghost" id="grammar-prev-page" type="button" disabled>← Trước</button>
+        <span id="grammar-page-status" aria-live="polite"></span>
+        <button class="button button-ghost" id="grammar-next-page" type="button">Sau →</button>
+      </nav>
+    </section>
+  </main>
+
+  <!-- ── Detail dialog ──────────────────────────────────────────────────── -->
+  <dialog class="grammar-dialog" id="grammar-dialog" aria-labelledby="grammar-dialog-title" aria-modal="true">
+    <div class="grammar-dialog-inner">
+
+      <!-- Close -->
+      <button class="dialog-close-btn" id="close-grammar-detail" type="button" aria-label="Đóng">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Header -->
+      <header class="grammar-dialog-header">
+        <div class="grammar-dialog-badges" id="grammar-dialog-badges"></div>
+        <h2 class="grammar-dialog-title" id="grammar-dialog-title"></h2>
+        <div class="grammar-dialog-structure" id="grammar-dialog-structure"></div>
+        <p class="grammar-dialog-meaning" id="grammar-dialog-meaning"></p>
+      </header>
+
+      <!-- TTS pronunciation bar -->
+      <div class="tts-bar" id="grammar-tts-bar">
+        <span class="tts-label">Phát âm:</span>
+        <button class="tts-btn" id="grammar-tts-btn" type="button" title="Nghe phát âm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+            <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Nghe
+        </button>
+        <div class="tts-wave" id="grammar-tts-wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Video player -->
+      <section class="grammar-video-section" id="grammar-video-section">
+        <div class="video-section-header">
+          <h3>Video giải thích</h3>
+          <button class="button button-ghost icon-btn" id="grammar-video-toggle" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 3l14 9-14 9V3z" fill="currentColor"/>
+            </svg>
+            Xem video
+          </button>
+        </div>
+
+        <div class="video-player-wrap" id="grammar-video-wrap" hidden>
+          <div class="video-player-box" id="grammar-video-player-box">
+            <div class="video-placeholder" id="grammar-video-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 9l5 3-5 3V9z" fill="currentColor"/>
+              </svg>
+              <p>Chưa có video cho mẫu ngữ pháp này.</p>
+            </div>
+          </div>
+
+          <!-- Custom controls overlay -->
+          <div class="video-controls" id="grammar-video-controls" hidden>
+            <button class="vc-btn vc-seek-back"    id="vc-seek-back"    type="button" title="Tua lại 10s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" fill="currentColor"/>
+                <text x="8.5" y="15.5" font-size="5" fill="currentColor" font-family="sans-serif">10</text>
+              </svg>
+            </button>
+            <button class="vc-btn vc-play-pause"   id="vc-play-pause"   type="button" title="Phát/Dừng">
+              <svg class="icon-play"  width="22" height="22" viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z" fill="currentColor"/></svg>
+              <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" hidden><rect x="6"  y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+            </button>
+            <button class="vc-btn vc-seek-fwd"     id="vc-seek-fwd"     type="button" title="Tua tới 10s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 5V1l5 5-5 5V7C8.69 7 6 9.69 6 13s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z" fill="currentColor"/>
+                <text x="8.5" y="15.5" font-size="5" fill="currentColor" font-family="sans-serif">10</text>
+              </svg>
+            </button>
+            <div class="vc-progress-wrap">
+              <input class="vc-progress" id="vc-progress" type="range" min="0" max="100" value="0" aria-label="Tiến trình video" />
+            </div>
+            <span class="vc-time" id="vc-time">0:00</span>
+            <button class="vc-btn vc-mute" id="vc-mute" type="button" title="Tắt/Bật tiếng">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+                <path d="M15.54 8.46a5 5 0 010 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Examples -->
+      <section class="grammar-examples-section" id="grammar-examples-section">
+        <h3>Ví dụ</h3>
+        <div class="grammar-examples-list" id="grammar-examples-list"></div>
+      </section>
+
+      <!-- Footer actions -->
+      <footer class="grammar-dialog-footer">
+        <button class="button button-secondary" id="close-grammar-detail-footer" type="button">Đóng</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-about">
+          <a class="footer-brand" href="../../index.html">
+            <span class="brand-mark" aria-hidden="true">あ</span> NIHONGO LEARNING
+          </a>
+          <p>Một góc nhỏ để bạn học, luyện tập và tiến gần hơn tới tiếng Nhật mỗi ngày.</p>
+        </div>
+        <nav class="footer-navigation" aria-label="Điều hướng website">
+          <h2>Khám phá</h2>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="../kanji/index.html">Kanji</a>
+          <a href="../vocabulary/index.html">Từ vựng</a>
+        </nav>
+        <nav class="footer-navigation" aria-label="Học tiếng Nhật">
+          <h2>Học tiếng Nhật</h2>
+          <a href="index.html" aria-current="page">Ngữ pháp</a>
+          <a href="../lessons/index.html">Bài học</a>
+          <a href="../exercises/index.html">Bài tập</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Nihongo Learning. All rights reserved.</p>
+        <p>Học một chút, vững thêm mỗi ngày.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
