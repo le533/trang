@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const multer = require('multer');
@@ -7,13 +6,19 @@ const { adminMiddleware, authMiddleware, optionalAuth } = require('../middleware
 const { documentDirectory, list, read, streamFile, updateProgress, upload } = require('../controllers/documentsController');
 
 const router = express.Router();
+const isVercel = Boolean(process.env.VERCEL);
 const accepted = new Map([
   ['.pdf', 'application/pdf'],
   ['.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
   ['.txt', 'text/plain'],
 ]);
 const storage = multer.diskStorage({
-  destination: documentDirectory,
+  destination(req, file, callback) {
+    if (isVercel) {
+      return callback(new Error('Tải tài liệu chưa khả dụng trên Vercel.'));
+    }
+    return callback(null, documentDirectory);
+  },
   filename(req, file, callback) {
     callback(null, `${crypto.randomUUID()}${path.extname(file.originalname).toLowerCase()}`);
   },
@@ -31,6 +36,12 @@ const receiveDocument = multer({
 
 router.get('/', optionalAuth, list);
 router.post('/', adminMiddleware, (req, res, next) => {
+  if (isVercel) {
+    return res.status(503).json({
+      success: false,
+      message: 'Tải tài liệu chưa khả dụng trên Vercel vì máy chủ chưa được cấu hình lưu trữ tệp bền vững.',
+    });
+  }
   receiveDocument.single('document')(req, res, error => {
     if (error instanceof multer.MulterError) {
       return res.status(error.code === 'LIMIT_FILE_SIZE' ? 413 : 400).json({

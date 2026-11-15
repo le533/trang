@@ -5,7 +5,7 @@ const { pool } = require('../config/database');
 const { hasCourseAccess } = require('../utils/courseAccess');
 
 const documentDirectory = path.resolve(__dirname, '../uploads/documents');
-fs.mkdirSync(documentDirectory, { recursive: true });
+if (!process.env.VERCEL) fs.mkdirSync(documentDirectory, { recursive: true });
 
 async function list(req, res, next) {
   try {

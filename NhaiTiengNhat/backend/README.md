@@ -42,4 +42,4 @@ The repository root is the Vercel project root. The root `package.json` and `ver
 4. Add `VNPAY_TMN_CODE`, `VNPAY_HASH_SECRET`, `VNPAY_URL`, and `APP_PUBLIC_URL` only when configuring VNPay. Keep credentials in Vercel environment settings, not in frontend files.
 5. Redeploy after adding the environment variables and verify `/api/health`.
 
-Vercel Functions do not provide durable local file storage or the FFmpeg executables used by this project. Video and document uploads therefore need to be moved to object storage (and video processing to a compatible service) before those features can be used reliably. Existing database records remain in the external MySQL database.
+Vercel Functions do not provide durable local file storage or the FFmpeg executables used by this project. The app skips creating local upload directories on Vercel and returns `503` from video and document upload endpoints until durable object storage is configured; video processing also needs a compatible service. Existing database records remain in the external MySQL database.

@@ -11,7 +11,8 @@ const { pool } = require('../config/database');
 const router = express.Router();
 const execFileAsync = promisify(execFile);
 const videoDirectory = path.resolve(__dirname, '../uploads/videos');
-fs.mkdirSync(videoDirectory, { recursive: true });
+const isVercel = Boolean(process.env.VERCEL);
+if (!isVercel) fs.mkdirSync(videoDirectory, { recursive: true });
 
 const videoTypes = new Map([
   ['.mp4', 'video/mp4'],
@@ -19,7 +20,12 @@ const videoTypes = new Map([
 ]);
 
 const storage = multer.diskStorage({
-  destination: videoDirectory,
+  destination(req, file, callback) {
+    if (isVercel) {
+      return callback(new Error('Tải video chưa khả dụng trên Vercel.'));
+    }
+    return callback(null, videoDirectory);
+  },
   filename(req, file, callback) {
     const extension = path.extname(file.originalname).toLowerCase();
     callback(null, `${crypto.randomUUID()}${extension}`);
@@ -83,6 +89,12 @@ const upload = multer({
 });
 
 router.post('/video', adminMiddleware, (req, res, next) => {
+  if (isVercel) {
+    return res.status(503).json({
+      success: false,
+      message: 'Tải video chưa khả dụng trên Vercel vì máy chủ chưa được cấu hình lưu trữ tệp bền vững.',
+    });
+  }
   upload.single('video')(req, res, error => {
     if (error instanceof multer.MulterError) {
       const status = error.code === 'LIMIT_FILE_SIZE' ? 413 : 400;
