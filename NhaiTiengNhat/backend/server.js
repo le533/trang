@@ -29,6 +29,10 @@ const feedbackRoutes = require('./routes/feedback');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+if (process.env.VERCEL) {
+  app.set('trust proxy', 1);
+}
+
 // ─── Security & Logging ───────────────────────────────────────────────────────
 app.use(helmet({
   crossOriginResourcePolicy: { policy: 'cross-origin' },
