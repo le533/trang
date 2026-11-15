@@ -34,9 +34,9 @@ Paid video playback uses a signed, video-scoped URL that expires after two hours
 
 ## Deploying to Vercel
 
-The repository root is the Vercel project root. The root `package.json` and `vercel.json` install the backend dependencies, export the Express app as a Vercel function, and build the checked-in site files into `public/`.
+The repository root is the Vercel project root. The root `package.json` and `vercel.json` install the backend dependencies, export the Express app as a Vercel function, and build the checked-in site files into `public/`. The Vercel output directory is `.` so the Express entrypoint at the repository root is discovered; `public/` only contains static assets.
 
-1. Push the repository to GitHub and import it into Vercel without changing the Root Directory, Build Command, or Output Directory.
+1. Push the repository to GitHub and import it into Vercel. Set the Root Directory to the repository root and keep the Build Command and Output Directory values from `vercel.json`.
 2. Create a reachable MySQL 8 database with a provider that accepts connections from Vercel. Run `database/schema.sql` and `database/seed.sql` against it.
 3. Add these environment variables in the Vercel project settings: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `JWT_SECRET` (at least 32 characters), and `NODE_ENV=production`. Set `CORS_ORIGIN` to any custom website origin; the default Vercel deployment domains are allowed automatically.
 4. Add `VNPAY_TMN_CODE`, `VNPAY_HASH_SECRET`, `VNPAY_URL`, and `APP_PUBLIC_URL` only when configuring VNPay. Keep credentials in Vercel environment settings, not in frontend files.
